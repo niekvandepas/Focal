@@ -14,8 +14,9 @@ struct ContentView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         VStack {
-            Text("\(timeRemaining / 60) : \(timeRemaining % 60, specifier: "%02d")")
-                .font(.system(size: 50))
+            Text("\(timeRemaining / 60):\(timeRemaining % 60, specifier: "%02d")")
+                .font(.custom("SF Mono", size: 50))
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .padding()
             
             Button(action: {
@@ -37,8 +38,9 @@ struct ContentView: View {
                 timerIsRunning = false
             }
         })
-        .padding()
+
     }
+
 }
 
 #Preview {

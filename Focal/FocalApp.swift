@@ -13,5 +13,6 @@ struct FocalApp: App {
         WindowGroup {
             ContentView()
         }
+        .defaultSize(width: 300, height: 200)
     }
 }
