@@ -25,9 +25,18 @@ struct FocalApp: App {
 
 struct AppMenu: View {
     @StateObject var viewModel: TimerViewModel
+    
+    func handleStartOrPause() {
+        if viewModel.timerIsRunning {
+            viewModel.pauseTimer()
+        }
+        else {
+            viewModel.startTimer()
+        }
+    }
 
     var body: some View {
-        Button(action: viewModel.startTimer, label: { Text("Start") }).disabled(viewModel.timerIsRunning)
-        Button(action: viewModel.stopTimer, label: { Text("Stop") }).disabled(!viewModel.timerIsRunning)
+        Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause") : Text("Start") })
+        Button(action: viewModel.resetTimer, label: { Text("Reset") }).disabled(viewModel.timeRemaining == 25 * 60 )
     }
 }

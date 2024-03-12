@@ -36,7 +36,12 @@ class TimerViewModel: ObservableObject {
         timerIsRunning = true
     }
     
-    func stopTimer() {
+    func pauseTimer() {
+        timerIsRunning = false
+    }
+    
+    func resetTimer() {
+        timeRemaining = 25 * 60
         timerIsRunning = false
     }
 }
