@@ -19,6 +19,10 @@ struct AppMenu: View {
         }
     }
 
+    func bringAppToFront() {
+        NSApp.activate()
+    }
+
     var body: some View {
         Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause") : Text("Start") })
             .keyboardShortcut(" ", modifiers: [])
@@ -28,5 +32,10 @@ struct AppMenu: View {
         Button(action: viewModel.resetTimer, label: { Text("Reset") })
             .disabled(viewModel.timeRemaining == 25 * 60 && !viewModel.timerIsRunning )
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
+
+        Divider()
+
+        Button(action: bringAppToFront, label: { Text("Open Focal") })
+            .keyboardShortcut(KeyEquivalent("o"), modifiers: [.command])
     }
 }
