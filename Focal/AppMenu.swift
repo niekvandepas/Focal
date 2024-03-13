@@ -20,8 +20,13 @@ struct AppMenu: View {
     }
 
     var body: some View {
-        Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause") : Text("Start") }).keyboardShortcut(" ", modifiers: [])
+        Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause") : Text("Start") })
+            .keyboardShortcut(" ", modifiers: [])
+
         Divider()
-        Button(action: viewModel.resetTimer, label: { Text("Reset") }).disabled(viewModel.timeRemaining == 25 * 60 ).keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
+
+        Button(action: viewModel.resetTimer, label: { Text("Reset") })
+            .disabled(viewModel.timeRemaining == 25 * 60 )
+            .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
     }
 }
