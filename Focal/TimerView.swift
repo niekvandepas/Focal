@@ -17,13 +17,22 @@ struct TimerView: View {
                 .fontWeight(.bold)
                 .padding()
             
-            Button(action: {
-                viewModel.toggleTimer()
-            }) {
-                Text(viewModel.timerIsRunning ? "Pause" : "Start")
+            HStack {
+                Button(action: {
+                    viewModel.toggleTimer()
+                }) {
+                    Text(viewModel.timerIsRunning ? "Pause" : "Start")
+                }
+                .padding()
+                .disabled(viewModel.timeRemaining == 0)
+
+                Button(action: {
+                    viewModel.resetTimer()
+                }) {
+                    Text("Reset")
+                }
+                .padding()
             }
-            .padding()
-            .disabled(viewModel.timeRemaining == 0)
         }
     }
 }
