@@ -26,7 +26,7 @@ struct AppMenu: View {
         Divider()
 
         Button(action: viewModel.resetTimer, label: { Text("Reset") })
-            .disabled(viewModel.timeRemaining == 25 * 60 )
+            .disabled(viewModel.timeRemaining == 25 * 60 && !viewModel.timerIsRunning )
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
     }
 }
