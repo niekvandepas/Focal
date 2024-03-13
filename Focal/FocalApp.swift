@@ -12,7 +12,7 @@ struct FocalApp: App {
     @StateObject var timerViewModel = TimerViewModel()
 
     var body: some Scene {
-        let menuBarImage = timerViewModel.timerIsRunning ? "clock" : "pause.circle";
+        let menuBarImage = timerViewModel.timerIsRunning ? "play.circle" : "pause.circle";
 
         MenuBarExtra("Focal", systemImage: menuBarImage) {
             AppMenu(viewModel: timerViewModel)
