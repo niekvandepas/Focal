@@ -21,6 +21,7 @@ struct AppMenu: View {
 
     var body: some View {
         Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause") : Text("Start") })
+        Divider()
         Button(action: viewModel.resetTimer, label: { Text("Reset") }).disabled(viewModel.timeRemaining == 25 * 60 )
     }
 }
