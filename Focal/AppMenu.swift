@@ -23,6 +23,10 @@ struct AppMenu: View {
         NSApp.activate()
     }
 
+    func quitApp() {
+        NSApplication.shared.terminate(nil)
+    }
+
     var body: some View {
         Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause") : Text("Start") })
             .keyboardShortcut(" ", modifiers: [])
@@ -37,5 +41,8 @@ struct AppMenu: View {
 
         Button(action: bringAppToFront, label: { Text("Open Focal") })
             .keyboardShortcut(KeyEquivalent("o"), modifiers: [.command])
+
+        Button(action: quitApp, label: { Text("Quit Focal") })
+            .keyboardShortcut(KeyEquivalent("q"), modifiers: [.command])
     }
 }
