@@ -25,6 +25,7 @@ struct TimerView: View {
                 }
                 .padding()
                 .disabled(viewModel.timeRemaining == 0)
+                .keyboardShortcut(" ")
 
                 Button(action: {
                     viewModel.resetTimer()
@@ -32,6 +33,7 @@ struct TimerView: View {
                     Text("Reset")
                 }
                 .padding()
+                .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
             }
         }
     }
