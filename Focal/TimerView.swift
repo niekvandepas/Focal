@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TimerView: View {
     @StateObject var viewModel: TimerViewModel
     
     var body: some View {

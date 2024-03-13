@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */; };
-		9F954AFD2B9F3BCC00A8D5FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* ContentView.swift */; };
+		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
 		9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
 		9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */; };
 		9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		9F954AF72B9F3BCC00A8D5FA /* Focal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalApp.swift; sourceTree = "<group>"; };
-		9F954AFC2B9F3BCC00A8D5FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focal.entitlements; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 				9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */,
 				9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */,
 				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
-				9F954AFC2B9F3BCC00A8D5FA /* ContentView.swift */,
+				9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */,
 				9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */,
 				9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */,
 				9F954B002B9F3BCE00A8D5FA /* Preview Content */,
@@ -145,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F954AFD2B9F3BCC00A8D5FA /* ContentView.swift in Sources */,
+				9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */,
 				9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */,
 				9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */,
 				9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */,

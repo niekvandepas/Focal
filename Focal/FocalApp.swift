@@ -16,7 +16,7 @@ struct FocalApp: App {
             AppMenu(viewModel: timerViewModel)
         }
         WindowGroup {
-            ContentView(viewModel: timerViewModel)
+            TimerView(viewModel: timerViewModel)
         }
         .defaultSize(width: 300, height: 200)
     }
