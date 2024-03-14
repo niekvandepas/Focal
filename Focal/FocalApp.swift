@@ -10,6 +10,7 @@ import UserNotifications
 
 @main
 struct FocalApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var timerViewModel = TimerViewModel()
 
     init() {
@@ -28,6 +29,14 @@ struct FocalApp: App {
             TimerView(viewModel: timerViewModel)
         }
         .defaultSize(width: 300, height: 200)
+    }
+}
+
+final class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        if let window = NSApplication.shared.windows.first {
+            window.collectionBehavior = .fullScreenNone
+        }
     }
 }
 
