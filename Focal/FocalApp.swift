@@ -38,5 +38,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             window.collectionBehavior = .fullScreenNone
         }
     }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        true
+    }
 }
 
