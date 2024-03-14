@@ -39,7 +39,10 @@ struct TimerView: View {
             }
         }
         .onAppear {
-            hotkey.keyDownHandler = viewModel.toggleTimer
+            hotkey.keyDownHandler = {
+                viewModel.toggleTimer()
+                NSApp.activate()
+            }
         }
     }
 }
