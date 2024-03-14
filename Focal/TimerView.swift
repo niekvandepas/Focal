@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import HotKey
 
 struct TimerView: View {
     @StateObject var viewModel: TimerViewModel
-    
+    private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
+
     var body: some View {
         VStack {
             Text("\(viewModel.timeRemaining / 60):\(viewModel.timeRemaining % 60, specifier: "%02d")")
@@ -35,6 +37,9 @@ struct TimerView: View {
                 .padding()
                 .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
             }
+        }
+        .onAppear {
+            hotkey.keyDownHandler = viewModel.toggleTimer
         }
     }
 }

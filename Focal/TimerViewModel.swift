@@ -14,7 +14,7 @@ class TimerViewModel: ObservableObject {
     @Published var timerIsRunning = false
     
     private var timer: AnyCancellable?
-    
+
     init() {
         timer = Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()

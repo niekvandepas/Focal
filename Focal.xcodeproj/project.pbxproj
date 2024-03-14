@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1E1DB62BA30BF90062C5BF /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1E1DB52BA30BF90062C5BF /* HotKey */; };
 		9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */; };
 		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
 		9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1E1DB62BA30BF90062C5BF /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = Focal;
+			packageProductDependencies = (
+				9F1E1DB52BA30BF90062C5BF /* HotKey */,
+			);
 			productName = Focal;
 			productReference = 9F954AF72B9F3BCC00A8D5FA /* Focal.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 9F954AEE2B9F3BCC00A8D5FA;
+			packageReferences = (
+				9F1E1DB42BA30BF90062C5BF /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
 			productRefGroup = 9F954AF82B9F3BCC00A8D5FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,6 +357,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9F1E1DB42BA30BF90062C5BF /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F1E1DB52BA30BF90062C5BF /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F1E1DB42BA30BF90062C5BF /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9F954AEF2B9F3BCC00A8D5FA /* Project object */;
 }
