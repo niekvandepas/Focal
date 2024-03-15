@@ -25,7 +25,7 @@ class TimerViewModel: ObservableObject {
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
                 } else {
-                    self.scheduleNotification()
+                    self.scheduleNotification(self.timerState)
                     self.timerState.toggle()
 
                     switch self.timerState {
@@ -55,10 +55,16 @@ class TimerViewModel: ObservableObject {
         timerIsRunning = false
     }
 
-    private func scheduleNotification() {
+    private func scheduleNotification(_ finishedTimerState: TimerState) {
         let content = UNMutableNotificationContent()
-        content.title = "Pomodoro Timer Ended"
-        content.body = "Your Pomodoro session has ended. Time to take a break!"
+        switch finishedTimerState {
+        case .work:
+            content.title = "Time for a break!"
+            content.body = "Your Pomodoro session has ended. Time to take a break!"
+        case .rest:
+            content.title = "Break's over!"
+            content.body = "Time to get back to work!"
+        }
         content.sound = .default
         content.categoryIdentifier = "TIMER_EXPIRED"
         let deliveryDate = Date()
