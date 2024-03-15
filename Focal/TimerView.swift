@@ -22,22 +22,34 @@ struct TimerView: View {
                 .padding()
             
             HStack {
+                Spacer()
+
                 Button(action: {
                     viewModel.toggleTimer()
                 }) {
                     Text(viewModel.timerIsRunning ? "Pause" : "Start")
                 }
-                .padding()
                 .disabled(viewModel.timeRemaining == 0)
                 .keyboardShortcut(" ")
+                .font(.headline)
+                .foregroundColor(.white)
+                .background(.blue)
+                .cornerRadius(10)
+
+                Spacer()
 
                 Button(action: {
                     viewModel.resetTimer()
                 }) {
                     Text("Reset")
                 }
-                .padding()
                 .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
+                .font(.headline)
+                .foregroundColor(.white)
+                .background(.yellow)
+                .cornerRadius(10)
+                
+                Spacer()
             }
         }
         .onAppear {
