@@ -18,15 +18,25 @@ struct FocalApp: App {
     }
 
     var body: some Scene {
-        let menuBarImage = timerViewModel.timerIsRunning ? "play.circle" : "pause.circle";
+        self.menuBarExtra()
 
-        MenuBarExtra("Focal", systemImage: menuBarImage) {
-            AppMenu(viewModel: timerViewModel)
-        }
         WindowGroup {
             TimerView(viewModel: timerViewModel)
         }
         .defaultSize(width: 300, height: 200)
+    }
+
+    private func menuBarExtra() -> some Scene {
+        if timerViewModel.timerIsRunning {
+            return MenuBarExtra("Focal", image: "MenuBarTimerRunning") {
+                AppMenu(viewModel: timerViewModel)
+            }
+        }
+        else {
+            return MenuBarExtra("Focal", systemImage: "pause.circle") {
+                AppMenu(viewModel: timerViewModel)
+            }
+        }
     }
 }
 

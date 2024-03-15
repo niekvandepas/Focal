@@ -48,7 +48,7 @@ struct TimerView: View {
                 .foregroundColor(.white)
                 .background(.yellow)
                 .cornerRadius(10)
-                
+
                 Spacer()
             }
         }
