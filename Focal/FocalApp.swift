@@ -24,6 +24,7 @@ struct FocalApp: App {
             TimerView(viewModel: timerViewModel)
         }
         .defaultSize(width: 300, height: 200)
+        .environment(\.font, Font.custom("DancingScript-VariableFont_wght", size: 14))
     }
 
     private func menuBarExtra() -> some Scene {

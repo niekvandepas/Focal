@@ -11,14 +11,14 @@ struct Pill: View {
     var timerState: TimerState
 
     var body: some View {
-        let color: Color = timerState == .work ? .blue : .green
+        let color: Color = timerState == .work ? .pink : .breakGreen
 
         Text(timerState.description)
             .font(.headline)
             .padding(.horizontal, 10)
             .padding(.vertical, 5)
-            .foregroundColor(.white)
-            .background(Capsule().foregroundColor(color))
+            .background(Capsule().background(.green))
     }
+
 }
 

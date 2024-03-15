@@ -10,6 +10,7 @@
 		9F1E1DB62BA30BF90062C5BF /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1E1DB52BA30BF90062C5BF /* HotKey */; };
 		9F2DDEEB2BA491A000EBA413 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
 		9F2DDEED2BA4D24000EBA413 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEC2BA4D24000EBA413 /* Pill.swift */; };
+		9F39DF1C2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */; };
 		9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */; };
 		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
 		9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		9F2DDEEA2BA491A000EBA413 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		9F2DDEEC2BA4D24000EBA413 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		9F2DDEEE2BA4F1E900EBA413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-VariableFont_slnt,wght.ttf"; path = "../../../../Downloads/Inter (2)/Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		9F954AF72B9F3BCC00A8D5FA /* Focal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalApp.swift; sourceTree = "<group>"; };
 		9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -63,11 +66,13 @@
 		9F954AF92B9F3BCC00A8D5FA /* Focal */ = {
 			isa = PBXGroup;
 			children = (
+				9F2DDEEE2BA4F1E900EBA413 /* Info.plist */,
 				9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */,
 				9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */,
 				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
 				9F2DDEEA2BA491A000EBA413 /* TimerState.swift */,
 				9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */,
+				9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */,
 				9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */,
 				9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */,
 				9F954B002B9F3BCE00A8D5FA /* Preview Content */,
@@ -148,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */,
+				9F39DF1C2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +310,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Focal/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,6 +340,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Focal/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
