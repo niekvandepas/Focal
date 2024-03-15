@@ -21,9 +21,14 @@ struct FocalApp: App {
         self.menuBarExtra()
 
         WindowGroup {
-            TimerView(viewModel: timerViewModel)
+            ZStack {
+                Color.accentColor
+                TimerView(viewModel: timerViewModel)
+                    .frame(width: 300, height: 400)
+            }
         }
-        .defaultSize(width: 300, height: 200)
+        .defaultSize(width: 300, height: 400)
+        .windowResizability(.contentSize)
         .environment(\.font, Font.custom("DancingScript-VariableFont_wght", size: 14))
     }
 

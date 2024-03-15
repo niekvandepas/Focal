@@ -14,65 +14,65 @@ struct TimerView: View {
     private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
 
     var body: some View {
-        ZStack {
-            switch self.viewModel.timerState {
-            case .work:
-                Color.workBlue
-            case .rest:
-                Color.breakGreen
-            }
-            VStack {
-                Text(viewModel.timerState.description.capitalized)
-                    .font(.custom("Inter", size: 18))
-                    .padding(.bottom, -20)
+        VStack {
+            ZStack {
+                Rectangle()
+                    .fill(Color.blue)
+                    .frame(width: 200, height: 200)
+                    .multilineTextAlignment(.center)
+                    .cornerRadius(8)
 
-                Text("\(viewModel.timeRemaining / 60):\(viewModel.timeRemaining % 60, specifier: "%02d")")
-                    .font(.custom("Inter", size: 50))
-                    .padding()
-                    .foregroundStyle(.primaryButton)
+                VStack {
+                    Text(viewModel.timerState.description.capitalized)
+                        .font(.custom("Inter", size: 18))
+                        .padding(.bottom, -20)
 
-                HStack {
-                    Spacer()
+                    Text("\(viewModel.timeRemaining / 60):\(viewModel.timeRemaining % 60, specifier: "%02d")")
+                        .font(.custom("Inter", size: 50))
+                        .padding()
+                        .foregroundStyle(.primaryButton)
 
-                    Button(action: {
+                }
+                .onAppear {
+                    hotkey.keyDownHandler = {
                         viewModel.toggleTimer()
-                    }) {
-                        Text(viewModel.timerIsRunning ? "Pause" : "Start")
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 20)
+                        NSApp.activate()
                     }
-                    .disabled(viewModel.timeRemaining == 0)
-                    .keyboardShortcut(" ")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .background(.primaryButton)
-                    .cornerRadius(2)
-
-                    Spacer()
-
-                    Button(action: {
-                        viewModel.resetTimer()
-                    }) {
-                        Text("Reset")
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 20)
-                            .foregroundStyle(.primaryButton)
-                    }
-                    .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
-                    .font(.headline)
-                    .background(.white)
-                    .cornerRadius(2)
-
-                    Spacer()
                 }
             }
-            .onAppear {
-                hotkey.keyDownHandler = {
+
+            HStack {
+                Button(action: {
                     viewModel.toggleTimer()
-                    NSApp.activate()
+                }) {
+                    Text(viewModel.timerIsRunning ? "Pause" : "Start")
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 20)
                 }
+                .disabled(viewModel.timeRemaining == 0)
+                .keyboardShortcut(" ")
+                .font(.headline)
+                .foregroundColor(.white)
+                .background(.primaryButton)
+                .cornerRadius(2)
+
+                Button(action: {
+                    viewModel.resetTimer()
+                }) {
+                    Text("Reset")
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 20)
+                        .foregroundStyle(.primaryButton)
+                }
+                .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
+                .font(.headline)
+                .background(.white)
+                .cornerRadius(2)
             }
+//            .background(.green)
+            .frame(width: 220)
         }
+//        .background(.yellow)
     }
 }
 
