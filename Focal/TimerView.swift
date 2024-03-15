@@ -14,6 +14,8 @@ struct TimerView: View {
 
     var body: some View {
         VStack {
+            Text(viewModel.timerState.description)
+
             Text("\(viewModel.timeRemaining / 60):\(viewModel.timeRemaining % 60, specifier: "%02d")")
                 .font(.custom("SF Mono", size: 50))
                 .fontWeight(.bold)

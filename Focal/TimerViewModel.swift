@@ -12,7 +12,9 @@ import UserNotifications
 class TimerViewModel: ObservableObject {
     @Published var timeRemaining = 25 * 60
     @Published var timerIsRunning = false
+    @Published var timerState: TimerState = .work
     
+
     private var timer: AnyCancellable?
 
     init() {
@@ -23,9 +25,15 @@ class TimerViewModel: ObservableObject {
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
                 } else {
-                    self.timeRemaining = 25 * 60
-                    self.timerIsRunning = false
                     self.scheduleNotification()
+                    self.timerState.toggle()
+
+                    switch self.timerState {
+                    case .work:
+                        self.timeRemaining = 25 * 60
+                    case .rest:
+                        self.timeRemaining = 5 * 60
+                    }
                 }
             }
     }
