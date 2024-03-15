@@ -14,7 +14,6 @@ class TimerViewModel: ObservableObject {
     @Published var timerIsRunning = false
     @Published var timerState: TimerState = .work
     
-
     private var timer: AnyCancellable?
 
     init() {
