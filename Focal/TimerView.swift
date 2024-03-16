@@ -65,6 +65,7 @@ struct TimerView: View {
                     .padding(.horizontal, 20)
                     .bold()
             }
+            .customFocus()
             .disabled(viewModel.timeRemaining == 0)
             .keyboardShortcut(" ")
             .foregroundColor(.white)
@@ -86,6 +87,7 @@ struct TimerView: View {
                     .padding(.horizontal, 20)
                     .foregroundStyle(.primaryButton)
             }
+            .customFocus()
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
             .background(.white)
             .cornerRadius(cornerRadius)
@@ -95,6 +97,9 @@ struct TimerView: View {
                     .offset(x: 3, y: 3)
             )
         }
+        .buttonStyle(MyButtonStyle())
+        .focusEffectDisabled()
+
 //            .background(.green)
 //        .frame(width: 220)
     }

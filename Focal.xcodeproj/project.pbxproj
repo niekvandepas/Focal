@@ -17,6 +17,7 @@
 		9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */; };
 		9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
 		9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */; };
+		9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focal.entitlements; sourceTree = "<group>"; };
 		9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
+		9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */,
 				9F2DDEEC2BA4D24000EBA413 /* Pill.swift */,
 				9F954AF92B9F3BCC00A8D5FA /* Focal */,
 				9F954AF82B9F3BCC00A8D5FA /* Products */,
@@ -167,6 +170,7 @@
 			files = (
 				9F2DDEED2BA4D24000EBA413 /* Pill.swift in Sources */,
 				9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */,
+				9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */,
 				9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */,
 				9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */,
 				9F2DDEEB2BA491A000EBA413 /* TimerState.swift in Sources */,
