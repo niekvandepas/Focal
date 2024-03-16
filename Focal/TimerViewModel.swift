@@ -13,7 +13,7 @@ class TimerViewModel: ObservableObject {
     @Published var timeRemaining = 25 * 60
     @Published var timerIsRunning = false
     @Published var timerState: TimerState = .work
-    
+
     private var timer: AnyCancellable?
 
     init() {
