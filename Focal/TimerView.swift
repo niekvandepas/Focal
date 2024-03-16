@@ -28,6 +28,8 @@ struct TimerView: View {
                 .frame(width: 200, height: 200)
                 .multilineTextAlignment(.center)
                 .cornerRadius(8)
+                .shadow(radius: 1, x: 5, y: 5)
+                .padding(.bottom, 10)
 
             VStack {
                 Text(viewModel.timerState.description.capitalized)
