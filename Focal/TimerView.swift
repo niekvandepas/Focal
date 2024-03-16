@@ -87,7 +87,6 @@ struct TimerView: View {
                     .foregroundStyle(.primaryButton)
             }
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
-            .font(.headline)
             .background(.white)
             .cornerRadius(cornerRadius)
             .border(.black, width: 2)
