@@ -96,6 +96,16 @@ struct TimerView: View {
                 .offset(x: 3, y: 3)
                 .fill(.black)
         )
+        .overlay(viewModel.timerIsFull ? GeometryReader { geometry in
+            // Draw a red X
+            Path { path in
+                path.move(to: CGPoint(x: 0, y: 0))
+                path.addLine(to: CGPoint(x: geometry.size.width, y: geometry.size.height))
+                path.move(to: CGPoint(x: geometry.size.width, y: 0))
+                path.addLine(to: CGPoint(x: 0, y: geometry.size.height))
+            }
+            .stroke(Color.red, lineWidth: 5)
+        } : nil)
 
         return HStack {
             startPauseButton
