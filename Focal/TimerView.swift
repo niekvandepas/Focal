@@ -61,10 +61,10 @@ struct TimerView: View {
                 Text(viewModel.timerIsRunning ? "Pause" : "Start")
                     .padding(.vertical, 10)
                     .padding(.horizontal, 20)
+                    .bold()
             }
             .disabled(viewModel.timeRemaining == 0)
             .keyboardShortcut(" ")
-            .font(.headline)
             .foregroundColor(.white)
             .background(.primaryButton)
             .cornerRadius(cornerRadius)
