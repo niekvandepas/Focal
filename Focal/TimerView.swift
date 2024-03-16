@@ -94,7 +94,8 @@ struct TimerView: View {
             .background( // rounded border
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .offset(x: 3, y: 3)
-            )        }
+            )
+        }
 //            .background(.green)
 //        .frame(width: 220)
     }
