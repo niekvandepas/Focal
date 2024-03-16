@@ -56,49 +56,51 @@ struct TimerView: View {
     var buttons: some View {
         let cornerRadius: CGFloat = 0
 
+        let startPauseButton = Button(action: {
+            viewModel.toggleTimer()
+        }) {
+            Text(viewModel.timerIsRunning ? "Pause" : "Start")
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
+                .bold()
+        }
+        .customFocus()
+        .disabled(viewModel.timeRemaining == 0)
+        .keyboardShortcut(" ")
+        .foregroundColor(.white)
+        .background(.primaryButton)
+        .cornerRadius(cornerRadius)
+        .border(.black, width: 2)
+        .background( // rounded border
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .offset(x: 3, y: 3)
+                .fill(.black)
+        )
+
+        let resetButton = Button(action: {
+            viewModel.resetTimer()
+        }) {
+            Text("Reset")
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
+                .foregroundStyle(.primaryButton)
+        }
+        .disabled(viewModel.timerIsFull)
+        .customFocus()
+        .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
+        .background(.white)
+        .cornerRadius(cornerRadius)
+        .border(.black, width: 2)
+        .background( // rounded border
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .offset(x: 3, y: 3)
+                .fill(.black)
+        )
+
         return HStack {
-            Button(action: {
-                viewModel.toggleTimer()
-            }) {
-                Text(viewModel.timerIsRunning ? "Pause" : "Start")
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 20)
-                    .bold()
-            }
-            .customFocus()
-            .disabled(viewModel.timeRemaining == 0)
-            .keyboardShortcut(" ")
-            .foregroundColor(.white)
-            .background(.primaryButton)
-            .cornerRadius(cornerRadius)
-            .border(.black, width: 2)
-            .background( // rounded border
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .offset(x: 3, y: 3)
-                    .fill(.black)
-            )
-
+            startPauseButton
             Spacer()
-
-            Button(action: {
-                viewModel.resetTimer()
-            }) {
-                Text("Reset")
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 20)
-                    .foregroundStyle(.primaryButton)
-            }
-            .disabled(viewModel.timerIsFull)
-            .customFocus()
-            .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
-            .background(.white)
-            .cornerRadius(cornerRadius)
-            .border(.black, width: 2)
-            .background( // rounded border
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .offset(x: 3, y: 3)
-                    .fill(.black)
-            )
+            resetButton
         }
         .buttonStyle(MyButtonStyle())
         .focusEffectDisabled()
