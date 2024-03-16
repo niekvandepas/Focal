@@ -16,7 +16,9 @@ struct TimerView: View {
     var body: some View {
         VStack {
             timerRect
+                .frame(width:200)
             buttons
+                .frame(width:200)
         }
 //        .background(.yellow)
     }
@@ -74,6 +76,8 @@ struct TimerView: View {
                     .offset(x: 3, y: 3)
             )
 
+            Spacer()
+
             Button(action: {
                 viewModel.resetTimer()
             }) {
@@ -92,7 +96,7 @@ struct TimerView: View {
                     .offset(x: 3, y: 3)
             )        }
 //            .background(.green)
-        .frame(width: 220)
+//        .frame(width: 220)
     }
 }
 
