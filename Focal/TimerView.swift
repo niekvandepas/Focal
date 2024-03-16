@@ -87,6 +87,7 @@ struct TimerView: View {
                     .padding(.horizontal, 20)
                     .foregroundStyle(.primaryButton)
             }
+            .disabled(viewModel.timerIsFull)
             .customFocus()
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
             .background(.white)

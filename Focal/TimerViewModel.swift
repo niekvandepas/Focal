@@ -55,6 +55,15 @@ class TimerViewModel: ObservableObject {
         timerIsRunning = false
     }
 
+    var timerIsFull: Bool {
+        switch self.timerState {
+        case .work:
+            return timeRemaining == 25 * 60
+        case .rest:
+            return timeRemaining == 5 * 60
+        }
+    }
+
     private func scheduleNotification(_ finishedTimerState: TimerState) {
         let content = UNMutableNotificationContent()
         switch finishedTimerState {
