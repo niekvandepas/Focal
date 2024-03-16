@@ -52,7 +52,9 @@ struct TimerView: View {
     }
 
     var buttons: some View {
-        HStack {
+        let cornerRadius: CGFloat = 0
+
+        return HStack {
             Button(action: {
                 viewModel.toggleTimer()
             }) {
@@ -65,7 +67,12 @@ struct TimerView: View {
             .font(.headline)
             .foregroundColor(.white)
             .background(.primaryButton)
-            .cornerRadius(2)
+            .cornerRadius(cornerRadius)
+            .border(.black, width: 2)
+            .background( // rounded border
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .offset(x: 3, y: 3)
+            )
 
             Button(action: {
                 viewModel.resetTimer()
@@ -78,8 +85,12 @@ struct TimerView: View {
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
             .font(.headline)
             .background(.white)
-            .cornerRadius(2)
-        }
+            .cornerRadius(cornerRadius)
+            .border(.black, width: 2)
+            .background( // rounded border
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .offset(x: 3, y: 3)
+            )        }
 //            .background(.green)
         .frame(width: 220)
     }
