@@ -75,6 +75,7 @@ struct TimerView: View {
             .background( // rounded border
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .offset(x: 3, y: 3)
+                    .fill(.black)
             )
 
             Spacer()
@@ -96,6 +97,7 @@ struct TimerView: View {
             .background( // rounded border
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .offset(x: 3, y: 3)
+                    .fill(.black)
             )
         }
         .buttonStyle(MyButtonStyle())
