@@ -50,7 +50,7 @@ class TimerViewModel: ObservableObject {
     }
     
     func resetTimer() {
-        timerState.toggle()
+        timerState = .work
         timeRemaining = 25 * 60
         timerIsRunning = false
     }
