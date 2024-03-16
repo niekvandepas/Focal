@@ -24,7 +24,7 @@ struct TimerView: View {
     var timerRect: some View {
         ZStack {
             Rectangle()
-                .fill(Color.blue)
+                .fill(self.viewModel.timerState == .work ? .workBlue : .breakGreen)
                 .frame(width: 200, height: 200)
                 .multilineTextAlignment(.center)
                 .cornerRadius(8)
