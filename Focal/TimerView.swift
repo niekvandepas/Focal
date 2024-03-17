@@ -53,6 +53,7 @@ struct TimerView: View {
         }
     }
 
+//    TODO animate selected button 'floating' (hovering / moving slightly)?
     var buttons: some View {
         let cornerRadius: CGFloat = 0
 
