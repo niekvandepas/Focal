@@ -55,7 +55,6 @@ struct TimerView: View {
 
 //    TODO animate selected button 'floating' (hovering / moving slightly)?
     var buttons: some View {
-        let cornerRadius: CGFloat = 0
 
         let startPauseButton = Button(action: {
             viewModel.toggleTimer()
@@ -70,10 +69,9 @@ struct TimerView: View {
         .keyboardShortcut(" ")
         .foregroundColor(.white)
         .background(.primaryButton)
-        .cornerRadius(cornerRadius)
         .border(.black, width: 2)
         .background( // rounded border
-            RoundedRectangle(cornerRadius: cornerRadius)
+            RoundedRectangle(cornerRadius: 0)
                 .offset(x: 3, y: 3)
                 .fill(.black)
         )
@@ -90,10 +88,9 @@ struct TimerView: View {
         .customFocus()
         .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
         .background(.white)
-        .cornerRadius(cornerRadius)
         .border(.black, width: 2)
         .background( // rounded border
-            RoundedRectangle(cornerRadius: cornerRadius)
+            RoundedRectangle(cornerRadius: 0)
                 .offset(x: 3, y: 3)
                 .fill(.black)
         )
