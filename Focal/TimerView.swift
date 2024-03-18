@@ -24,9 +24,14 @@ struct TimerView: View {
     }
 
     var timerRect: some View {
-        ZStack {
+        // work:    .workBlue
+        // rest:    .breakGreen
+        // paused:  .offWhite
+        let timerSquareColor: Color = viewModel.timerIsRunning ? (viewModel.timerState == .work ? Color.workBlue : Color.breakGreen) : Color.offWhite
+
+        return ZStack {
             Rectangle()
-                .fill(self.viewModel.timerState == .work ? .workBlue : .breakGreen)
+                .fill(timerSquareColor)
                 .frame(width: 200, height: 200)
                 .multilineTextAlignment(.center)
                 .cornerRadius(8)
