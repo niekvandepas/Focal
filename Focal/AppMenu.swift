@@ -28,12 +28,12 @@ struct AppMenu: View {
     }
 
     var body: some View {
-        Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause") : Text("Start") })
+        Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause Timer") : Text("Start Timer") })
             .keyboardShortcut(" ", modifiers: [])
 
         Divider()
 
-        Button(action: viewModel.resetTimer, label: { Text("Reset") })
+        Button(action: viewModel.resetTimer, label: { Text("Reset Timer") })
             .disabled(viewModel.timeRemaining == 25 * 60 && !viewModel.timerIsRunning )
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
 
