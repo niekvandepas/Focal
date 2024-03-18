@@ -64,7 +64,11 @@ struct TimerView: View {
         let startPauseButton = Button(action: {
             viewModel.toggleTimer()
         }) {
-            Text(viewModel.timerIsRunning ? "Pause" : "Start")
+            // Overlay the actual text on hidden "Pause" text to ensure the button is always the same width,
+            // https://stackoverflow.com/questions/77051742/how-to-create-a-fixed-size-swiftui-button-when-label-content-changes
+            Text("Pause")
+                .hidden()
+                .overlay(Text(viewModel.timerIsRunning ? "Pause" : "Start"))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
                 .bold()
