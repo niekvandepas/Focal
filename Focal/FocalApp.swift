@@ -38,7 +38,9 @@ struct FocalApp: App {
             }
         }
         else {
-            return MenuBarExtra("Focal", systemImage: "pause.circle") {
+            let systemImage = timerViewModel.timerIsFull ? "stop.circle" : "pause.circle"
+
+            return MenuBarExtra("Focal", systemImage: systemImage) {
                 AppMenu(viewModel: timerViewModel)
             }
         }
