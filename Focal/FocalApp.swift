@@ -56,6 +56,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         ensureMainWindowIsOpen()
     }
 
+    func applicationDidBecomeActive(_ notification: Notification) {
+        ensureMainWindowIsOpen()
+    }
+
     /// Ensures the main window (the timer window) is open at app launch.
     private func ensureMainWindowIsOpen() {
         // If fewer than 2 windows are open, that means only the menu bar item 'window' is open,
