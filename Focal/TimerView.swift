@@ -42,6 +42,7 @@ struct TimerView: View {
                 Text(viewModel.timerState.description.capitalized)
                     .font(.custom("Inter", size: 18))
                     .padding(.bottom, -20)
+                    .foregroundStyle(.black)
 
                 Text("\(viewModel.timeRemaining / 60):\(viewModel.timeRemaining % 60, specifier: "%02d")")
                     .font(.custom("Inter", size: 50))
