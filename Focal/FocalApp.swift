@@ -55,10 +55,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         ensureMainWindowIsOpen()
     }
 
-    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        true
-    }
-
     /// Ensures the main window (the timer window) is open at app launch.
     private func ensureMainWindowIsOpen() {
         // If fewer than 2 windows are open, that means only the menu bar item 'window' is open,
