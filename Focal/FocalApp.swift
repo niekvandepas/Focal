@@ -33,7 +33,7 @@ struct FocalApp: App {
 
     private func menuBarExtra() -> some Scene {
         if timerViewModel.timerIsRunning {
-            return MenuBarExtra("Focal", image: "MenuBarTimerRunning") {
+            return MenuBarExtra("Focal", image: timerViewModel.timerState == .work ? "play.circle.workBlue" : "play.circle.workGreen") {
                 AppMenu(viewModel: timerViewModel)
             }
         }
