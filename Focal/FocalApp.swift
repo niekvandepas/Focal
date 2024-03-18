@@ -29,7 +29,6 @@ struct FocalApp: App {
         }
         .defaultSize(width: 300, height: 400)
         .windowResizability(.contentSize)
-        .environment(\.font, Font.custom("DancingScript-VariableFont_wght", size: 14))
     }
 
     private func menuBarExtra() -> some Scene {
