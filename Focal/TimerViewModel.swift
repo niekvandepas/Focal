@@ -26,6 +26,7 @@ class TimerViewModel: ObservableObject {
                 } else {
                     self.scheduleNotification(self.timerState)
                     self.timerState.toggle()
+                    self.pauseTimer()
 
                     switch self.timerState {
                     case .work:
