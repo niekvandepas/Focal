@@ -24,7 +24,6 @@ struct TimerView: View {
             buttons
                 .frame(width:200)
         }
-//        .background(.yellow)
     }
 
     var timerRect: some View {
@@ -64,7 +63,6 @@ struct TimerView: View {
         }
     }
 
-//    TODO animate selected button 'floating' (hovering / moving slightly)?
     var buttons: some View {
 
         let startPauseButton = Button(action: {
@@ -130,8 +128,6 @@ struct TimerView: View {
         .focusEffectDisabled()
         #endif
 
-//            .background(.green)
-//        .frame(width: 220)
     }
 }
 
