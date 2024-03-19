@@ -51,8 +51,6 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
-				9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */,
-				9F2DDEEC2BA4D24000EBA413 /* Pill.swift */,
 				9F954AF92B9F3BCC00A8D5FA /* Focal */,
 				9F954AF82B9F3BCC00A8D5FA /* Products */,
 			);
@@ -71,6 +69,8 @@
 			children = (
 				9F2DDEEE2BA4F1E900EBA413 /* Info.plist */,
 				9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */,
+				9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */,
+				9F2DDEEC2BA4D24000EBA413 /* Pill.swift */,
 				9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */,
 				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
 				9F2DDEEA2BA491A000EBA413 /* TimerState.swift */,
