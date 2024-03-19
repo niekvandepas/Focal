@@ -10,7 +10,7 @@ import UserNotifications
 
 @main
 struct FocalApp: App {
-    @StateObject var timerViewModel = TimerViewModel()
+    @StateObject var timerViewModel = TimerViewModel.shared
 
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in }
@@ -20,7 +20,7 @@ struct FocalApp: App {
         WindowGroup {
             ZStack {
                 Color.accentColor
-                TimerView(viewModel: timerViewModel)
+                TimerView()
             }
         }
     }

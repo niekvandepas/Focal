@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppMenu: View {
-    @StateObject var viewModel: TimerViewModel
+    @StateObject var viewModel = TimerViewModel.shared
     
     func handleStartOrPause() {
         if viewModel.timerIsRunning {

@@ -12,7 +12,7 @@ import AppKit
 #endif
 
 struct TimerView: View {
-    @StateObject var viewModel: TimerViewModel
+    @StateObject var viewModel = TimerViewModel.shared
     #if os(macOS)
     private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
     #endif

@@ -10,7 +10,8 @@ import Combine
 import UserNotifications
 
 class TimerViewModel: ObservableObject {
-    @Published var timeRemaining = 25 * 60
+    static let shared = TimerViewModel()
+    @Published var timeRemaining = 2
     @Published var timerIsRunning = false
     @Published var timerState: TimerState = .work
 
@@ -66,6 +67,22 @@ class TimerViewModel: ObservableObject {
     }
 
     private func scheduleNotification(_ finishedTimerState: TimerState) {
+        let content = createNotificationContent(for: finishedTimerState)
+        let category = createNotificationCategory()
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+
+        content.userInfo = ["timerState": finishedTimerState.description]
+        let request = createNotificationRequest(for: content)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error scheduling notification: \(error.localizedDescription)")
+            } else {
+                print("Notification scheduled successfully!")
+            }
+        }
+    }
+
+    private func createNotificationContent(for finishedTimerState: TimerState) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         switch finishedTimerState {
         case .work:
@@ -77,19 +94,27 @@ class TimerViewModel: ObservableObject {
         }
         content.sound = .default
         content.categoryIdentifier = "TIMER_EXPIRED"
-        let deliveryDate = Date()
+        return content
+    }
 
+    private func createNotificationCategory() -> UNNotificationCategory {
+        let startNextTimerAction = UNNotificationAction(identifier: "START_NEXT_TIMER",
+                                                         title: "Start Next Timer",
+                                                         options: .foreground)
+        let category = UNNotificationCategory(identifier: "TIMER_EXPIRED",
+                                              actions: [startNextTimerAction],
+                                              intentIdentifiers: [],
+                                              options: [])
+        return category
+    }
+
+    private func createNotificationRequest(for content: UNMutableNotificationContent) -> UNNotificationRequest {
+        let deliveryDate = Date()
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: deliveryDate), repeats: false)
         let request = UNNotificationRequest(identifier: "com.niekvdpas.FocalTimeUp", content: content, trigger: trigger)
-
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error scheduling notification: \(error.localizedDescription)")
-            } else {
-                print("Notification scheduled successfully!")
-            }
-        }
+        return request
     }
+
 
 }
 

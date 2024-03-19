@@ -11,7 +11,7 @@ import UserNotifications
 @main
 struct FocalApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var timerViewModel = TimerViewModel()
+    @StateObject var timerViewModel = TimerViewModel.shared
 
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in }
@@ -23,7 +23,7 @@ struct FocalApp: App {
         WindowGroup {
             ZStack {
                 Color.accentColor
-                TimerView(viewModel: timerViewModel)
+                TimerView()
                     .frame(width: 300, height: 400)
             }
         }
@@ -34,30 +34,44 @@ struct FocalApp: App {
     private func menuBarExtra() -> some Scene {
         if timerViewModel.timerIsRunning {
             return MenuBarExtra("Focal", image: timerViewModel.timerState == .work ? "play.circle.workBlue" : "play.circle.workGreen") {
-                AppMenu(viewModel: timerViewModel)
+                AppMenu()
             }
         }
         else {
             let systemImage = timerViewModel.timerIsFull ? "stop.circle" : "pause.circle"
 
             return MenuBarExtra("Focal", systemImage: systemImage) {
-                AppMenu(viewModel: timerViewModel)
+                AppMenu()
             }
         }
     }
 }
 
-final class AppDelegate: NSObject, NSApplicationDelegate {
+// TODO move this to a different file
+final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         if let window = NSApplication.shared.windows.first {
             window.collectionBehavior = .fullScreenNone
         }
+
+        UNUserNotificationCenter.current().delegate = self
 
         ensureMainWindowIsOpen()
     }
 
     func applicationDidBecomeActive(_ notification: Notification) {
         ensureMainWindowIsOpen()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.actionIdentifier == "START_NEXT_TIMER" {
+            // Handle the action here
+            // For example, you can start the next timer
+            // Call the appropriate method on your view model
+            print("org borg")
+            TimerViewModel.shared.startTimer()
+        }
+        completionHandler()
     }
 
     /// Ensures the main window (the timer window) is open at app launch.
