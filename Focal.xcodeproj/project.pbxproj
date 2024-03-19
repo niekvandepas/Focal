@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9F1E1DB62BA30BF90062C5BF /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1E1DB52BA30BF90062C5BF /* HotKey */; };
 		9F2DDEEB2BA491A000EBA413 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
-		9F2DDEED2BA4D24000EBA413 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEC2BA4D24000EBA413 /* Pill.swift */; };
 		9F39DF1C2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */; };
 		9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */; };
 		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
@@ -22,7 +21,6 @@
 
 /* Begin PBXFileReference section */
 		9F2DDEEA2BA491A000EBA413 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
-		9F2DDEEC2BA4D24000EBA413 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 		9F2DDEEE2BA4F1E900EBA413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-VariableFont_slnt,wght.ttf"; path = "../../../../Downloads/Inter (2)/Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		9F954AF72B9F3BCC00A8D5FA /* Focal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +68,6 @@
 				9F2DDEEE2BA4F1E900EBA413 /* Info.plist */,
 				9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */,
 				9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */,
-				9F2DDEEC2BA4D24000EBA413 /* Pill.swift */,
 				9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */,
 				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
 				9F2DDEEA2BA491A000EBA413 /* TimerState.swift */,
@@ -168,7 +165,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F2DDEED2BA4D24000EBA413 /* Pill.swift in Sources */,
 				9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */,
 				9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */,
 				9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */,
