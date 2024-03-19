@@ -20,6 +20,8 @@
 		9F5D34002BA9BE6A0049100C /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
 		9F5D34022BA9FD5C0049100C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34012BA9FD5C0049100C /* ViewController.swift */; };
 		9F5D34032BA9FD5C0049100C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34012BA9FD5C0049100C /* ViewController.swift */; };
+		9F5D34052BAA080D0049100C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34042BAA080D0049100C /* AppDelegate.swift */; };
+		9F5D34062BAA080D0049100C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34042BAA080D0049100C /* AppDelegate.swift */; };
 		9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */; };
 		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
 		9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
@@ -39,6 +41,7 @@
 		9F5D33ED2BA9B9D50049100C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F5D33F02BA9B9D50049100C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F5D34012BA9FD5C0049100C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F5D34042BAA080D0049100C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F954AF72B9F3BCC00A8D5FA /* Focal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalApp.swift; sourceTree = "<group>"; };
 		9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9F5D34042BAA080D0049100C /* AppDelegate.swift */,
 				9F5D34012BA9FD5C0049100C /* ViewController.swift */,
 				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
 				9F2DDEEA2BA491A000EBA413 /* TimerState.swift */,
@@ -240,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5D34062BAA080D0049100C /* AppDelegate.swift in Sources */,
 				9F5D33FF2BA9BE560049100C /* TimerView.swift in Sources */,
 				9F5D34002BA9BE6A0049100C /* MyButtonStyle.swift in Sources */,
 				9F5D33EC2BA9B9D40049100C /* ContentView.swift in Sources */,
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5D34052BAA080D0049100C /* AppDelegate.swift in Sources */,
 				9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */,
 				9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */,
 				9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */,
