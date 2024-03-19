@@ -147,15 +147,22 @@ struct TimerView: View {
             .stroke(Color.red, lineWidth: 5)
         } : nil)
 
-        return HStack {
-            startPauseButton
-            Spacer()
-            resetButton
+        if #available(macOS 14.0, *) {
+            return HStack {
+                startPauseButton
+                Spacer()
+                resetButton
+            }
+            .buttonStyle(MyButtonStyle())
+            .focusEffectDisabled()
+        } else {
+            return HStack {
+                startPauseButton
+                Spacer()
+                resetButton
+            }
+            .buttonStyle(MyButtonStyle())
         }
-        .buttonStyle(MyButtonStyle())
-        #if os(macOS)
-        .focusEffectDisabled()
-        #endif
 
     }
 }
