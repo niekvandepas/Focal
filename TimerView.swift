@@ -17,12 +17,19 @@ struct TimerView: View {
     private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
     #endif
 
+
     var body: some View {
+#if os(macOS)
+        let buttonFrameWidth = 200.0
+#else
+        let buttonFrameWidth = 250.0
+#endif
+
         VStack {
             timerRect
                 .frame(width:200)
             buttons
-                .frame(width:200)
+                .frame(width:buttonFrameWidth)
         }
     }
 
@@ -31,11 +38,33 @@ struct TimerView: View {
         // rest:    .breakGreen
         // paused:  .offWhite
         let timerSquareColor: Color = viewModel.timerIsRunning ? (viewModel.timerState == .work ? Color.workBlue : Color.breakGreen) : Color.offWhite
+#if os(macOS)
+        let timerStateLabelFontSize = 18.0
+#else
+        let timerStateLabelFontSize = 26.0
+#endif
+
+#if os(macOS)
+        let timerTimeLeftFontSize = 50.0
+#else
+        let timerTimeLeftFontSize = 64.0
+#endif
+#if os(macOS)
+        let timerRectangleWidth = 200.0
+#else
+        let timerRectangleWidth = 250.0
+#endif
+#if os(macOS)
+        let timerRectangleHeight = 200.0
+#else
+        let timerRectangleHeight = 250.0
+#endif
+
 
         return ZStack {
             Rectangle()
                 .fill(timerSquareColor)
-                .frame(width: 200, height: 200)
+                .frame(width: timerRectangleWidth, height: timerRectangleHeight)
                 .multilineTextAlignment(.center)
                 .cornerRadius(8)
                 .shadow(radius: 1, x: 5, y: 5)
@@ -43,12 +72,12 @@ struct TimerView: View {
 
             VStack {
                 Text(viewModel.timerState.description.capitalized)
-                    .font(.custom("Inter", size: 18))
+                    .font(.custom("Inter", size: timerStateLabelFontSize))
                     .padding(.bottom, -20)
                     .foregroundStyle(.black)
 
                 Text("\(viewModel.timeRemaining / 60):\(viewModel.timeRemaining % 60, specifier: "%02d")")
-                    .font(.custom("Inter", size: 50))
+                    .font(.custom("Inter", size: timerTimeLeftFontSize))
                     .padding()
                     .foregroundStyle(.primaryButton)
 

@@ -21,7 +21,6 @@ struct FocalApp: App {
             ZStack {
                 Color.accentColor
                 TimerView(viewModel: timerViewModel)
-                    .frame(width: 300, height: 400)
             }
         }
     }
