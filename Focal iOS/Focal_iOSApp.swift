@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 @main
-struct Focal_iOSApp: App {
+struct FocalApp: App {
+    @StateObject var timerViewModel = TimerViewModel()
+
+    init() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in }
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                Color.accentColor
+                TimerView(viewModel: timerViewModel)
+                    .frame(width: 300, height: 400)
+            }
         }
     }
 }
+

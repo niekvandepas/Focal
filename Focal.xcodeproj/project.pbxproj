@@ -14,6 +14,10 @@
 		9F5D33EC2BA9B9D40049100C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D33EB2BA9B9D40049100C /* ContentView.swift */; };
 		9F5D33EE2BA9B9D50049100C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5D33ED2BA9B9D50049100C /* Assets.xcassets */; };
 		9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5D33F02BA9B9D50049100C /* Preview Assets.xcassets */; };
+		9F5D33FD2BA9BE440049100C /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
+		9F5D33FE2BA9BE500049100C /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
+		9F5D33FF2BA9BE560049100C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
+		9F5D34002BA9BE6A0049100C /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
 		9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */; };
 		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
 		9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
@@ -84,6 +88,10 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
+				9F2DDEEA2BA491A000EBA413 /* TimerState.swift */,
+				9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */,
+				9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */,
 				9F954AF92B9F3BCC00A8D5FA /* Focal */,
 				9F5D33E82BA9B9D40049100C /* Focal iOS */,
 				9F954AF82B9F3BCC00A8D5FA /* Products */,
@@ -104,11 +112,7 @@
 			children = (
 				9F2DDEEE2BA4F1E900EBA413 /* Info.plist */,
 				9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */,
-				9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */,
 				9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */,
-				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
-				9F2DDEEA2BA491A000EBA413 /* TimerState.swift */,
-				9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */,
 				9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */,
 				9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */,
 				9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */,
@@ -232,7 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5D33FF2BA9BE560049100C /* TimerView.swift in Sources */,
+				9F5D34002BA9BE6A0049100C /* MyButtonStyle.swift in Sources */,
 				9F5D33EC2BA9B9D40049100C /* ContentView.swift in Sources */,
+				9F5D33FE2BA9BE500049100C /* TimerState.swift in Sources */,
+				9F5D33FD2BA9BE440049100C /* TimerViewModel.swift in Sources */,
 				9F5D33EA2BA9B9D40049100C /* Focal_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+#if os(macOS)
 import HotKey
 import AppKit
+#endif
 
 struct TimerView: View {
     @StateObject var viewModel: TimerViewModel
+    #if os(macOS)
     private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
+    #endif
 
     var body: some View {
         VStack {
@@ -50,11 +54,13 @@ struct TimerView: View {
                     .foregroundStyle(.primaryButton)
 
             }
+#if os(macOS)
             .onAppear {
                 hotkey.keyDownHandler = {
                     viewModel.toggleTimer()
                 }
             }
+#endif
         }
     }
 
@@ -120,7 +126,9 @@ struct TimerView: View {
             resetButton
         }
         .buttonStyle(MyButtonStyle())
+        #if os(macOS)
         .focusEffectDisabled()
+        #endif
 
 //            .background(.green)
 //        .frame(width: 220)
