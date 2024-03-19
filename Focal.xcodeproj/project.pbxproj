@@ -10,6 +10,10 @@
 		9F1E1DB62BA30BF90062C5BF /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1E1DB52BA30BF90062C5BF /* HotKey */; };
 		9F2DDEEB2BA491A000EBA413 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
 		9F39DF1C2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */; };
+		9F5D33EA2BA9B9D40049100C /* Focal_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D33E92BA9B9D40049100C /* Focal_iOSApp.swift */; };
+		9F5D33EC2BA9B9D40049100C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D33EB2BA9B9D40049100C /* ContentView.swift */; };
+		9F5D33EE2BA9B9D50049100C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5D33ED2BA9B9D50049100C /* Assets.xcassets */; };
+		9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5D33F02BA9B9D50049100C /* Preview Assets.xcassets */; };
 		9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */; };
 		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
 		9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
@@ -23,6 +27,11 @@
 		9F2DDEEA2BA491A000EBA413 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		9F2DDEEE2BA4F1E900EBA413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-VariableFont_slnt,wght.ttf"; path = "../../../../Downloads/Inter (2)/Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		9F5D33E72BA9B9D30049100C /* Focal iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focal iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F5D33E92BA9B9D40049100C /* Focal_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focal_iOSApp.swift; sourceTree = "<group>"; };
+		9F5D33EB2BA9B9D40049100C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F5D33ED2BA9B9D50049100C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F5D33F02BA9B9D50049100C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F954AF72B9F3BCC00A8D5FA /* Focal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalApp.swift; sourceTree = "<group>"; };
 		9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -35,6 +44,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F5D33E42BA9B9D30049100C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F954AF42B9F3BCC00A8D5FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,10 +62,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F5D33E82BA9B9D40049100C /* Focal iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9F5D33E92BA9B9D40049100C /* Focal_iOSApp.swift */,
+				9F5D33EB2BA9B9D40049100C /* ContentView.swift */,
+				9F5D33ED2BA9B9D50049100C /* Assets.xcassets */,
+				9F5D33EF2BA9B9D50049100C /* Preview Content */,
+			);
+			path = "Focal iOS";
+			sourceTree = "<group>";
+		};
+		9F5D33EF2BA9B9D50049100C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9F5D33F02BA9B9D50049100C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
 				9F954AF92B9F3BCC00A8D5FA /* Focal */,
+				9F5D33E82BA9B9D40049100C /* Focal iOS */,
 				9F954AF82B9F3BCC00A8D5FA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				9F954AF72B9F3BCC00A8D5FA /* Focal.app */,
+				9F5D33E72BA9B9D30049100C /* Focal iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +128,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9F5D33E62BA9B9D30049100C /* Focal iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F5D33F42BA9B9D50049100C /* Build configuration list for PBXNativeTarget "Focal iOS" */;
+			buildPhases = (
+				9F5D33E32BA9B9D30049100C /* Sources */,
+				9F5D33E42BA9B9D30049100C /* Frameworks */,
+				9F5D33E52BA9B9D30049100C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Focal iOS";
+			productName = "Focal iOS";
+			productReference = 9F5D33E72BA9B9D30049100C /* Focal iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		9F954AF62B9F3BCC00A8D5FA /* Focal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F954B062B9F3BCE00A8D5FA /* Build configuration list for PBXNativeTarget "Focal" */;
@@ -121,6 +175,9 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					9F5D33E62BA9B9D30049100C = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					9F954AF62B9F3BCC00A8D5FA = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -143,11 +200,21 @@
 			projectRoot = "";
 			targets = (
 				9F954AF62B9F3BCC00A8D5FA /* Focal */,
+				9F5D33E62BA9B9D30049100C /* Focal iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F5D33E52BA9B9D30049100C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */,
+				9F5D33EE2BA9B9D50049100C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F954AF52B9F3BCC00A8D5FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,6 +228,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F5D33E32BA9B9D30049100C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F5D33EC2BA9B9D40049100C /* ContentView.swift in Sources */,
+				9F5D33EA2BA9B9D40049100C /* Focal_iOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F954AF32B9F3BCC00A8D5FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +253,69 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		9F5D33F22BA9B9D50049100C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Focal iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 335PJS6A82;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "niekvdpas.Focal-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F5D33F32BA9B9D50049100C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Focal iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 335PJS6A82;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "niekvdpas.Focal-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		9F954B042B9F3BCE00A8D5FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -360,6 +499,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F5D33F42BA9B9D50049100C /* Build configuration list for PBXNativeTarget "Focal iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F5D33F22BA9B9D50049100C /* Debug */,
+				9F5D33F32BA9B9D50049100C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9F954AF22B9F3BCC00A8D5FA /* Build configuration list for PBXProject "Focal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
