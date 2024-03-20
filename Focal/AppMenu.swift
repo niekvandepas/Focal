@@ -20,9 +20,11 @@ struct AppMenu: View {
     }
 
     func bringAppToFront() {
-        // TODO
         if #available(macOS 14.0, *) {
             NSApp.activate()
+        }
+        else {
+            NSApplication.shared.activate(ignoringOtherApps: true)
         }
     }
 

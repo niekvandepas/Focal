@@ -33,9 +33,11 @@ struct FocalApp: App {
                             timerViewModel.toggleTimer()
 
                             if (settingsViewModel.globalShortcutBringsAppToFront) {
-                                // TODO
                                 if #available(macOS 14.0, *) {
                                     NSApp.activate()
+                                }
+                                else {
+                                    NSApplication.shared.activate(ignoringOtherApps: true)
                                 }
                             }
                         }
