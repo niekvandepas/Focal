@@ -12,7 +12,7 @@ import AppKit
 #endif
 
 struct TimerView: View {
-    @StateObject var viewModel = TimerViewModel.shared
+    @StateObject var timerViewModel = TimerViewModel.shared
     @EnvironmentObject var settingsViewModel: SettingsViewModel
     #if os(macOS)
     private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
@@ -37,7 +37,7 @@ struct TimerView: View {
         // work:    .workBlue
         // rest:    .breakGreen
         // paused:  .offWhite
-        let timerSquareColor: Color = viewModel.timerIsRunning ? (viewModel.timerState == .work ? Color.workBlue : Color.breakGreen) : Color.offWhite
+        let timerSquareColor: Color = timerViewModel.timerIsRunning ? (timerViewModel.timerState == .work ? Color.workBlue : Color.breakGreen) : Color.offWhite
 #if os(macOS)
         let timerStateLabelFontSize = 18.0
 #else
@@ -60,7 +60,7 @@ struct TimerView: View {
         let timerRectangleHeight = 250.0
 #endif
 
-        let timerText = settingsViewModel.hideTime ? viewModel.timerState.description.capitalized : "\(viewModel.timeRemaining / 60):\(String(format: "%02d", viewModel.timeRemaining % 60))"
+        let timerText = settingsViewModel.hideTime ? timerViewModel.timerState.description.capitalized : "\(timerViewModel.timeRemaining / 60):\(String(format: "%02d", timerViewModel.timeRemaining % 60))"
 
         return ZStack {
             Rectangle()
@@ -73,7 +73,7 @@ struct TimerView: View {
 
             VStack {
                 if !settingsViewModel.hideTime {
-                    Text(viewModel.timerState.description.capitalized)
+                    Text(timerViewModel.timerState.description.capitalized)
                         .font(.custom("Inter", size: timerStateLabelFontSize))
                         .padding(.bottom, -20)
                         .foregroundStyle(.black)
@@ -88,7 +88,7 @@ struct TimerView: View {
 #if os(macOS)
             .onAppear {
                 hotkey.keyDownHandler = {
-                    viewModel.toggleTimer()
+                    timerViewModel.toggleTimer()
                 }
             }
 #endif
@@ -98,19 +98,19 @@ struct TimerView: View {
     var buttons: some View {
 
         let startPauseButton = Button(action: {
-            viewModel.toggleTimer()
+            timerViewModel.toggleTimer()
         }) {
             // Overlay the actual text on hidden "Pause" text to ensure the button is always the same width,
             // https://stackoverflow.com/questions/77051742/how-to-create-a-fixed-size-swiftui-button-when-label-content-changes
             Text("Pause")
                 .hidden()
-                .overlay(Text(viewModel.timerIsRunning ? "Pause" : "Start"))
+                .overlay(Text(timerViewModel.timerIsRunning ? "Pause" : "Start"))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
                 .bold()
         }
         .customFocus()
-        .disabled(viewModel.timeRemaining == 0)
+        .disabled(timerViewModel.timeRemaining == 0)
         .keyboardShortcut(" ")
         .foregroundColor(.white)
         .background(.primaryButton)
@@ -122,14 +122,14 @@ struct TimerView: View {
         )
 
         let resetButton = Button(action: {
-            viewModel.resetTimer()
+            timerViewModel.resetTimer()
         }) {
             Text("Reset")
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
                 .foregroundStyle(.primaryButton)
         }
-        .disabled(viewModel.timerIsFull)
+        .disabled(timerViewModel.timerIsFull)
         .customFocus()
         .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
         .background(.white)
@@ -139,7 +139,7 @@ struct TimerView: View {
                 .offset(x: 3, y: 3)
                 .fill(.black)
         )
-        .overlay(viewModel.timerIsFull ? GeometryReader { geometry in
+        .overlay(timerViewModel.timerIsFull ? GeometryReader { geometry in
             // Draw a red X
             Path { path in
                 path.move(to: CGPoint(x: 0, y: 0))
