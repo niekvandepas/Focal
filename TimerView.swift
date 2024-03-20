@@ -13,6 +13,7 @@ import AppKit
 
 struct TimerView: View {
     @StateObject var viewModel = TimerViewModel.shared
+    @EnvironmentObject var settingsViewModel: SettingsViewModel
     #if os(macOS)
     private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
     #endif
@@ -59,6 +60,7 @@ struct TimerView: View {
         let timerRectangleHeight = 250.0
 #endif
 
+        let timerText = settingsViewModel.hideTime ? viewModel.timerState.description.capitalized : "\(viewModel.timeRemaining / 60):\(String(format: "%02d", viewModel.timeRemaining % 60))"
 
         return ZStack {
             Rectangle()
@@ -70,12 +72,14 @@ struct TimerView: View {
                 .padding(.bottom, 10)
 
             VStack {
-                Text(viewModel.timerState.description.capitalized)
-                    .font(.custom("Inter", size: timerStateLabelFontSize))
-                    .padding(.bottom, -20)
-                    .foregroundStyle(.black)
+                if !settingsViewModel.hideTime {
+                    Text(viewModel.timerState.description.capitalized)
+                        .font(.custom("Inter", size: timerStateLabelFontSize))
+                        .padding(.bottom, -20)
+                        .foregroundStyle(.black)
+                }
 
-                Text("\(viewModel.timeRemaining / 60):\(viewModel.timeRemaining % 60, specifier: "%02d")")
+                Text(timerText)
                     .font(.custom("Inter", size: timerTimeLeftFontSize))
                     .padding()
                     .foregroundStyle(.primaryButton)

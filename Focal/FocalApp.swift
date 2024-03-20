@@ -12,6 +12,7 @@ import UserNotifications
 struct FocalApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var timerViewModel = TimerViewModel.shared
+    @StateObject var settingsViewModel = SettingsViewModel()
 
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in }
@@ -25,10 +26,16 @@ struct FocalApp: App {
                 Color.accentColor
                 TimerView()
                     .frame(width: 300, height: 400)
+                    .environmentObject(settingsViewModel)
             }
         }
         .defaultSize(width: 300, height: 400)
         .windowResizability(.contentSize)
+
+        Settings {
+            SettingsView()
+                .environmentObject(settingsViewModel)
+        }
     }
 
     private func menuBarExtra() -> some Scene {
