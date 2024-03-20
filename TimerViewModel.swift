@@ -79,7 +79,7 @@ class TimerViewModel: ObservableObject {
 
         // add our notification request
         UNUserNotificationCenter.current().add(request) { error in
-            print(error)
+            if error != nil {print(error)}
         }
     }
 
