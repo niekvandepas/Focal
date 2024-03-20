@@ -25,9 +25,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.actionIdentifier == "START_NEXT_TIMER" {
-            // Handle the action here
-            // For example, you can start the next timer
-            // Call the appropriate method on your view model
             TimerViewModel.shared.startTimer()
         }
         completionHandler()
