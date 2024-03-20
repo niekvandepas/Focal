@@ -5,13 +5,10 @@
 //  Created by Niek van de Pas on 20/03/2024.
 //
 
-import Foundation
 import SwiftUI
-import KeyboardShortcuts
 
-class SettingsViewModel: ObservableObject {
-    @AppStorage("hideTime") var hideTime = false
-}
+#if os(macOS)
+import KeyboardShortcuts
 
 struct SettingsView: View {
     @EnvironmentObject var settingsViewModel: SettingsViewModel
@@ -28,4 +25,9 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
     }
+}
+#endif
+
+class SettingsViewModel: ObservableObject {
+    @AppStorage("hideTime") var hideTime = false
 }
