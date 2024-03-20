@@ -68,17 +68,14 @@ class TimerViewModel: ObservableObject {
 
     private func scheduleNotification(_ finishedTimerState: TimerState) {
         let content = createNotificationContent(for: finishedTimerState)
-        let category = createNotificationCategory()
-        UNUserNotificationCenter.current().setNotificationCategories([category])
 
-        content.userInfo = ["timerState": finishedTimerState.description]
-        let request = createNotificationRequest(for: content)
+        // show this notification 0.1 seconds from now
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        // add our notification request
         UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error scheduling notification: \(error.localizedDescription)")
-            } else {
-                print("Notification scheduled successfully!")
-            }
+            print(error)
         }
     }
 
@@ -106,13 +103,6 @@ class TimerViewModel: ObservableObject {
                                               intentIdentifiers: [],
                                               options: [])
         return category
-    }
-
-    private func createNotificationRequest(for content: UNMutableNotificationContent) -> UNNotificationRequest {
-        let deliveryDate = Date()
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: deliveryDate), repeats: false)
-        let request = UNNotificationRequest(identifier: "com.niekvdpas.FocalTimeUp", content: content, trigger: trigger)
-        return request
     }
 
 
