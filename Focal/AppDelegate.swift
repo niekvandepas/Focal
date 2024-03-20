@@ -28,7 +28,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
             // Handle the action here
             // For example, you can start the next timer
             // Call the appropriate method on your view model
-            print("org borg")
             TimerViewModel.shared.startTimer()
         }
         completionHandler()
