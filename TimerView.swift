@@ -154,7 +154,9 @@ struct TimerView: View {
                 resetButton
             }
             .buttonStyle(MyButtonStyle())
+#if os(macOS)
             .focusEffectDisabled()
+#endif
         } else {
             return HStack {
                 startPauseButton
