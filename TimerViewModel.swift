@@ -11,7 +11,11 @@ import UserNotifications
 
 class TimerViewModel: ObservableObject {
     static let shared = TimerViewModel()
+#if DEBUG
+    @Published var timeRemaining = 2
+#else
     @Published var timeRemaining = 25 * 60
+#endif
     @Published var timerIsRunning = false
     @Published var timerState: TimerState = .work
 
