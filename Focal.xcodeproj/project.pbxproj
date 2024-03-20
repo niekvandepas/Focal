@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9F2DDEEB2BA491A000EBA413 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
-		9F39DF1C2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */; };
 		9F5D33EA2BA9B9D40049100C /* Focal_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D33E92BA9B9D40049100C /* Focal_iOSApp.swift */; };
 		9F5D33EE2BA9B9D50049100C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5D33ED2BA9B9D50049100C /* Assets.xcassets */; };
 		9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5D33F02BA9B9D50049100C /* Preview Assets.xcassets */; };
@@ -29,6 +28,8 @@
 		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
 		9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
 		9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */; };
+		9FA3AC3D2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */; };
+		9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */; };
 		9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
 		9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */; };
 		9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		9F2DDEEA2BA491A000EBA413 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		9F2DDEEE2BA4F1E900EBA413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-VariableFont_slnt,wght.ttf"; path = "../../../../Downloads/Inter (2)/Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		9F5D33E72BA9B9D30049100C /* Focal iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focal iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5D33E92BA9B9D40049100C /* Focal_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focal_iOSApp.swift; sourceTree = "<group>"; };
 		9F5D33ED2BA9B9D50049100C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +53,7 @@
 		9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focal.entitlements; sourceTree = "<group>"; };
+		9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */,
 				9F83A6822BAB6C41004A6E6A /* Constants.swift */,
 				9F5D34012BA9FD5C0049100C /* ViewController.swift */,
 				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
@@ -128,7 +130,6 @@
 				9F2DDEEE2BA4F1E900EBA413 /* Info.plist */,
 				9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */,
 				9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */,
-				9F39DF1B2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf */,
 				9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */,
 				9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */,
 				9F954B002B9F3BCE00A8D5FA /* Preview Content */,
@@ -230,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */,
+				9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F5D33EE2BA9B9D50049100C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,8 +240,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA3AC3D2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */,
-				9F39DF1C2BA4FABE008E7CDA /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
