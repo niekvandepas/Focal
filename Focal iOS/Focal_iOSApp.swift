@@ -11,6 +11,7 @@ import UserNotifications
 @main
 struct FocalApp: App {
     @StateObject var timerViewModel = TimerViewModel.shared
+    @StateObject var settingsViewModel = SettingsViewModel()
     let notificationDelegate = NotificationDelegate()
 
     init() {
@@ -23,6 +24,7 @@ struct FocalApp: App {
             ZStack {
                 Color.accentColor
                 TimerView()
+                    .environmentObject(settingsViewModel)
             }
         }
     }
