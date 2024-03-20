@@ -17,7 +17,6 @@ struct TimerView: View {
     private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
     #endif
 
-
     var body: some View {
 #if os(macOS)
         let buttonFrameWidth = 200.0
