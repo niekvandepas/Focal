@@ -35,7 +35,6 @@ struct FocalApp: App {
                             if (settingsViewModel.globalShortcutBringsAppToFront) {
                                 // TODO
                                 if #available(macOS 14.0, *) {
-                                    print("hello world acti")
                                     NSApp.activate()
                                 }
                             }
