@@ -16,10 +16,10 @@ struct SettingsView: View {
     var body: some View {
         Form {
             VStack {
-                Toggle("Hide Time", isOn: $settingsViewModel.hideTime)
+                Toggle("Hide time left", isOn: $settingsViewModel.hideTime)
                     .toggleStyle(.checkbox)
                     .padding()
-                KeyboardShortcuts.Recorder("Toggle timer Shortcut:", name: .toggleTimer)
+                KeyboardShortcuts.Recorder("Toggle timer shortcut:", name: .toggleTimer)
                 Toggle("Toggle timer shortcut brings app to front ", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
                     .toggleStyle(.checkbox)
                     .padding()
