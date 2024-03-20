@@ -31,6 +31,14 @@ struct FocalApp: App {
                     .onAppear {
                         KeyboardShortcuts.onKeyUp(for: .toggleTimer) { [self] in
                             timerViewModel.toggleTimer()
+
+                            if (settingsViewModel.globalShortcutBringsAppToFront) {
+                                // TODO
+                                if #available(macOS 14.0, *) {
+                                    print("hello world acti")
+                                    NSApp.activate()
+                                }
+                            }
                         }
                     }
             }

@@ -18,7 +18,9 @@ struct SettingsView: View {
             VStack {
                 Toggle("Hide Time", isOn: $settingsViewModel.hideTime)
                     .padding()
-                KeyboardShortcuts.Recorder("Toggle Timer Shortcut:", name: .toggleTimer)
+                KeyboardShortcuts.Recorder("Toggle timer Shortcut:", name: .toggleTimer)
+                Toggle("Toggle timer shortcut brings app to front ", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
+                    .padding()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
@@ -30,4 +32,5 @@ struct SettingsView: View {
 
 class SettingsViewModel: ObservableObject {
     @AppStorage("hideTime") var hideTime = false
+    @AppStorage("globalShortcutBringsAppToFront") var globalShortcutBringsAppToFront = false
 }
