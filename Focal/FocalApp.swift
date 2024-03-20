@@ -50,6 +50,7 @@ struct FocalApp: App {
         Settings {
             SettingsView()
                 .environmentObject(settingsViewModel)
+                .frame(width: 380, height: 136)
         }
     }
 

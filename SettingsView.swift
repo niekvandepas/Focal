@@ -15,17 +15,18 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            VStack {
-                Toggle("Hide time left", isOn: $settingsViewModel.hideTime)
-                    .toggleStyle(.checkbox)
-                    .padding()
-                KeyboardShortcuts.Recorder("Toggle timer shortcut:", name: .toggleTimer)
-                Toggle("Toggle timer shortcut brings app to front ", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
-                    .toggleStyle(.checkbox)
-                    .padding()
+            VStack(alignment: .leading) {
+                Group {
+                    KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
+                    Toggle("Bring app to front", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
+                        .toggleStyle(.checkbox)
+                }
+                Divider()
+                Group {
+                    Toggle("Hide time left in timer", isOn: $settingsViewModel.hideTime)
+                        .toggleStyle(.checkbox)
+                }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
         }
         .formStyle(.grouped)
     }
