@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import KeyboardShortcuts
 
 class SettingsViewModel: ObservableObject {
     @AppStorage("hideTime") var hideTime = false
@@ -20,6 +21,7 @@ struct SettingsView: View {
             VStack {
                 Toggle("Hide Time", isOn: $settingsViewModel.hideTime)
                     .padding()
+                KeyboardShortcuts.Recorder("Toggle Timer Shortcut:", name: .toggleTimer)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()

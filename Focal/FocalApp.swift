@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UserNotifications
+import KeyboardShortcuts
 
 @main
 struct FocalApp: App {
@@ -27,6 +28,11 @@ struct FocalApp: App {
                 TimerView()
                     .frame(width: 300, height: 400)
                     .environmentObject(settingsViewModel)
+                    .onAppear {
+                        KeyboardShortcuts.onKeyUp(for: .toggleTimer) { [self] in
+                            timerViewModel.toggleTimer()
+                        }
+                    }
             }
         }
         .defaultSize(width: 300, height: 400)

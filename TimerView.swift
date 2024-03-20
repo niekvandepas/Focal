@@ -7,16 +7,13 @@
 
 import SwiftUI
 #if os(macOS)
-import HotKey
+import KeyboardShortcuts
 import AppKit
 #endif
 
 struct TimerView: View {
     @StateObject var timerViewModel = TimerViewModel.shared
     @EnvironmentObject var settingsViewModel: SettingsViewModel
-    #if os(macOS)
-    private let hotkey = HotKey(key: .f, modifiers: [.command, .control, .shift])
-    #endif
 
     var body: some View {
 #if os(macOS)
@@ -85,13 +82,6 @@ struct TimerView: View {
                     .foregroundStyle(.primaryButton)
 
             }
-#if os(macOS)
-            .onAppear {
-                hotkey.keyDownHandler = {
-                    timerViewModel.toggleTimer()
-                }
-            }
-#endif
         }
     }
 
