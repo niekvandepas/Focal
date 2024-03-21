@@ -20,6 +20,8 @@ struct SettingsView: View {
                     KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
                     Toggle("Bring app to front", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
                         .toggleStyle(.checkbox)
+                    Toggle("Hide app on timer start", isOn: $settingsViewModel.hideAppOnTimerStart)
+                        .toggleStyle(.checkbox)
                 }
                 Divider()
                 Group {
@@ -36,4 +38,5 @@ struct SettingsView: View {
 class SettingsViewModel: ObservableObject {
     @AppStorage("hideTime") var hideTime = false
     @AppStorage("globalShortcutBringsAppToFront") var globalShortcutBringsAppToFront = false
+    @AppStorage("hideAppOnTimerStart") var hideAppOnTimerStart = false
 }
