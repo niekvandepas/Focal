@@ -55,6 +55,3 @@ struct FocalApp: App {
 
 }
 
-#Preview {
-    FocalApp() as! any View
-}
