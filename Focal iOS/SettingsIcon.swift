@@ -14,7 +14,7 @@ struct SettingsIcon: View {
     var body: some View {
         HStack {
             Spacer()
-            NavigationLink(destination: SettingsView().environmentObject(settingsViewModel)) {
+            NavigationLink(destination: SettingsView()) {
                 Image(systemName: "gear")
                     .font(.title)
                     .padding(.vertical, 10)
