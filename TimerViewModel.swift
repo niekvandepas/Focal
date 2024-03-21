@@ -31,7 +31,14 @@ class TimerViewModel: ObservableObject {
                 } else {
                     self.scheduleNotification(self.timerState)
                     self.timerState.toggle()
+                    #if os(macOS)
+                    if !SettingsViewModel.shared.startNextTimerAutomatically {
+                        self.pauseTimer()
+                    }
+                    #endif
+                    #if os(iOS)
                     self.pauseTimer()
+                    #endif
 
                     switch self.timerState {
                     case .work:
@@ -94,7 +101,10 @@ class TimerViewModel: ObservableObject {
             content.body = "Time to get back to work!"
         }
         content.sound = .default
-        content.categoryIdentifier = "TIMER_EXPIRED"
+
+        if !SettingsViewModel.shared.startNextTimerAutomatically {
+            content.categoryIdentifier = "TIMER_EXPIRED"
+        }
         return content
     }
 }
