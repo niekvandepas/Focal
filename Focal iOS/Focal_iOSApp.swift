@@ -22,11 +22,39 @@ struct FocalApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                Color.accentColor
+                HStack(alignment: .top) {
+                    Spacer()
+                    settingsIcon // TODO make this a view
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+
                 TimerView()
                     .environmentObject(settingsViewModel)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            }
+            .frame(maxHeight: .infinity)
+            .background(Color.accentColor)
+            .background(ignoresSafeAreaEdges: .all)
+        }
+    }
+
+    var settingsIcon: some View {
+        HStack {
+            Spacer()
+            Button(action: {
+                timerViewModel.resetTimer()
+            }) {
+                Image(systemName: "gear")
+                    .font(.title)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 16)
+                    .foregroundStyle(.primaryButton)
             }
         }
     }
+
 }
 
+#Preview {
+    FocalApp() as! any View
+}
