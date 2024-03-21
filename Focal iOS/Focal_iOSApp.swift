@@ -11,7 +11,7 @@ import UserNotifications
 @main
 struct FocalApp: App {
     @StateObject var timerViewModel = TimerViewModel.shared
-    @StateObject var settingsViewModel = SettingsViewModel()
+    @StateObject var settingsViewModel = SettingsViewModel.shared
     let notificationDelegate = NotificationDelegate()
 
     init() {

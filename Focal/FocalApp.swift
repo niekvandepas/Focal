@@ -13,7 +13,7 @@ import KeyboardShortcuts
 struct FocalApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var timerViewModel = TimerViewModel.shared
-    @StateObject var settingsViewModel = SettingsViewModel()
+    @StateObject var settingsViewModel = SettingsViewModel.shared
 
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in }
@@ -50,7 +50,7 @@ struct FocalApp: App {
         Settings {
             SettingsView()
                 .environmentObject(settingsViewModel)
-                .frame(width: 380, height: 136)
+                .frame(width: 380, height: 184)
         }
     }
 

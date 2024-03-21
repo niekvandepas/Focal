@@ -20,12 +20,14 @@ struct SettingsView: View {
                     KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
                     Toggle("Bring app to front", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
                         .toggleStyle(.checkbox)
-                    Toggle("Hide app on timer start", isOn: $settingsViewModel.hideAppOnTimerStart)
-                        .toggleStyle(.checkbox)
                 }
                 Divider()
                 Group {
                     Toggle("Hide time left in timer", isOn: $settingsViewModel.hideTime)
+                        .toggleStyle(.checkbox)
+                    Toggle("Hide app on timer start", isOn: $settingsViewModel.hideAppOnTimerStart)
+                        .toggleStyle(.checkbox)
+                    Toggle("Start next timer automatically", isOn: $settingsViewModel.startNextTimerAutomatically)
                         .toggleStyle(.checkbox)
                 }
             }
@@ -36,7 +38,12 @@ struct SettingsView: View {
 #endif
 
 class SettingsViewModel: ObservableObject {
+    static let shared = SettingsViewModel()
+
+    private init() {}
+
     @AppStorage("hideTime") var hideTime = false
     @AppStorage("globalShortcutBringsAppToFront") var globalShortcutBringsAppToFront = false
     @AppStorage("hideAppOnTimerStart") var hideAppOnTimerStart = false
+    @AppStorage("startNextTimerAutomatically") var startNextTimerAutomatically = false
 }

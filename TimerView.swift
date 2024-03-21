@@ -13,7 +13,7 @@ import AppKit
 
 struct TimerView: View {
     @StateObject var timerViewModel = TimerViewModel.shared
-    @EnvironmentObject var settingsViewModel: SettingsViewModel
+    @StateObject var settingsViewModel = SettingsViewModel.shared
 
     var body: some View {
 #if os(macOS)
