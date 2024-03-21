@@ -22,10 +22,10 @@ struct SettingsView: View {
                     KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
                     Toggle("Bring app to front", isOn: settingsViewModel.$globalShortcutBringsAppToFront)
                         .toggleStyle(.checkbox)
+                    Divider()
                     Toggle("Hide app on timer start", isOn: settingsViewModel.$hideAppOnTimerStart)
                         .toggleStyle(.checkbox)
                 }
-                Divider()
 #endif
                 Group {
                     Toggle("Hide time left in timer", isOn: settingsViewModel.$hideTime)
