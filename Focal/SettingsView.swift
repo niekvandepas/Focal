@@ -23,7 +23,7 @@ struct SettingsView: View {
                         .toggleStyle(.checkbox)
                 }
                 Group {
-                    Toggle("Hide time left in timer", isOn: $settingsViewModel.hideTime)
+                    Toggle("Hide timer duration", isOn: $settingsViewModel.hideTime)
                         .toggleStyle(.checkbox)
                 }
             }
