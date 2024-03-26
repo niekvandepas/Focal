@@ -57,7 +57,18 @@ struct TimerView: View {
         let timerRectangleHeight = 250.0
 #endif
 
-        let timerText = settingsViewModel.hideTime ? timerViewModel.timerState.description.capitalized : "\(timerViewModel.timeRemaining / 60):\(String(format: "%02d", timerViewModel.timeRemaining % 60))"
+//        TODO fix this to check if the text is empty, which it is by default because of placeholder stuff
+        let timerLabelText = {
+            switch timerViewModel.timerState {
+            case .work:
+                settingsViewModel.optionalTimerWorkLabel == "" ? "work" : settingsViewModel.optionalTimerWorkLabel
+            case .rest:
+                settingsViewModel.optionalTimerBreakLabel == "" ? "break" : settingsViewModel.optionalTimerBreakLabel
+            }
+
+        }()
+
+        let timerText = settingsViewModel.hideTime ? timerLabelText : "\(timerViewModel.timeRemaining / 60):\(String(format: "%02d", timerViewModel.timeRemaining % 60))"
 
         return ZStack {
             Rectangle()
@@ -70,7 +81,7 @@ struct TimerView: View {
 
             VStack {
                 if !settingsViewModel.hideTime {
-                    Text(timerViewModel.timerState.description.capitalized)
+                    Text(timerLabelText)
                         .font(.custom("Inter", size: timerStateLabelFontSize))
                         .padding(.bottom, -20)
                         .foregroundStyle(.black)

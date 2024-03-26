@@ -6,10 +6,7 @@
 //
 
 import SwiftUI
-
-#if os(macOS)
 import KeyboardShortcuts
-#endif
 
 struct SettingsView: View {
     @EnvironmentObject var settingsViewModel: SettingsViewModel
@@ -17,7 +14,6 @@ struct SettingsView: View {
     var body: some View {
         Form {
             VStack(alignment: .leading) {
-#if os(macOS)
                 Group {
                     KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
                     Toggle("Bring app to front", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
@@ -26,26 +22,12 @@ struct SettingsView: View {
                     Toggle("Hide app on timer start", isOn: $settingsViewModel.hideAppOnTimerStart)
                         .toggleStyle(.checkbox)
                 }
-#endif
                 Group {
                     Toggle("Hide time left in timer", isOn: $settingsViewModel.hideTime)
-#if os(macOS)
                         .toggleStyle(.checkbox)
-#endif
                 }
             }
         }
         .formStyle(.grouped)
     }
 }
-
-class SettingsViewModel: ObservableObject {
-    static let shared = SettingsViewModel()
-    private init() {}
-
-    @AppStorage("hideTime") var hideTime = false
-    @AppStorage("globalShortcutBringsAppToFront") var globalShortcutBringsAppToFront = false
-    @AppStorage("hideAppOnTimerStart") var hideAppOnTimerStart = false
-    @AppStorage("startNextTimerAutomatically") var startNextTimerAutomatically = false
-}
-
