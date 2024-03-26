@@ -16,7 +16,7 @@ struct SettingsView: View {
             VStack(alignment: .leading) {
                 Group {
                     KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
-                    Toggle("Bring app to front", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
+                    Toggle("Brings app to front", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
                         .toggleStyle(.checkbox)
                     Divider()
                     Toggle("Hide app on timer start", isOn: $settingsViewModel.hideAppOnTimerStart)
