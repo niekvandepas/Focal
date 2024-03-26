@@ -27,6 +27,7 @@ struct FocalApp: App {
                 Color.accentColor
                 TimerView()
                     .frame(width: 300, height: 400)
+                    .environmentObject(settingsViewModel)
                     .onAppear {
                         KeyboardShortcuts.onKeyUp(for: .toggleTimer) { [self] in
                             timerViewModel.toggleTimer()
@@ -48,6 +49,7 @@ struct FocalApp: App {
 
         Settings {
             SettingsView()
+                .environmentObject(settingsViewModel)
                 .frame(width: 380, height: 184)
         }
     }

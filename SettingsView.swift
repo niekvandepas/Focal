@@ -12,7 +12,7 @@ import KeyboardShortcuts
 #endif
 
 struct SettingsView: View {
-    let settingsViewModel = SettingsViewModel.shared
+    @EnvironmentObject var settingsViewModel: SettingsViewModel
 
     var body: some View {
         Form {
@@ -20,15 +20,15 @@ struct SettingsView: View {
 #if os(macOS)
                 Group {
                     KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
-                    Toggle("Bring app to front", isOn: settingsViewModel.$globalShortcutBringsAppToFront)
+                    Toggle("Bring app to front", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
                         .toggleStyle(.checkbox)
                     Divider()
-                    Toggle("Hide app on timer start", isOn: settingsViewModel.$hideAppOnTimerStart)
+                    Toggle("Hide app on timer start", isOn: $settingsViewModel.hideAppOnTimerStart)
                         .toggleStyle(.checkbox)
                 }
 #endif
                 Group {
-                    Toggle("Hide time left in timer", isOn: settingsViewModel.$hideTime)
+                    Toggle("Hide time left in timer", isOn: $settingsViewModel.hideTime)
 #if os(macOS)
                         .toggleStyle(.checkbox)
 #endif

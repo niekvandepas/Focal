@@ -30,6 +30,7 @@ struct FocalApp: App {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
 
                     TimerView()
+                        .environmentObject(settingsViewModel)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
                 .background(Color.accentColor)
