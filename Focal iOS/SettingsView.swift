@@ -12,7 +12,7 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Toggle("Hide time left in timer", isOn: $settingsManager.hideTime)
+            Toggle("Show time left", isOn: $settingsManager.showTimeLeft)
             TextField("Custom Work Label", text: settingsManager.$optionalTimerWorkLabel)
             TextField("Custom Break Label", text: settingsManager.$optionalTimerBreakLabel)
         }

@@ -11,7 +11,7 @@ class SettingsManager: ObservableObject {
     static let shared = SettingsManager()
     private init() {}
 
-    @AppStorage("hideTime") var hideTime = false
+    @AppStorage("showTimeLeft") var showTimeLeft = true
     @AppStorage("globalShortcutBringsAppToFront") var globalShortcutBringsAppToFront = false
     @AppStorage("hideAppOnTimerStart") var hideAppOnTimerStart = false
     @AppStorage("startNextTimerAutomatically") var startNextTimerAutomatically = false

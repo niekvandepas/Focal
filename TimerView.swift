@@ -68,7 +68,7 @@ struct TimerView: View {
 
         }()
 
-        let timerText = settingsManager.hideTime ? timerLabelText : "\(timerViewModel.timeRemaining / 60):\(String(format: "%02d", timerViewModel.timeRemaining % 60))"
+        let timerText = settingsManager.showTimeLeft ? "\(timerViewModel.timeRemaining / 60):\(String(format: "%02d", timerViewModel.timeRemaining % 60))" : timerLabelText
 
         return ZStack {
             Rectangle()
@@ -80,7 +80,7 @@ struct TimerView: View {
                 .padding(.bottom, 10)
 
             VStack {
-                if !settingsManager.hideTime {
+                if settingsManager.showTimeLeft {
                     Text(timerLabelText)
                         .font(.custom("Inter", size: timerStateLabelFontSize))
                         .padding(.bottom, -20)
