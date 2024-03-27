@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var settingsManager: SettingsManager
+    @ObservedObject var settingsManager: SettingsManager
 
     var body: some View {
         Form {

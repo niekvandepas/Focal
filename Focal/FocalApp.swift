@@ -48,7 +48,7 @@ struct FocalApp: App {
         .windowResizability(.contentSize)
 
         Settings {
-            SettingsView()
+            SettingsView(settingsManager: settingsManager)
                 .environmentObject(settingsManager)
                 .frame(width: 380, height: 184)
         }
