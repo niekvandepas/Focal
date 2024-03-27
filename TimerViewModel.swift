@@ -32,7 +32,7 @@ class TimerViewModel: ObservableObject {
                     self.scheduleNotification(self.timerState)
                     self.timerState.toggle()
                     #if os(macOS)
-                    if !SettingsViewModel.shared.startNextTimerAutomatically {
+                    if !SettingsManager.shared.startNextTimerAutomatically {
                         self.pauseTimer()
                     }
                     #endif
@@ -102,7 +102,7 @@ class TimerViewModel: ObservableObject {
         }
         content.sound = .default
 
-        if !SettingsViewModel.shared.startNextTimerAutomatically {
+        if !SettingsManager.shared.startNextTimerAutomatically {
             content.categoryIdentifier = "TIMER_EXPIRED"
         }
         return content

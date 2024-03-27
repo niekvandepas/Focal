@@ -9,20 +9,20 @@ import SwiftUI
 import KeyboardShortcuts
 
 struct SettingsView: View {
-    @EnvironmentObject var settingsViewModel: SettingsViewModel
+    @EnvironmentObject var settingsManager: SettingsManager
 
     var body: some View {
         Form {
             VStack(alignment: .leading) {
                 KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
-                Toggle("Brings app to front", isOn: $settingsViewModel.globalShortcutBringsAppToFront)
+                Toggle("Brings app to front", isOn: $settingsManager.globalShortcutBringsAppToFront)
                 .toggleStyle(.checkbox)
 
                 Divider()
 
-                Toggle("Hide app on timer start", isOn: $settingsViewModel.hideAppOnTimerStart)
+                Toggle("Hide app on timer start", isOn: $settingsManager.hideAppOnTimerStart)
                     .toggleStyle(.checkbox)
-                Toggle("Hide timer duration", isOn: $settingsViewModel.hideTime)
+                Toggle("Hide timer duration", isOn: $settingsManager.hideTime)
                     .toggleStyle(.checkbox)
             }
         }

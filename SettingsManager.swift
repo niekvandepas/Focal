@@ -1,5 +1,5 @@
 //
-//  SettingsViewModel.swift
+//  SettingsManager.swift
 //  Focal
 //
 //  Created by Niek van de Pas on 26/03/2024.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class SettingsViewModel: ObservableObject {
-    static let shared = SettingsViewModel()
+class SettingsManager: ObservableObject {
+    static let shared = SettingsManager()
     private init() {}
 
     @AppStorage("hideTime") var hideTime = false

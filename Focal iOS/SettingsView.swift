@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var settingsViewModel: SettingsViewModel
+    @EnvironmentObject var settingsManager: SettingsManager
 
     var body: some View {
         Form {
-            Toggle("Hide time left in timer", isOn: $settingsViewModel.hideTime)
-            TextField("Custom Work Label", text: settingsViewModel.$optionalTimerWorkLabel)
-            TextField("Custom Break Label", text: settingsViewModel.$optionalTimerBreakLabel)
+            Toggle("Hide time left in timer", isOn: $settingsManager.hideTime)
+            TextField("Custom Work Label", text: settingsManager.$optionalTimerWorkLabel)
+            TextField("Custom Break Label", text: settingsManager.$optionalTimerBreakLabel)
         }
     }
 }

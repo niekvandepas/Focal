@@ -9,12 +9,12 @@ import SwiftUI
 
 struct SettingsIcon: View {
     let timerViewModel = TimerViewModel.shared
-    let settingsViewModel = SettingsViewModel.shared
+    let settingsManager = SettingsManager.shared
 
     var body: some View {
         HStack {
             Spacer()
-            NavigationLink(destination: SettingsView().environmentObject(settingsViewModel)) {
+            NavigationLink(destination: SettingsView().environmentObject(settingsManager)) {
                 Image(systemName: "gear")
                     .font(.title)
                     .padding(.vertical, 10)

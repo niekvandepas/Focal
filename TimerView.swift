@@ -13,7 +13,7 @@ import AppKit
 
 struct TimerView: View {
     @StateObject var timerViewModel = TimerViewModel.shared
-    @StateObject var settingsViewModel = SettingsViewModel.shared
+    @StateObject var settingsManager = SettingsManager.shared
 
     var body: some View {
 #if os(macOS)
@@ -61,14 +61,14 @@ struct TimerView: View {
         let timerLabelText = {
             switch timerViewModel.timerState {
             case .work:
-                settingsViewModel.optionalTimerWorkLabel == "" ? "work" : settingsViewModel.optionalTimerWorkLabel
+                settingsManager.optionalTimerWorkLabel == "" ? "work" : settingsManager.optionalTimerWorkLabel
             case .rest:
-                settingsViewModel.optionalTimerBreakLabel == "" ? "break" : settingsViewModel.optionalTimerBreakLabel
+                settingsManager.optionalTimerBreakLabel == "" ? "break" : settingsManager.optionalTimerBreakLabel
             }
 
         }()
 
-        let timerText = settingsViewModel.hideTime ? timerLabelText : "\(timerViewModel.timeRemaining / 60):\(String(format: "%02d", timerViewModel.timeRemaining % 60))"
+        let timerText = settingsManager.hideTime ? timerLabelText : "\(timerViewModel.timeRemaining / 60):\(String(format: "%02d", timerViewModel.timeRemaining % 60))"
 
         return ZStack {
             Rectangle()
@@ -80,7 +80,7 @@ struct TimerView: View {
                 .padding(.bottom, 10)
 
             VStack {
-                if !settingsViewModel.hideTime {
+                if !settingsManager.hideTime {
                     Text(timerLabelText)
                         .font(.custom("Inter", size: timerStateLabelFontSize))
                         .padding(.bottom, -20)
@@ -104,7 +104,7 @@ struct TimerView: View {
 
             timerViewModel.toggleTimer()
 #if os(macOS)
-            if settingsViewModel.hideAppOnTimerStart && timerViewModel.timerIsRunning {
+            if settingsManager.hideAppOnTimerStart && timerViewModel.timerIsRunning {
                 NSApp.hide(self)
             }
 #endif

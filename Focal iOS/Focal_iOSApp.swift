@@ -11,7 +11,7 @@ import UserNotifications
 @main
 struct FocalApp: App {
     @StateObject var timerViewModel = TimerViewModel.shared
-    @StateObject var settingsViewModel = SettingsViewModel.shared
+    @StateObject var settingsManager = SettingsManager.shared
     let notificationDelegate = NotificationDelegate()
 
     init() {
@@ -30,7 +30,7 @@ struct FocalApp: App {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
 
                     TimerView()
-                        .environmentObject(settingsViewModel)
+                        .environmentObject(settingsManager)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
                 .background(Color.accentColor)
