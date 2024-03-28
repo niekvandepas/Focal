@@ -68,7 +68,7 @@ struct TimerView: View {
 
         }()
 
-        let timerText = settingsManager.showTimeLeft ? "\(timerViewModel.timeRemaining / 60):\(String(format: "%02d", timerViewModel.timeRemaining % 60))" : timerLabelText
+        let timerText = settingsManager.showTimeLeft ? timerViewModel.timeRemainingFormatted : timerLabelText
 
         return ZStack {
             Rectangle()

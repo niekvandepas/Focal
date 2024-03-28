@@ -73,6 +73,10 @@ class TimerViewModel: ObservableObject {
         return timeRemaining == 25 * 60
     }
 
+    var timeRemainingFormatted: String {
+        "\(timeRemaining / 60):\(String(format: "%02d", timeRemaining % 60))"
+    }
+
     private func scheduleNotification(_ finishedTimerState: TimerState) {
         let content = createNotificationContent(for: finishedTimerState)
 
