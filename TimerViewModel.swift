@@ -101,6 +101,7 @@ class TimerViewModel: ObservableObject {
             content.body = "Time to get back to work!"
         }
         content.sound = .default
+        content.interruptionLevel = .timeSensitive
 
         if !SettingsManager.shared.startNextTimerAutomatically {
             content.categoryIdentifier = "TIMER_EXPIRED"
