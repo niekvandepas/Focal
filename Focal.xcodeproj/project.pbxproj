@@ -22,6 +22,7 @@
 		9F5D34032BA9FD5C0049100C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34012BA9FD5C0049100C /* ViewController.swift */; };
 		9F5D34052BAA080D0049100C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34042BAA080D0049100C /* AppDelegate.swift */; };
 		9F5D34082BAA0AC40049100C /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34072BAA0AC40049100C /* NotificationDelegate.swift */; };
+		9F6D48DB2BB59A0300FB7D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */; };
 		9F83A67D2BAB5742004A6E6A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A67C2BAB5742004A6E6A /* SettingsView.swift */; };
 		9F83A6812BAB6ACE004A6E6A /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 9F83A6802BAB6ACE004A6E6A /* KeyboardShortcuts */; };
 		9F83A6832BAB6C41004A6E6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A6822BAB6C41004A6E6A /* Constants.swift */; };
@@ -31,6 +32,7 @@
 		9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */; };
 		9FA3AC3D2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */; };
 		9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */; };
+		9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2207B2BB4B242007C722A /* SceneDelegate.swift */; };
 		9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
 		9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */; };
 		9FBC3BBC2BACCAA90012876D /* SettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */; };
@@ -49,6 +51,7 @@
 		9F5D34012BA9FD5C0049100C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F5D34042BAA080D0049100C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F5D34072BAA0AC40049100C /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
+		9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F83A67C2BAB5742004A6E6A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9F83A6822BAB6C41004A6E6A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F954AF72B9F3BCC00A8D5FA /* Focal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +61,7 @@
 		9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focal.entitlements; sourceTree = "<group>"; };
 		9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		9FB2207B2BB4B242007C722A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsIcon.swift; path = "Focal iOS/SettingsIcon.swift"; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				9F52B8FF2BB330F100410E1C /* SettingsView.swift */,
+				9FB2207B2BB4B242007C722A /* SceneDelegate.swift */,
+				9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */,
 				9F5D34072BAA0AC40049100C /* NotificationDelegate.swift */,
 				9F5D33E92BA9B9D40049100C /* Focal_iOSApp.swift */,
 				9F5D33ED2BA9B9D50049100C /* Assets.xcassets */,
@@ -261,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6D48DB2BB59A0300FB7D23 /* AppDelegate.swift in Sources */,
 				9F5D34082BAA0AC40049100C /* NotificationDelegate.swift in Sources */,
 				9F5D33FF2BA9BE560049100C /* TimerView.swift in Sources */,
 				9F5D34002BA9BE6A0049100C /* MyButtonStyle.swift in Sources */,
@@ -268,6 +275,7 @@
 				9F52B9002BB330F100410E1C /* SettingsView.swift in Sources */,
 				9F52B9032BB3322700410E1C /* SettingsManager.swift in Sources */,
 				9F5D34032BA9FD5C0049100C /* ViewController.swift in Sources */,
+				9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */,
 				9F5D33FD2BA9BE440049100C /* TimerViewModel.swift in Sources */,
 				9FBC3BBC2BACCAA90012876D /* SettingsIcon.swift in Sources */,
 				9F5D33EA2BA9B9D40049100C /* Focal_iOSApp.swift in Sources */,

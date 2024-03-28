@@ -70,12 +70,7 @@ class TimerViewModel: ObservableObject {
     }
 
     var timerIsFull: Bool {
-        switch self.timerState {
-        case .work:
-            return timeRemaining == 25 * 60
-        case .rest:
-            return timeRemaining == 5 * 60
-        }
+        return timeRemaining == 25 * 60
     }
 
     private func scheduleNotification(_ finishedTimerState: TimerState) {

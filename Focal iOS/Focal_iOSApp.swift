@@ -13,6 +13,7 @@ struct FocalApp: App {
     @StateObject var timerViewModel = TimerViewModel.shared
     @StateObject var settingsManager = SettingsManager.shared
     let notificationDelegate = NotificationDelegate()
+    @UIApplicationDelegateAdaptor (AppDelegate.self) var delegate
 
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in }
