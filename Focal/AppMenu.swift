@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AppMenu: View {
-    @StateObject var viewModel = TimerViewModel.shared
+    @StateObject var timerViewModel = TimerViewModel.shared
     
     func handleStartOrPause() {
-        if viewModel.timerIsRunning {
-            viewModel.pauseTimer()
+        if timerViewModel.timerIsRunning {
+            timerViewModel.pauseTimer()
         }
         else {
-            viewModel.startTimer()
+            timerViewModel.startTimer()
         }
     }
 
@@ -33,13 +33,13 @@ struct AppMenu: View {
     }
 
     var body: some View {
-        Button(action: handleStartOrPause, label: { viewModel.timerIsRunning ? Text("Pause Timer") : Text("Start Timer") })
+        Button(action: handleStartOrPause, label: { timerViewModel.timerIsRunning ? Text("Pause Timer") : Text("Start Timer") })
             .keyboardShortcut(" ", modifiers: [])
 
         Divider()
 
-        Button(action: viewModel.resetTimer, label: { Text("Reset Timer") })
-            .disabled(viewModel.timeRemaining == 25 * 60 && !viewModel.timerIsRunning )
+        Button(action: timerViewModel.resetTimer, label: { Text("Reset Timer") })
+            .disabled(timerViewModel.timeRemaining == 25 * 60 && !timerViewModel.timerIsRunning )
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
 
         Divider()
