@@ -61,9 +61,9 @@ struct TimerView: View {
         let timerLabelText = {
             switch timerViewModel.timerState {
             case .work:
-                settingsManager.optionalTimerWorkLabel == "" ? "work" : settingsManager.optionalTimerWorkLabel
+                settingsManager.optionalTimerWorkLabel == "" ? "Work" : settingsManager.optionalTimerWorkLabel
             case .rest:
-                settingsManager.optionalTimerBreakLabel == "" ? "break" : settingsManager.optionalTimerBreakLabel
+                settingsManager.optionalTimerBreakLabel == "" ? "Break" : settingsManager.optionalTimerBreakLabel
             }
 
         }()
