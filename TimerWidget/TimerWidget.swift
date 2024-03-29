@@ -20,8 +20,8 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let userDefaults = UserDefaults(suiteName: "group.com.Focal")
-        let timeRemaining = UserDefaults(suiteName: "group.com.Focal")?.integer(forKey: "TimeRemaining") ?? 0
-        let timerIsRunning = UserDefaults(suiteName: "group.com.Focal")?.bool(forKey: "TimerIsRunning")
+        let timeRemaining = userDefaults?.integer(forKey: "TimeRemaining") ?? 0
+        let timerIsRunning = userDefaults?.bool(forKey: "TimerIsRunning")
 
         print("getting timeline")
         print("userDefaults object: ")
