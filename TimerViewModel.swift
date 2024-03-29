@@ -12,7 +12,7 @@ import UserNotifications
 class TimerViewModel: ObservableObject {
     static let shared = TimerViewModel()
 #if DEBUG
-    @Published var timeRemaining = 2
+    @Published var timeRemaining = 7
 #else
     @Published var timeRemaining = 25 * 60
 #endif
@@ -23,6 +23,8 @@ class TimerViewModel: ObservableObject {
     private var timer: AnyCancellable?
 
     init() {
+//        self.updateUserDefaults()
+
         timer = Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
             .sink { _ in
@@ -32,6 +34,7 @@ class TimerViewModel: ObservableObject {
                 } else {
                     self.scheduleNotification(self.timerState)
                     self.timerState.toggle()
+                    // TODO I think this #if is no longer needed
                     #if os(macOS)
                     if !SettingsManager.shared.startNextTimerAutomatically {
                         self.pauseTimer()
@@ -47,26 +50,47 @@ class TimerViewModel: ObservableObject {
                     case .rest:
                         self.timeRemaining = 5 * 60
                     }
+                    self.updateUserDefaults()
                 }
             }
     }
     
     func toggleTimer() {
         timerIsRunning.toggle()
+//        self.updateUserDefaults()
     }
     
     func startTimer() {
         timerIsRunning = true
+//        self.updateUserDefaults()
     }
     
     func pauseTimer() {
         timerIsRunning = false
+//        self.updateUserDefaults()
     }
     
     func resetTimer() {
         timerState = .work
         timeRemaining = 25 * 60
         timerIsRunning = false
+//        self.updateUserDefaults()
+    }
+
+    func updateUserDefaults() {
+//        TODO make these strings global constants
+        if let userDefaults = UserDefaults(suiteName: "group.com.Focal") {
+            userDefaults.set(timeRemaining, forKey: "TimeRemaining")
+            userDefaults.set(timerIsRunning, forKey: "TimerIsRunning")
+            print("I've gone and done it. Here are the values again:")
+            print(userDefaults.object(forKey: "TimerIsRunning"))
+            print(userDefaults.object(forKey: "TimeRemaining"))
+            print(userDefaults.bool(forKey: "TimerIsRunning"))
+        }
+        else {
+            print("fuck, no userdefaults?!?!")
+        }
+
     }
 
     var timerIsFull: Bool {

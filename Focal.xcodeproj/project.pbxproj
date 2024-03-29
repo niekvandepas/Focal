@@ -14,6 +14,9 @@
 		9F3053992BB5E9B6006B8090 /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3053982BB5E9B6006B8090 /* TimerWidget.swift */; };
 		9F30539B2BB5E9B8006B8090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F30539A2BB5E9B8006B8090 /* Assets.xcassets */; };
 		9F30539F2BB5E9B8006B8090 /* TimerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9F30538F2BB5E9B6006B8090 /* TimerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9F3053A42BB6ED28006B8090 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
+		9F3053A52BB6ED7F006B8090 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
+		9F3053A62BB6ED8F006B8090 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B9012BB3322700410E1C /* SettingsManager.swift */; };
 		9F52B9002BB330F100410E1C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B8FF2BB330F100410E1C /* SettingsView.swift */; };
 		9F52B9022BB3322700410E1C /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B9012BB3322700410E1C /* SettingsManager.swift */; };
 		9F52B9032BB3322700410E1C /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B9012BB3322700410E1C /* SettingsManager.swift */; };
@@ -79,6 +82,8 @@
 		9F3053982BB5E9B6006B8090 /* TimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidget.swift; sourceTree = "<group>"; };
 		9F30539A2BB5E9B8006B8090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F30539C2BB5E9B8006B8090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3053A72BB71267006B8090 /* Focal iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Focal iOS.entitlements"; sourceTree = "<group>"; };
+		9F3053A82BB714F9006B8090 /* TimerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimerWidgetExtension.entitlements; sourceTree = "<group>"; };
 		9F52B8FF2BB330F100410E1C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9F52B9012BB3322700410E1C /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		9F5D33E72BA9B9D30049100C /* Focal iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focal iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +161,7 @@
 		9F5D33E82BA9B9D40049100C /* Focal iOS */ = {
 			isa = PBXGroup;
 			children = (
+				9F3053A72BB71267006B8090 /* Focal iOS.entitlements */,
 				9F52B8FF2BB330F100410E1C /* SettingsView.swift */,
 				9FB2207B2BB4B242007C722A /* SceneDelegate.swift */,
 				9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */,
@@ -178,6 +184,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9F3053A82BB714F9006B8090 /* TimerWidgetExtension.entitlements */,
 				9F52B9012BB3322700410E1C /* SettingsManager.swift */,
 				9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */,
 				9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */,
@@ -368,6 +375,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3053972BB5E9B6006B8090 /* TimerWidgetBundle.swift in Sources */,
+				9F3053A62BB6ED8F006B8090 /* SettingsManager.swift in Sources */,
+				9F3053A52BB6ED7F006B8090 /* TimerState.swift in Sources */,
+				9F3053A42BB6ED28006B8090 /* TimerViewModel.swift in Sources */,
 				9F3053992BB5E9B6006B8090 /* TimerWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TimerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 335PJS6A82;
@@ -454,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TimerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 335PJS6A82;
@@ -485,6 +497,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Focal iOS/Focal iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Focal iOS/Preview Content\"";
@@ -518,6 +531,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Focal iOS/Focal iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Focal iOS/Preview Content\"";

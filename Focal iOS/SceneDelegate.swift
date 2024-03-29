@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import WidgetKit
 
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
     let timerViewModel = TimerViewModel.shared
     
     func sceneWillResignActive(_ scene: UIScene) {
         setApplicationShorcutItems()
+        timerViewModel.updateUserDefaults()
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
