@@ -23,7 +23,7 @@ class TimerViewModel: ObservableObject {
     private var timer: AnyCancellable?
 
     init() {
-//        self.updateUserDefaults()
+        self.updateUserDefaults()
 
         timer = Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
@@ -57,24 +57,24 @@ class TimerViewModel: ObservableObject {
     
     func toggleTimer() {
         timerIsRunning.toggle()
-//        self.updateUserDefaults()
+        self.updateUserDefaults()
     }
     
     func startTimer() {
         timerIsRunning = true
-//        self.updateUserDefaults()
+        self.updateUserDefaults()
     }
     
     func pauseTimer() {
         timerIsRunning = false
-//        self.updateUserDefaults()
+        self.updateUserDefaults()
     }
     
     func resetTimer() {
         timerState = .work
         timeRemaining = 25 * 60
         timerIsRunning = false
-//        self.updateUserDefaults()
+        self.updateUserDefaults()
     }
 
     func updateUserDefaults() {
