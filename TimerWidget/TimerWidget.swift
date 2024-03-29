@@ -10,22 +10,23 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+        SimpleEntry(date: Date(), timeRemaining: 25 * 60)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+        let entry = SimpleEntry(date: Date(), timeRemaining: 25 * 60)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
+        for secondOffset in 0 ..< (25 * 60) {
+            let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
+            let timeRemaining = 25 * 60 - secondOffset
+
+            let entry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining)
             entries.append(entry)
         }
 
@@ -36,19 +37,19 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let emoji: String
+    let timeRemaining: Int
 }
 
 struct TimerWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
+        let timeRemainingFormatted = "\(entry.timeRemaining / 60):\(String(format: "%02d", entry.timeRemaining % 60))"
 
-            Text("Emoji:")
-            Text(entry.emoji)
+        return VStack {
+            Text("Time left:")
+            
+            Text(timeRemainingFormatted)
         }
     }
 }
@@ -67,14 +68,15 @@ struct TimerWidget: Widget {
                     .background()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+//        TODO
+        .configurationDisplayName("Timer Widget")
+        .description("Shows the current time left.")
     }
 }
 
 #Preview(as: .systemSmall) {
     TimerWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    SimpleEntry(date: .now, timeRemaining: 25 * 60)
+    SimpleEntry(date: .now, timeRemaining: 0)
 }
