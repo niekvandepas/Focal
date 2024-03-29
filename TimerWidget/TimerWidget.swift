@@ -19,29 +19,12 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let userDefaults = UserDefaults(suiteName: "group.com.Focal")
-        let timeRemaining = userDefaults?.integer(forKey: "TimeRemaining") ?? 0
-        let timerIsRunning = userDefaults?.bool(forKey: "TimerIsRunning")
-        let timerStateRawValue = userDefaults?.integer(forKey: "TimerState")
+        let userDefaults = UserDefaults(suiteName: Constants.UD_GROUP_NAME)
+        let timeRemaining = userDefaults?.integer(forKey: Constants.UD_TIME_REMAINING) ?? 0
+        let timerIsRunning = userDefaults?.bool(forKey: Constants.UD_TIMER_IS_RUNNING)
+        let timerStateRawValue = userDefaults?.integer(forKey: Constants.UD_TIMER_STATE)
         let timerState = TimerState(rawValue: timerStateRawValue ?? 0) ?? .work
 
-        print("getting timeline")
-        print("userDefaults object: ")
-        if let v = userDefaults {
-            print("yes user defaluts :)")
-            print(v)
-            print("here are the values for timeRemainng, TimerState, and timerISRUninng:")
-            print(v.object(forKey: "TimerIsRunning"))
-            print(v.object(forKey: "TimerState"))
-            print(v.bool(forKey: "TimeRemaining"))
-        }
-        else {
-            print("no user defaluts")
-        }
-        print("time remaining from userd: " + timeRemaining.description)
-        print("timerIsRunning from userd: " + (timerIsRunning?.description ?? "No timerIsRunning in user defaults"))
-//        print("timer is running: " + timerViewModel.timerIsRunning.description)
-//        print("time left: " + timerViewModel.timeRemainingFormatted)
         let entries = makeEntries(timerIsRunning: timerIsRunning ?? false, timeRemaining: timeRemaining, timerState: timerState)
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -53,9 +36,6 @@ struct Provider: TimelineProvider {
         let currentDate = Date()
 
         // If the timer is running, we provide a timeline with the seconds counting down
-        print(timerIsRunning) // false
-        print(timeRemaining) // 7
-
         if (timerIsRunning) {
             for secondOffset in 0 ..< timeRemaining {
                 let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!

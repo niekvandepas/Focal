@@ -17,6 +17,8 @@
 		9F3053A42BB6ED28006B8090 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
 		9F3053A52BB6ED7F006B8090 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
 		9F3053A62BB6ED8F006B8090 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B9012BB3322700410E1C /* SettingsManager.swift */; };
+		9F3053A92BB7644C006B8090 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A6822BAB6C41004A6E6A /* Constants.swift */; };
+		9F3053AA2BB764D3006B8090 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A6822BAB6C41004A6E6A /* Constants.swift */; };
 		9F52B9002BB330F100410E1C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B8FF2BB330F100410E1C /* SettingsView.swift */; };
 		9F52B9022BB3322700410E1C /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B9012BB3322700410E1C /* SettingsManager.swift */; };
 		9F52B9032BB3322700410E1C /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B9012BB3322700410E1C /* SettingsManager.swift */; };
@@ -379,6 +381,7 @@
 				9F3053A52BB6ED7F006B8090 /* TimerState.swift in Sources */,
 				9F3053A42BB6ED28006B8090 /* TimerViewModel.swift in Sources */,
 				9F3053992BB5E9B6006B8090 /* TimerWidget.swift in Sources */,
+				9F3053AA2BB764D3006B8090 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +396,7 @@
 				9F5D33FE2BA9BE500049100C /* TimerState.swift in Sources */,
 				9F52B9002BB330F100410E1C /* SettingsView.swift in Sources */,
 				9F52B9032BB3322700410E1C /* SettingsManager.swift in Sources */,
+				9F3053A92BB7644C006B8090 /* Constants.swift in Sources */,
 				9F5D34032BA9FD5C0049100C /* ViewController.swift in Sources */,
 				9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */,
 				9F5D33FD2BA9BE440049100C /* TimerViewModel.swift in Sources */,

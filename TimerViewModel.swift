@@ -78,22 +78,11 @@ class TimerViewModel: ObservableObject {
     }
 
     func updateUserDefaults() {
-//        TODO make these strings global constants
-        if let userDefaults = UserDefaults(suiteName: "group.com.Focal") {
-            userDefaults.set(timeRemaining, forKey: "TimeRemaining")
-            userDefaults.set(timerIsRunning, forKey: "TimerIsRunning")
-            userDefaults.set(timerState.rawValue, forKey: "TimerState")
-            print("I've gone and done it. Here are the values again:")
-            print(userDefaults.bool(forKey: "TimerIsRunning"))
-            print(userDefaults.object(forKey: "TimeRemaining"))
-            print("**********************")
-            print(userDefaults.integer(forKey: "TimerState"))
-            print("**********************")
+        if let userDefaults = UserDefaults(suiteName: Constants.UD_GROUP_NAME) {
+            userDefaults.set(timeRemaining, forKey: Constants.UD_TIME_REMAINING)
+            userDefaults.set(timerIsRunning, forKey: Constants.UD_TIMER_IS_RUNNING)
+            userDefaults.set(timerState.rawValue, forKey: Constants.UD_TIMER_STATE)
         }
-        else {
-            print("fuck, no userdefaults?!?!")
-        }
-
     }
 
     var timerIsFull: Bool {
