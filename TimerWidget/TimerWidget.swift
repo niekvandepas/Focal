@@ -10,11 +10,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), timeRemaining: 25 * 60)
+        SimpleEntry(date: Date(), timeRemaining: 25 * 60, timerState: .work)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), timeRemaining: 25 * 60)
+        let entry = SimpleEntry(date: Date(), timeRemaining: 25 * 60, timerState: .work)
         completion(entry)
     }
 
@@ -22,15 +22,17 @@ struct Provider: TimelineProvider {
         let userDefaults = UserDefaults(suiteName: "group.com.Focal")
         let timeRemaining = userDefaults?.integer(forKey: "TimeRemaining") ?? 0
         let timerIsRunning = userDefaults?.bool(forKey: "TimerIsRunning")
+        let timerStateRawValue = userDefaults?.integer(forKey: "TimerState")
+        let timerState = TimerState(rawValue: timerStateRawValue ?? 0) ?? .work
 
         print("getting timeline")
         print("userDefaults object: ")
         if let v = userDefaults {
             print("yes user defaluts :)")
             print(v)
-            print("here are the values for timeRemainng and timerISRUninng:")
+            print("here are the values for timeRemainng, TimerState, and timerISRUninng:")
             print(v.object(forKey: "TimerIsRunning"))
-            print(v.object(forKey: "TimeRemaining"))
+            print(v.object(forKey: "TimerState"))
             print(v.bool(forKey: "TimeRemaining"))
         }
         else {
@@ -40,13 +42,13 @@ struct Provider: TimelineProvider {
         print("timerIsRunning from userd: " + (timerIsRunning?.description ?? "No timerIsRunning in user defaults"))
 //        print("timer is running: " + timerViewModel.timerIsRunning.description)
 //        print("time left: " + timerViewModel.timeRemainingFormatted)
-        let entries = makeEntries(timerIsRunning: timerIsRunning ?? false, timeRemaining: timeRemaining)
+        let entries = makeEntries(timerIsRunning: timerIsRunning ?? false, timeRemaining: timeRemaining, timerState: timerState)
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 
-    private func makeEntries(timerIsRunning: Bool, timeRemaining: Int) -> [SimpleEntry] {
+    private func makeEntries(timerIsRunning: Bool, timeRemaining: Int, timerState: TimerState) -> [SimpleEntry] {
         var entries: [SimpleEntry] = []
         let currentDate = Date()
 
@@ -59,14 +61,14 @@ struct Provider: TimelineProvider {
                 let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
                 let timeRemaining = timeRemaining - secondOffset
 
-                let entry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining)
+                let entry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: timerState)
                 entries.append(entry)
             }
         }
 
         // If the timer is not running, we provide a single 'static' timeline entry with the time remaining
         else {
-            let entry = SimpleEntry(date: Date(), timeRemaining: timeRemaining)
+            let entry = SimpleEntry(date: Date(), timeRemaining: timeRemaining, timerState: timerState)
             entries.append(entry)
         }
 
@@ -77,6 +79,7 @@ struct Provider: TimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let timeRemaining: Int
+    let timerState: TimerState
 }
 
 struct TimerWidgetEntryView : View {
@@ -87,8 +90,10 @@ struct TimerWidgetEntryView : View {
 
         return VStack {
             Text("Time left:")
-            
             Text(timeRemainingFormatted)
+
+            Text("Timer state:")
+            Text(entry.timerState.description)
         }
     }
 }
@@ -113,9 +118,9 @@ struct TimerWidget: Widget {
     }
 }
 
-#Preview(as: .systemSmall) {
-    TimerWidget()
-} timeline: {
-    SimpleEntry(date: .now, timeRemaining: 25 * 60)
-    SimpleEntry(date: .now, timeRemaining: 0)
-}
+//#Preview(as: .systemSmall) {
+//    TimerWidget()
+//} timeline: {
+//    SimpleEntry(date: .now, timeRemaining: 25 * 60)
+//    SimpleEntry(date: .now, timeRemaining: 0)
+//}

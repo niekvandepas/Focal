@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TimerState: CustomStringConvertible {
+enum TimerState: Int, CustomStringConvertible {
     var description: String {
         switch self {
         case .work:
@@ -17,8 +17,8 @@ enum TimerState: CustomStringConvertible {
         }
     }
 
-    case work
-    case rest // 'break' is a reserved keyword lol
+    case work = 0
+    case rest = 1 // 'break' is a reserved keyword lol
 
     mutating func toggle() {
         switch self {

@@ -82,10 +82,13 @@ class TimerViewModel: ObservableObject {
         if let userDefaults = UserDefaults(suiteName: "group.com.Focal") {
             userDefaults.set(timeRemaining, forKey: "TimeRemaining")
             userDefaults.set(timerIsRunning, forKey: "TimerIsRunning")
+            userDefaults.set(timerState.rawValue, forKey: "TimerState")
             print("I've gone and done it. Here are the values again:")
-            print(userDefaults.object(forKey: "TimerIsRunning"))
-            print(userDefaults.object(forKey: "TimeRemaining"))
             print(userDefaults.bool(forKey: "TimerIsRunning"))
+            print(userDefaults.object(forKey: "TimeRemaining"))
+            print("**********************")
+            print(userDefaults.integer(forKey: "TimerState"))
+            print("**********************")
         }
         else {
             print("fuck, no userdefaults?!?!")
