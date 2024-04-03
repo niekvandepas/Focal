@@ -113,6 +113,8 @@ struct TimerView: View {
                 NSApp.hide(self)
             }
 #endif
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            timerViewModel.notificationScheduled = false
         }) {
             // Overlay the actual text on hidden "Pause" text to ensure the button is always the same width,
             // https://stackoverflow.com/questions/77051742/how-to-create-a-fixed-size-swiftui-button-when-label-content-changes

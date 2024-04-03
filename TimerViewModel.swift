@@ -18,8 +18,8 @@ class TimerViewModel: ObservableObject {
 #endif
     @Published var timerIsRunning = false
     @Published var timerState: TimerState = .work
+    var notificationScheduled = false
     private let settingsManager = SettingsManager.shared
-    private var notificationScheduled = false
 
     private var timer: AnyCancellable?
 
