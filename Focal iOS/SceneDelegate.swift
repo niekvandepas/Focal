@@ -22,6 +22,7 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     }
 
     func correctSuspendedTimerState() {
+        guard timerViewModel.timerIsRunning else { return }
         if let resignationTime = lastTimeWhenFocalResignedActive {
             let timeDifferenceBetweenResignationAndActivation = Date().timeIntervalSince(resignationTime)
             let correctedTimeRemaining =
