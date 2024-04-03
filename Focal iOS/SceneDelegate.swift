@@ -39,9 +39,6 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
             else {
                 timerViewModel.timeRemaining = correctedTimeRemaining
             }
-//            if settingsManager.startNextTimerAutomatically {
-//                 TODO: later
-//            }
         }
     }
 

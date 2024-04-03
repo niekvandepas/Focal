@@ -114,7 +114,6 @@ class TimerViewModel: ObservableObject {
                 self.notificationScheduled = true
             }
             else {
-                // TODO
                 print(error ?? "")
             }
         }
