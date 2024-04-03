@@ -13,4 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sceneConfiguration.delegateClass = SceneDelegate.self
         return sceneConfiguration
     }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        // When the app terminates, the timer expects the timer to stop running.
+        // Since notifications are scheduled ahead of time, we need to cancel them.
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
 }
