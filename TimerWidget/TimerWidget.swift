@@ -44,6 +44,13 @@ struct Provider: TimelineProvider {
                 let entry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: timerState)
                 entries.append(entry)
             }
+
+            // Append a final entry that shows a paused timer in the next TimerState
+            let secondOffset = timeRemaining + 1
+            let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
+            let timeRemaining = timerState == .work ? 5 * 60 : 25 * 60
+            let pausedNextTimerEntry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: timerState.next)
+            entries.append(pausedNextTimerEntry)
         }
 
         // If the timer is not running, we provide a single 'static' timeline entry with the time remaining

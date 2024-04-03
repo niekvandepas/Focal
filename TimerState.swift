@@ -17,6 +17,16 @@ enum TimerState: Int, CustomStringConvertible {
         }
     }
 
+    /// Returns the next TimerState: 'work' if the current state is 'rest', and vice versa. Does not mutate self.
+    var next: TimerState {
+        switch self {
+        case .work:
+            return .rest
+        case .rest:
+            return .work
+        }
+    }
+
     case work = 0
     case rest = 1 // 'break' is a reserved keyword lol
 
