@@ -19,6 +19,7 @@ class TimerViewModel: ObservableObject {
     @Published var timerIsRunning = false
     @Published var timerState: TimerState = .work
     private let settingsManager = SettingsManager.shared
+    private var notificationScheduled = false
 
     private var timer: AnyCancellable?
 
@@ -27,10 +28,12 @@ class TimerViewModel: ObservableObject {
             .autoconnect()
             .sink { _ in
                 guard self.timerIsRunning else { return }
+                if self.timerIsRunning && !self.notificationScheduled {
+                    self.scheduleNotification()
+                }
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
                 } else {
-                    self.scheduleNotification(self.timerState)
                     self.timerState.toggle()
                     #if os(macOS)
                     if !SettingsManager.shared.startNextTimerAutomatically {
@@ -69,6 +72,11 @@ class TimerViewModel: ObservableObject {
         timerIsRunning = false
     }
 
+    func resetTimerDuration() {
+        timeRemaining = timerState == .work ? 25 * 60 : 5 * 60
+        timerIsRunning = false
+    }
+
     var timerIsFull: Bool {
         return timeRemaining == 25 * 60
     }
@@ -77,16 +85,22 @@ class TimerViewModel: ObservableObject {
         "\(timeRemaining / 60):\(String(format: "%02d", timeRemaining % 60))"
     }
 
-    private func scheduleNotification(_ finishedTimerState: TimerState) {
-        let content = createNotificationContent(for: finishedTimerState)
+    private func scheduleNotification() {
+        let content = createNotificationContent(for: self.timerState)
 
-        // show this notification 0.1 seconds from now
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        let triggerTime = Date().addingTimeInterval(TimeInterval(self.timeRemaining))
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerTime), repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 
         // add our notification request
         UNUserNotificationCenter.current().add(request) { error in
-            if error != nil {print(error ?? "")}
+            if error == nil {
+                self.notificationScheduled = true
+            }
+            else {
+                // TODO
+                print(error ?? "")
+            }
         }
     }
 

@@ -9,9 +9,32 @@ import UIKit
 
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
     let timerViewModel = TimerViewModel.shared
-    
+    let settingsManager = SettingsManager.shared
+    var lastTimeWhenFocalResignedActive: Date? = nil
+
     func sceneWillResignActive(_ scene: UIScene) {
+        lastTimeWhenFocalResignedActive = Date()
         setApplicationShorcutItems()
+    }
+
+    func sceneWillEnterForeground(_ scene: UIScene) {
+        if let resignationTime = lastTimeWhenFocalResignedActive {
+            let timeDifferenceBetweenResignationAndActivation = Date().timeIntervalSince(resignationTime)
+            let correctedTimeRemaining =
+                timerViewModel.timeRemaining - Int(timeDifferenceBetweenResignationAndActivation)
+
+            // A negative correctedTimeRemaining means the timer has elapsed
+            if correctedTimeRemaining < 0 {
+                timerViewModel.timerState.toggle()
+                timerViewModel.resetTimerDuration()
+            }
+            else {
+                timerViewModel.timeRemaining = correctedTimeRemaining
+            }
+//            if settingsManager.startNextTimerAutomatically {
+//                 TODO: later
+//            }
+        }
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
