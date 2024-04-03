@@ -18,6 +18,10 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
+        correctSuspendedTimerState()
+    }
+
+    func correctSuspendedTimerState() {
         if let resignationTime = lastTimeWhenFocalResignedActive {
             let timeDifferenceBetweenResignationAndActivation = Date().timeIntervalSince(resignationTime)
             let correctedTimeRemaining =
