@@ -19,5 +19,3 @@ struct Constants {
     static let UD_TIMER_IS_RUNNING = "TimerIsRunning"
     static let UD_TIMER_STATE = "TimerIsRunning"
 }
-
-let EHTU = 5
