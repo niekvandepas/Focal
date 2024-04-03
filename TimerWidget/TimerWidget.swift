@@ -69,7 +69,7 @@ struct SimpleEntry: TimelineEntry {
     let timerState: TimerState
 }
 
-struct TimerWidgetEntryView : View {
+struct TimerWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
