@@ -99,7 +99,7 @@ struct TimerView: View {
     var buttons: some View {
 
         let startPauseButton = Button(action: {
-            // Immediately decreasing from 25:00 to 24:00 indicates visual responsiveness to the user
+            // Immediately decreasing from 25:00 to 24:59 indicates visual responsiveness to the user
             timerViewModel.timeRemaining = min(1499, timerViewModel.timeRemaining)
 
             timerViewModel.toggleTimer()
