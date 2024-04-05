@@ -115,7 +115,6 @@ struct MediumWidget: View {
                 .shadow(radius: 1, x: 5, y: 5)
 
             VStack {
-
                 Text(entry.timerState.description.capitalized)
 
                 Text(timeRemainingFormatted)
@@ -123,7 +122,6 @@ struct MediumWidget: View {
 
             }
         }
-
     }
 }
 
@@ -144,7 +142,6 @@ struct SmallWidget: View {
                     .padding(.bottom, 10)
 
                 VStack {
-
                     Text(entry.timerState.description.capitalized)
 
                     Text(timeRemainingFormatted)
