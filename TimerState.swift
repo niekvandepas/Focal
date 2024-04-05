@@ -5,7 +5,7 @@
 //  Created by Niek van de Pas on 15/03/2024.
 //
 
-import Foundation
+import SwiftUI
 
 enum TimerState: Int, CustomStringConvertible {
     var description: String {
@@ -24,6 +24,15 @@ enum TimerState: Int, CustomStringConvertible {
             return .rest
         case .rest:
             return .work
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .work:
+            .workBlue
+        case .rest:
+            .breakGreen
         }
     }
 

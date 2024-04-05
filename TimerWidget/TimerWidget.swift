@@ -10,11 +10,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), timeRemaining: 25 * 60, timerState: .work)
+        SimpleEntry(date: Date(), timeRemaining: 25 * 60, timerState: .work, timerIsRunning: false)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), timeRemaining: 25 * 60, timerState: .work)
+        let entry = SimpleEntry(date: Date(), timeRemaining: 25 * 60, timerState: .work, timerIsRunning: false)
         completion(entry)
     }
 
@@ -41,7 +41,7 @@ struct Provider: TimelineProvider {
                 let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
                 let timeRemaining = timeRemaining - secondOffset
 
-                let entry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: timerState)
+                let entry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: timerState, timerIsRunning: timerIsRunning)
                 entries.append(entry)
             }
 
@@ -49,13 +49,13 @@ struct Provider: TimelineProvider {
             let secondOffset = timeRemaining + 1
             let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
             let timeRemaining = timerState == .work ? 5 * 60 : 25 * 60
-            let pausedNextTimerEntry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: timerState.next)
+            let pausedNextTimerEntry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: timerState.next, timerIsRunning: timerIsRunning)
             entries.append(pausedNextTimerEntry)
         }
 
         // If the timer is not running, we provide a single 'static' timeline entry with the time remaining
         else {
-            let entry = SimpleEntry(date: Date(), timeRemaining: timeRemaining, timerState: timerState)
+            let entry = SimpleEntry(date: Date(), timeRemaining: timeRemaining, timerState: timerState, timerIsRunning: timerIsRunning)
             entries.append(entry)
         }
 
@@ -67,6 +67,7 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let timeRemaining: Int
     let timerState: TimerState
+    let timerIsRunning: Bool
 }
 
 struct TimerWidgetEntryView: View {
@@ -74,14 +75,37 @@ struct TimerWidgetEntryView: View {
 
     var body: some View {
         let timeRemainingFormatted = "\(entry.timeRemaining / 60):\(String(format: "%02d", entry.timeRemaining % 60))"
+//        TODO
+        let timerSquareColor: Color = entry.timerIsRunning ? entry.timerState.color : Color.offWhite
 
-        return VStack {
-            Text("Time left:")
-            Text(timeRemainingFormatted)
+        return ZStack {
+            Rectangle()
+                .fill(timerSquareColor)
+                .frame(width: 100, height: 80)
+                .multilineTextAlignment(.center)
+                .cornerRadius(8)
+                .shadow(radius: 1, x: 5, y: 5)
+                .padding(.bottom, 10)
 
-            Text("Timer state:")
-            Text(entry.timerState.description)
+            VStack {
+//                TODO
+//                if settingsManager.showTimeLeft {
+//                    Text(timerLabelText)
+//                        .font(.custom("Inter", size: timerStateLabelFontSize))
+//                        .padding(.bottom, -20)
+//                        .foregroundStyle(.black)
+//                }
+
+                Text(entry.timerState.description.capitalized)
+
+                Text(timeRemainingFormatted)
+                    .padding()
+                    .foregroundStyle(.primaryButton)
+
+            }
+            .font(.custom("Inter", size: 16))
         }
+
     }
 }
 
@@ -92,7 +116,7 @@ struct TimerWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 TimerWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
+                    .containerBackground(.accent, for: .widget)
             } else {
                 TimerWidgetEntryView(entry: entry)
                     .padding()
