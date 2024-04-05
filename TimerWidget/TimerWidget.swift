@@ -81,9 +81,9 @@ struct TimerWidgetEntryView: View {
         switch family {
 
         case .systemSmall:
-            return AnyView(Text("small"))
+            return AnyView(SmallAndMediumWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
         case .systemMedium:
-            return AnyView(MediumWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
+            return AnyView(SmallAndMediumWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
         case .systemLarge:
             return AnyView(Text("large"))
         case .systemExtraLarge:
@@ -100,7 +100,7 @@ struct TimerWidgetEntryView: View {
     }
 }
 
-struct MediumWidget: View {
+struct SmallAndMediumWidget: View {
     let timerSquareColor: Color
     let entry: SimpleEntry
     let timeRemainingFormatted: String
@@ -122,44 +122,6 @@ struct MediumWidget: View {
 
             }
         }
-    }
-}
-
-struct SmallWidget: View {
-    let timerSquareColor: Color
-    let entry: SimpleEntry
-    let timeRemainingFormatted: String
-
-    var body: some View {
-        return HStack {
-            ZStack {
-                Rectangle()
-                    .fill(timerSquareColor)
-                    .frame(width: 100, height: 80)
-                    .multilineTextAlignment(.center)
-                    .cornerRadius(8)
-                    .shadow(radius: 1, x: 5, y: 5)
-                    .padding(.bottom, 10)
-
-                VStack {
-                    Text(entry.timerState.description.capitalized)
-
-                    Text(timeRemainingFormatted)
-                        .padding()
-                        .foregroundStyle(.primaryButton)
-
-                }
-                .font(.custom("Inter", size: 16))
-            }
-            HStack {
-                Spacer()
-                Text("start")
-                Spacer()
-                Text("reset")
-                Spacer()
-            }
-        }
-
     }
 }
 
