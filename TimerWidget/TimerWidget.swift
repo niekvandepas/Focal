@@ -85,9 +85,9 @@ struct TimerWidgetEntryView: View {
         case .systemMedium:
             return AnyView(SmallAndMediumWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
         case .systemLarge:
-            return AnyView(Text("large"))
+            return AnyView(LargeWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
         case .systemExtraLarge:
-            return AnyView(Text("extra large"))
+            return AnyView(Text("wow this is literally impossible"))
         case .accessoryCircular:
             return AnyView(Text("circle"))
         case .accessoryRectangular:
@@ -121,6 +121,32 @@ struct SmallAndMediumWidget: View {
                     .foregroundStyle(.primaryButton)
 
             }
+        }
+    }
+}
+
+struct LargeWidget: View {
+    let timerSquareColor: Color
+    let entry: SimpleEntry
+    let timeRemainingFormatted: String
+
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(timerSquareColor)
+                .frame(width: 280, height: 280)
+                .multilineTextAlignment(.center)
+                .cornerRadius(8)
+                .shadow(radius: 1, x: 5, y: 5)
+
+            VStack {
+                Text(entry.timerState.description.capitalized)
+
+                Text(timeRemainingFormatted)
+                    .foregroundStyle(.primaryButton)
+
+            }
+            .font(.custom("Inter", size: 48))
         }
     }
 }
