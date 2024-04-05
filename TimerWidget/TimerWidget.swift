@@ -146,7 +146,7 @@ struct TimerWidget: Widget {
         //        TODO
         .configurationDisplayName("Timer Widget")
         .description("Shows the current time left.")
-        .supportedFamilies([.systemExtraLarge, .systemLarge, .systemMedium, .systemSmall])
+        .supportedFamilies([.systemLarge, .systemMedium, .systemSmall])
     }
 }
 
