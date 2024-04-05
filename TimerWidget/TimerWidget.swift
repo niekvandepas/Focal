@@ -106,40 +106,28 @@ struct MediumWidget: View {
     let timeRemainingFormatted: String
 
     var body: some View {
-        return HStack {
-            ZStack {
-                Rectangle()
-                    .fill(timerSquareColor)
-                    .frame(width: 100, height: 80)
-                    .multilineTextAlignment(.center)
-                    .cornerRadius(8)
-                    .shadow(radius: 1, x: 5, y: 5)
-                    .padding(.bottom, 10)
+        ZStack {
+            Rectangle()
+                .fill(timerSquareColor)
+                .frame(width: 100, height: 100)
+                .multilineTextAlignment(.center)
+                .cornerRadius(8)
+                .shadow(radius: 1, x: 5, y: 5)
 
-                VStack {
-                    //                TODO
-                    //                if settingsManager.showTimeLeft {
-                    //                    Text(timerLabelText)
-                    //                        .font(.custom("Inter", size: timerStateLabelFontSize))
-                    //                        .padding(.bottom, -20)
-                    //                        .foregroundStyle(.black)
-                    //                }
+            VStack {
+                //                TODO
+                //                if settingsManager.showTimeLeft {
+                //                    Text(timerLabelText)
+                //                        .font(.custom("Inter", size: timerStateLabelFontSize))
+                //                        .padding(.bottom, -20)
+                //                        .foregroundStyle(.black)
+                //                }
 
-                    Text(entry.timerState.description.capitalized)
+                Text(entry.timerState.description.capitalized)
 
-                    Text(timeRemainingFormatted)
-                        .padding()
-                        .foregroundStyle(.primaryButton)
+                Text(timeRemainingFormatted)
+                    .foregroundStyle(.primaryButton)
 
-                }
-                .font(.custom("Inter", size: 16))
-            }
-            HStack {
-                Spacer()
-                Text("start")
-                Spacer()
-                Text("reset")
-                Spacer()
             }
         }
 
@@ -200,10 +188,14 @@ struct TimerWidget: Widget {
             if #available(iOS 17.0, *) {
                 TimerWidgetEntryView(entry: entry)
                     .containerBackground(.accent, for: .widget)
+                    .font(.custom("Inter", size: 22))
+
             } else {
                 TimerWidgetEntryView(entry: entry)
                     .padding()
                     .background()
+                    .font(.custom("Inter", size: 22))
+
             }
         }
         //        TODO
