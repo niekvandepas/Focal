@@ -72,38 +72,121 @@ struct SimpleEntry: TimelineEntry {
 
 struct TimerWidgetEntryView: View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var family
 
     var body: some View {
         let timeRemainingFormatted = "\(entry.timeRemaining / 60):\(String(format: "%02d", entry.timeRemaining % 60))"
-//        TODO
         let timerSquareColor: Color = entry.timerIsRunning ? entry.timerState.color : Color.offWhite
 
-        return ZStack {
-            Rectangle()
-                .fill(timerSquareColor)
-                .frame(width: 100, height: 80)
-                .multilineTextAlignment(.center)
-                .cornerRadius(8)
-                .shadow(radius: 1, x: 5, y: 5)
-                .padding(.bottom, 10)
+        switch family {
 
-            VStack {
-//                TODO
-//                if settingsManager.showTimeLeft {
-//                    Text(timerLabelText)
-//                        .font(.custom("Inter", size: timerStateLabelFontSize))
-//                        .padding(.bottom, -20)
-//                        .foregroundStyle(.black)
-//                }
+        case .systemSmall:
+            return AnyView(Text("small"))
+        case .systemMedium:
+            return AnyView(MediumWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
+        case .systemLarge:
+            return AnyView(Text("large"))
+        case .systemExtraLarge:
+            return AnyView(Text("extra large"))
+        case .accessoryCircular:
+            return AnyView(Text("circle"))
+        case .accessoryRectangular:
+            return AnyView(Text("rectangle"))
+        case .accessoryInline:
+            return AnyView(Text("inline"))
+        @unknown default:
+            return AnyView(Text("default"))
+        }
+    }
+}
 
-                Text(entry.timerState.description.capitalized)
+struct MediumWidget: View {
+    let timerSquareColor: Color
+    let entry: SimpleEntry
+    let timeRemainingFormatted: String
 
-                Text(timeRemainingFormatted)
-                    .padding()
-                    .foregroundStyle(.primaryButton)
+    var body: some View {
+        return HStack {
+            ZStack {
+                Rectangle()
+                    .fill(timerSquareColor)
+                    .frame(width: 100, height: 80)
+                    .multilineTextAlignment(.center)
+                    .cornerRadius(8)
+                    .shadow(radius: 1, x: 5, y: 5)
+                    .padding(.bottom, 10)
 
+                VStack {
+                    //                TODO
+                    //                if settingsManager.showTimeLeft {
+                    //                    Text(timerLabelText)
+                    //                        .font(.custom("Inter", size: timerStateLabelFontSize))
+                    //                        .padding(.bottom, -20)
+                    //                        .foregroundStyle(.black)
+                    //                }
+
+                    Text(entry.timerState.description.capitalized)
+
+                    Text(timeRemainingFormatted)
+                        .padding()
+                        .foregroundStyle(.primaryButton)
+
+                }
+                .font(.custom("Inter", size: 16))
             }
-            .font(.custom("Inter", size: 16))
+            HStack {
+                Spacer()
+                Text("start")
+                Spacer()
+                Text("reset")
+                Spacer()
+            }
+        }
+
+    }
+}
+
+struct SmallWidget: View {
+    let timerSquareColor: Color
+    let entry: SimpleEntry
+    let timeRemainingFormatted: String
+
+    var body: some View {
+        return HStack {
+            ZStack {
+                Rectangle()
+                    .fill(timerSquareColor)
+                    .frame(width: 100, height: 80)
+                    .multilineTextAlignment(.center)
+                    .cornerRadius(8)
+                    .shadow(radius: 1, x: 5, y: 5)
+                    .padding(.bottom, 10)
+
+                VStack {
+                    //                TODO
+                    //                if settingsManager.showTimeLeft {
+                    //                    Text(timerLabelText)
+                    //                        .font(.custom("Inter", size: timerStateLabelFontSize))
+                    //                        .padding(.bottom, -20)
+                    //                        .foregroundStyle(.black)
+                    //                }
+
+                    Text(entry.timerState.description.capitalized)
+
+                    Text(timeRemainingFormatted)
+                        .padding()
+                        .foregroundStyle(.primaryButton)
+
+                }
+                .font(.custom("Inter", size: 16))
+            }
+            HStack {
+                Spacer()
+                Text("start")
+                Spacer()
+                Text("reset")
+                Spacer()
+            }
         }
 
     }
@@ -123,9 +206,10 @@ struct TimerWidget: Widget {
                     .background()
             }
         }
-//        TODO
+        //        TODO
         .configurationDisplayName("Timer Widget")
         .description("Shows the current time left.")
+        .supportedFamilies([.systemExtraLarge, .systemLarge, .systemMedium, .systemSmall])
     }
 }
 
