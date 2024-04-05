@@ -115,13 +115,6 @@ struct MediumWidget: View {
                 .shadow(radius: 1, x: 5, y: 5)
 
             VStack {
-                //                TODO
-                //                if settingsManager.showTimeLeft {
-                //                    Text(timerLabelText)
-                //                        .font(.custom("Inter", size: timerStateLabelFontSize))
-                //                        .padding(.bottom, -20)
-                //                        .foregroundStyle(.black)
-                //                }
 
                 Text(entry.timerState.description.capitalized)
 
@@ -151,13 +144,6 @@ struct SmallWidget: View {
                     .padding(.bottom, 10)
 
                 VStack {
-                    //                TODO
-                    //                if settingsManager.showTimeLeft {
-                    //                    Text(timerLabelText)
-                    //                        .font(.custom("Inter", size: timerStateLabelFontSize))
-                    //                        .padding(.bottom, -20)
-                    //                        .foregroundStyle(.black)
-                    //                }
 
                     Text(entry.timerState.description.capitalized)
 
