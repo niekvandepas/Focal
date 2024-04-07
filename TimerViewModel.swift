@@ -12,7 +12,7 @@ import UserNotifications
 class TimerViewModel: ObservableObject {
     static let shared = TimerViewModel()
 #if DEBUG
-    @Published var timeRemaining = 7
+    @Published var timeRemaining = 3
 #else
     @Published var timeRemaining = 25 * 60
 #endif
