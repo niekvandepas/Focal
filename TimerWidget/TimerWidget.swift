@@ -108,8 +108,8 @@ struct TimerWidget: Widget {
             if #available(iOS 17.0, *) {
                 TimerWidgetEntryView(entry: entry)
                     .containerBackground(.accent, for: .widget)
-
-            } else {
+            }
+            else {
                 TimerWidgetEntryView(entry: entry)
                     .padding()
                     .background()
