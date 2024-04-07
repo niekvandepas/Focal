@@ -16,7 +16,12 @@ final class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.actionIdentifier == "START_NEXT_TIMER" {
-            TimerViewModel.shared.startTimer()
+            // HACK: SceneDelegate.correctSuspendedTimerState, which calculates the time since the app was last closed and then pauses the timer,
+            // conflicts with the handling of this notification action, which start the timer,
+            // so we delay by 750 milliseconds to ensure the timer is started after it is paused.
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(750)) {
+                TimerViewModel.shared.startTimer()
+            }
         }
         completionHandler()
     }

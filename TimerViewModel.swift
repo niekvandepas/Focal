@@ -104,6 +104,8 @@ class TimerViewModel: ObservableObject {
 
     private func scheduleNotification() {
         let content = createNotificationContent(for: self.timerState)
+        let category = createNotificationCategory()
+        UNUserNotificationCenter.current().setNotificationCategories([category])
 
         let triggerTime = Date().addingTimeInterval(TimeInterval(self.timeRemaining))
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerTime), repeats: false)
@@ -136,6 +138,17 @@ class TimerViewModel: ObservableObject {
             content.categoryIdentifier = "TIMER_EXPIRED"
         }
         return content
+    }
+
+    private func createNotificationCategory() -> UNNotificationCategory {
+        let startNextTimerAction = UNNotificationAction(identifier: "START_NEXT_TIMER",
+                                                         title: "Start Next Timer",
+                                                         options: .foreground)
+        let category = UNNotificationCategory(identifier: "TIMER_EXPIRED",
+                                              actions: [startNextTimerAction],
+                                              intentIdentifiers: [],
+                                              options: [])
+        return category
     }
 }
 
