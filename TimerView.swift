@@ -128,6 +128,7 @@ struct TimerView: View {
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
                 .bold()
+                .contentShape(Rectangle()) // This is needed to have the entire button actuate
         }
         .customFocus()
         .disabled(timerViewModel.timeRemaining == 0)
@@ -148,6 +149,7 @@ struct TimerView: View {
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
                 .foregroundStyle(.primaryButton)
+                .contentShape(Rectangle()) // This is needed to have the entire button actuate
         }
         .disabled(timerViewModel.timerIsFull)
         .customFocus()
