@@ -18,4 +18,5 @@ struct Constants {
     static let UD_TIME_REMAINING = "TimeRemaining"
     static let UD_TIMER_IS_RUNNING = "TimerIsRunning"
     static let UD_TIMER_STATE = "TimerState"
+    static let UD_SHOW_TIME_LEFT_SETTING = "ShowTimeLeftSetting"
 }

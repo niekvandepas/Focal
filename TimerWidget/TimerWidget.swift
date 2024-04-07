@@ -75,6 +75,9 @@ struct TimerWidgetEntryView: View {
     @Environment(\.widgetFamily) var family
 
     var body: some View {
+        let userDefaults = UserDefaults(suiteName: Constants.UD_GROUP_NAME)
+        let showTimeLeft = userDefaults?.bool(forKey: Constants.UD_SHOW_TIME_LEFT_SETTING)
+
         let timerSquareColor: Color = entry.timerIsRunning ? entry.timerState.color : Color.offWhite
         let timeRemainingFormatted = "\(entry.timeRemaining / 60):\(String(format: "%02d", entry.timeRemaining % 60))"
         let widgetSize: CGFloat = family == .systemLarge ? 280 : 100
@@ -91,8 +94,10 @@ struct TimerWidgetEntryView: View {
                 VStack {
                     Text(entry.timerState.description.capitalized)
 
-                    Text(timeRemainingFormatted)
-                        .foregroundStyle(.primaryButton)
+                    if showTimeLeft! {
+                        Text(timeRemainingFormatted)
+                            .foregroundStyle(.primaryButton)
+                    }
 
                 }
                 .font(.custom("Inter", size: fontSize))

@@ -85,6 +85,7 @@ class TimerViewModel: ObservableObject {
             userDefaults.set(timeRemaining, forKey: Constants.UD_TIME_REMAINING)
             userDefaults.set(timerIsRunning, forKey: Constants.UD_TIMER_IS_RUNNING)
             userDefaults.set(timerState.rawValue, forKey: Constants.UD_TIMER_STATE)
+            userDefaults.set(settingsManager.showTimeLeft, forKey: Constants.UD_SHOW_TIME_LEFT_SETTING)
         }
     }
 
