@@ -108,9 +108,6 @@ struct TimerView: View {
             timerViewModel.timerIsRunning ? mediumFeedbackGenerator.impactOccurred() : notificationFeedbackGenerator.notificationOccurred(.success)
             #endif
 
-            // Immediately decreasing from 25:00 to 24:59 indicates visual responsiveness to the user
-            timerViewModel.timeRemaining = min(1499, timerViewModel.timeRemaining)
-
             timerViewModel.toggleTimer()
 #if os(macOS)
             if settingsManager.hideAppOnTimerStart && timerViewModel.timerIsRunning {
