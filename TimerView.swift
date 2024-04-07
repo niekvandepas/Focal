@@ -10,6 +10,7 @@ import SwiftUI
 import KeyboardShortcuts
 import AppKit
 #endif
+import UserNotifications
 
 struct TimerView: View {
     @StateObject var timerViewModel = TimerViewModel.shared
@@ -97,12 +98,15 @@ struct TimerView: View {
     }
 
     var buttons: some View {
-
+        #if os(iOS)
         let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
         let mediumFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+        #endif
 
         let startPauseButton = Button(action: {
+            #if os(iOS)
             timerViewModel.timerIsRunning ? mediumFeedbackGenerator.impactOccurred() : notificationFeedbackGenerator.notificationOccurred(.success)
+            #endif
 
             // Immediately decreasing from 25:00 to 24:59 indicates visual responsiveness to the user
             timerViewModel.timeRemaining = min(1499, timerViewModel.timeRemaining)
