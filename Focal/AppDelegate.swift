@@ -32,9 +32,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
 
     /// Ensures the main window (the timer window) is open at app launch.
     private func ensureMainWindowIsOpen() {
-        // If fewer than 2 windows are open, that means only the menu bar item 'window' is open,
+        // If fewer than 3 windows are open, that means only the menu bar item 'window' is open,
         // and we need to 'click' the 'New Window' menu bar item to ensure the timer window is open.
-        guard NSApplication.shared.windows.count < 2,
+        // I don't know why 3 is the number that's needed here, but somehow it seems to work...
+        guard NSApplication.shared.windows.count < 3,
               let mainMenu = NSApp.mainMenu,
               let fileMenu = mainMenu.item(withTitle: "File")?.submenu,
               let newWindowMenuItem = fileMenu.item(withTitle: "New Window"),
