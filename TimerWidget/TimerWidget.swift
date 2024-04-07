@@ -75,79 +75,28 @@ struct TimerWidgetEntryView: View {
     @Environment(\.widgetFamily) var family
 
     var body: some View {
-        let timeRemainingFormatted = "\(entry.timeRemaining / 60):\(String(format: "%02d", entry.timeRemaining % 60))"
         let timerSquareColor: Color = entry.timerIsRunning ? entry.timerState.color : Color.offWhite
+        let timeRemainingFormatted = "\(entry.timeRemaining / 60):\(String(format: "%02d", entry.timeRemaining % 60))"
+        let widgetSize: CGFloat = family == .systemLarge ? 280 : 100
+        let fontSize: CGFloat = family == .systemLarge ? 48 : 22
 
-        switch family {
+            return ZStack {
+                Rectangle()
+                    .fill(timerSquareColor)
+                    .frame(width: widgetSize, height: widgetSize)
+                    .multilineTextAlignment(.center)
+                    .cornerRadius(8)
+                    .shadow(radius: 1, x: 5, y: 5)
 
-        case .systemSmall:
-            return AnyView(SmallAndMediumWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
-        case .systemMedium:
-            return AnyView(SmallAndMediumWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
-        case .systemLarge:
-            return AnyView(LargeWidget(timerSquareColor: timerSquareColor, entry: entry, timeRemainingFormatted: timeRemainingFormatted))
-        case .systemExtraLarge:
-            return AnyView(Text("wow this is literally impossible"))
-        case .accessoryCircular:
-            return AnyView(Text("circle"))
-        case .accessoryRectangular:
-            return AnyView(Text("rectangle"))
-        case .accessoryInline:
-            return AnyView(Text("inline"))
-        @unknown default:
-            return AnyView(Text("default"))
-        }
-    }
-}
+                VStack {
+                    Text(entry.timerState.description.capitalized)
 
-struct SmallAndMediumWidget: View {
-    let timerSquareColor: Color
-    let entry: SimpleEntry
-    let timeRemainingFormatted: String
+                    Text(timeRemainingFormatted)
+                        .foregroundStyle(.primaryButton)
 
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(timerSquareColor)
-                .frame(width: 100, height: 100)
-                .multilineTextAlignment(.center)
-                .cornerRadius(8)
-                .shadow(radius: 1, x: 5, y: 5)
-
-            VStack {
-                Text(entry.timerState.description.capitalized)
-
-                Text(timeRemainingFormatted)
-                    .foregroundStyle(.primaryButton)
-
+                }
+                .font(.custom("Inter", size: fontSize))
             }
-        }
-    }
-}
-
-struct LargeWidget: View {
-    let timerSquareColor: Color
-    let entry: SimpleEntry
-    let timeRemainingFormatted: String
-
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(timerSquareColor)
-                .frame(width: 280, height: 280)
-                .multilineTextAlignment(.center)
-                .cornerRadius(8)
-                .shadow(radius: 1, x: 5, y: 5)
-
-            VStack {
-                Text(entry.timerState.description.capitalized)
-
-                Text(timeRemainingFormatted)
-                    .foregroundStyle(.primaryButton)
-
-            }
-            .font(.custom("Inter", size: 48))
-        }
     }
 }
 
@@ -159,17 +108,14 @@ struct TimerWidget: Widget {
             if #available(iOS 17.0, *) {
                 TimerWidgetEntryView(entry: entry)
                     .containerBackground(.accent, for: .widget)
-                    .font(.custom("Inter", size: 22))
 
             } else {
                 TimerWidgetEntryView(entry: entry)
                     .padding()
                     .background()
-                    .font(.custom("Inter", size: 22))
 
             }
         }
-        //        TODO
         .configurationDisplayName("Timer Widget")
         .description("Shows the current time left.")
         .supportedFamilies([.systemLarge, .systemMedium, .systemSmall])
