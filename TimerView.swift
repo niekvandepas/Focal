@@ -30,7 +30,7 @@ struct TimerView: View {
             buttons
                 .frame(width:buttonFrameWidth)
             Spacer()
-            sessionMarkers
+            SessionMarkers()
                 .padding(.bottom)
         }
     }
@@ -191,10 +191,12 @@ struct TimerView: View {
             }
             .buttonStyle(MyButtonStyle())
         }
-        
+
     }
-    
-    var sessionMarkers: some View {
+}
+
+struct SessionMarkers: View {
+    var body: some View {
         HStack {
             ForEach(0..<5) { index in
                 Circle()
