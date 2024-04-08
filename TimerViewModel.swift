@@ -18,6 +18,7 @@ class TimerViewModel: ObservableObject {
 #endif
     @Published var timerIsRunning = false
     @Published var timerState: TimerState = .work
+    @Published var completedSessions = 0
     var notificationScheduled = false
     private let settingsManager = SettingsManager.shared
 
@@ -51,7 +52,8 @@ class TimerViewModel: ObservableObject {
                     case .work:
                         self.timeRemaining = 25 * 60
                     case .rest:
-                        self.timeRemaining = 5 * 60
+                        self.completedSessions += 1
+                        self.timeRemaining = 2
                     }
                     self.updateUserDefaults()
                 }
@@ -77,6 +79,7 @@ class TimerViewModel: ObservableObject {
         timerState = .work
         timeRemaining = 25 * 60
         timerIsRunning = false
+        completedSessions = 0
         self.updateUserDefaults()
     }
 

@@ -30,7 +30,7 @@ struct TimerView: View {
             buttons
                 .frame(width:buttonFrameWidth)
             Spacer()
-            SessionMarkers(goal: 4, currentSessionIndex: 2, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
+            SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
                 .padding(.bottom)
         }
     }
@@ -197,23 +197,21 @@ struct TimerView: View {
 
 struct SessionMarkers: View {
     let goal: Int
-    let currentSessionIndex: Int
+    let completedSessions: Int
     let timerState: TimerState
     let isRunning: Bool
 
     var body: some View {
-        let activeSessionColor = Color.workBlue
-//        let activeSessionColor = isRunning ? timerState.color : .offWhite
         HStack {
-            ForEach(0..<currentSessionIndex) { index in
+            ForEach(0..<completedSessions, id: \.self) { index in
                 Circle()
                     .foregroundStyle(.workBlue)
                     .frame(width: 4, height: 4)
             }
             Circle()
-                .foregroundStyle(activeSessionColor)
+                .foregroundStyle(timerState.color)
                 .frame(width: 6, height: 6)
-            ForEach(currentSessionIndex..<(goal-1)) { index in
+            ForEach(completedSessions+1..<goal, id: \.self) { index in
                 Circle()
                     .foregroundStyle(.white)
                     .frame(width: 4, height: 4)

@@ -17,5 +17,6 @@ class SettingsManager: ObservableObject {
     @AppStorage("startNextTimerAutomatically") var startNextTimerAutomatically = false
     @AppStorage("timerWorkLabel") var optionalTimerWorkLabel = ""
     @AppStorage("timerBreakLabel") var optionalTimerBreakLabel = ""
+    @AppStorage("sessionGoal") var sessionGoal = 4
 }
 
