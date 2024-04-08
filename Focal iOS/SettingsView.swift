@@ -15,6 +15,13 @@ struct SettingsView: View {
             Toggle("Show time left", isOn: $settingsManager.showTimeLeft)
             TextField("Custom Work Label", text: settingsManager.$optionalTimerWorkLabel)
             TextField("Custom Break Label", text: settingsManager.$optionalTimerBreakLabel)
+            Stepper {
+                Text("Number of sessions: \(settingsManager.sessionGoal)")
+            } onIncrement: {
+                settingsManager.sessionGoal += 1
+            } onDecrement: {
+                settingsManager.sessionGoal -= 1
+            }
         }
     }
 }
