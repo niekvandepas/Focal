@@ -43,6 +43,8 @@
 		9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */; };
 		9FA3AC3D2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */; };
 		9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */; };
+		9FAA45F32BC40F6D0002A537 /* SessionMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */; };
+		9FAA45F42BC40F6D0002A537 /* SessionMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */; };
 		9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2207B2BB4B242007C722A /* SceneDelegate.swift */; };
 		9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
 		9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */; };
@@ -105,6 +107,7 @@
 		9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focal.entitlements; sourceTree = "<group>"; };
 		9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMarkers.swift; sourceTree = "<group>"; };
 		9FB2207B2BB4B242007C722A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */,
 				9F3053A82BB714F9006B8090 /* TimerWidgetExtension.entitlements */,
 				9F52B9012BB3322700410E1C /* SettingsManager.swift */,
 				9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */,
@@ -391,6 +395,7 @@
 			files = (
 				9F6D48DB2BB59A0300FB7D23 /* AppDelegate.swift in Sources */,
 				9F5D34082BAA0AC40049100C /* NotificationDelegate.swift in Sources */,
+				9FAA45F42BC40F6D0002A537 /* SessionMarkers.swift in Sources */,
 				9F5D33FF2BA9BE560049100C /* TimerView.swift in Sources */,
 				9F5D34002BA9BE6A0049100C /* MyButtonStyle.swift in Sources */,
 				9F5D33FE2BA9BE500049100C /* TimerState.swift in Sources */,
@@ -409,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FAA45F32BC40F6D0002A537 /* SessionMarkers.swift in Sources */,
 				9F5D34052BAA080D0049100C /* AppDelegate.swift in Sources */,
 				9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */,
 				9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */,
