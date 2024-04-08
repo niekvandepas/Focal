@@ -14,6 +14,8 @@ struct SessionMarkers: View {
     let isRunning: Bool
 
     var body: some View {
+        let currentCircleColor = isRunning ? timerState.color : .primaryButton
+
         HStack {
             ForEach(0..<completedSessions, id: \.self) { index in
                 Circle()
@@ -21,7 +23,7 @@ struct SessionMarkers: View {
                     .frame(width: 4, height: 4)
             }
             Circle()
-                .foregroundStyle(timerState.color)
+                .foregroundStyle(currentCircleColor)
                 .frame(width: 6, height: 6)
             ForEach(completedSessions+1..<goal, id: \.self) { index in
                 Circle()
