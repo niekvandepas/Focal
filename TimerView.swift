@@ -221,7 +221,3 @@ struct SessionMarkers: View {
         }
     }
 }
-
-//#Preview {
-//    ContentView()
-//}
