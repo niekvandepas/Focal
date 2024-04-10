@@ -30,7 +30,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
         completionHandler()
     }
 
-    /// Ensures the main window (the timer window) is open at app launch.
+    /// Opens the main window (the timer window) if it is not already open
     private func ensureMainWindowIsOpen() {
         // If fewer than 2 windows are open, that means only the menu bar item 'window' is open,
         // and we need to 'click' the 'New Window' menu bar item to ensure the timer window is open.
