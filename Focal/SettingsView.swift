@@ -42,6 +42,9 @@ struct SettingsView: View {
             Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
                 .toggleStyle(.checkbox)
 
+            Toggle("Start next timer automatically", isOn: $settingsManager.startNextTimerAutomatically)
+                .toggleStyle(.checkbox)
+
             Toggle("Hide app on timer start", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
 
