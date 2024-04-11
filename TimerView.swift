@@ -79,7 +79,7 @@ struct TimerView: View {
                 .frame(width: timerRectangleWidth, height: timerRectangleHeight)
                 .multilineTextAlignment(.center)
                 .cornerRadius(8)
-                .shadow(radius: 1, x: 5, y: 5)
+                .shadow(color: .black, radius: 0, x: 5, y: 5)
                 .padding(.bottom, 10)
 
             VStack {
