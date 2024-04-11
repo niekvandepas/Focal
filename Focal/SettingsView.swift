@@ -58,5 +58,5 @@ struct SettingsView: View {
 
 #Preview {
     return SettingsView(settingsManager: SettingsManager.shared)
-        .frame(width: 420, height: 220)
+        .frame(width: 420)
 }
