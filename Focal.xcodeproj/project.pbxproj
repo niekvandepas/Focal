@@ -37,6 +37,8 @@
 		9F83A67D2BAB5742004A6E6A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A67C2BAB5742004A6E6A /* SettingsView.swift */; };
 		9F83A6812BAB6ACE004A6E6A /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 9F83A6802BAB6ACE004A6E6A /* KeyboardShortcuts */; };
 		9F83A6832BAB6C41004A6E6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A6822BAB6C41004A6E6A /* Constants.swift */; };
+		9F9406CC2BC843CD003DB49E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
+		9F9406CD2BC843CD003DB49E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
 		9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFA2B9F3BCC00A8D5FA /* FocalApp.swift */; };
 		9F954AFD2B9F3BCC00A8D5FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954AFC2B9F3BCC00A8D5FA /* TimerView.swift */; };
 		9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F954AFE2B9F3BCE00A8D5FA /* Assets.xcassets */; };
@@ -349,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9406CD2BC843CD003DB49E /* Assets.xcassets in Resources */,
 				9F30539B2BB5E9B8006B8090 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +362,7 @@
 			files = (
 				9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */,
 				9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				9F9406CC2BC843CD003DB49E /* Assets.xcassets in Resources */,
 				9F5D33EE2BA9B9D50049100C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

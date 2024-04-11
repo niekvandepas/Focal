@@ -34,7 +34,7 @@ struct FocalApp: App {
                         .environmentObject(settingsManager)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
-                .background(Color.accentColor)
+                .background(Color.appRed)
             }
             .frame(maxHeight: .infinity)
             .background(ignoresSafeAreaEdges: .all)

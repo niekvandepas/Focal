@@ -113,7 +113,7 @@ struct TimerWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 TimerWidgetEntryView(entry: entry)
-                    .containerBackground(.accent, for: .widget)
+                    .containerBackground(.appRed, for: .widget)
             }
             else {
                 TimerWidgetEntryView(entry: entry)

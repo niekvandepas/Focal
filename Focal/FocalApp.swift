@@ -24,7 +24,7 @@ struct FocalApp: App {
 
         WindowGroup {
             ZStack {
-                Color.accentColor
+                Color.appRed
                 TimerView()
                     .frame(width: 300, height: 400)
                     .environmentObject(settingsManager)
