@@ -193,3 +193,11 @@ struct TimerView: View {
     }
 }
 
+#Preview {
+    return ZStack {
+        Color.appRed
+        TimerView(settingsManager: SettingsManager.shared)
+           .frame(width: 300, height: 400)
+    }
+    .frame(width: 300, height: 400)
+}
