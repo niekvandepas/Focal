@@ -69,7 +69,6 @@ struct TimerView: View {
             case .rest:
                 settingsManager.optionalTimerBreakLabel == "" ? "Break" : settingsManager.optionalTimerBreakLabel
             }
-
         }()
 
         let timerText = settingsManager.showTimeLeft ? timerViewModel.timeRemainingFormatted : timerLabelText
