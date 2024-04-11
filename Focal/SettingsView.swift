@@ -23,15 +23,25 @@ struct SettingsView: View {
         Grid(alignment: .leadingFirstTextBaseline) {
             KeyboardShortcuts.Recorder("Global keyboard shortcut:", name: .toggleTimer)
 
+            Text(
+                """
+                The global keyboard shortcut starts or stops the timer from any app.
+                """
+            )
+            .font(.callout)
+            .foregroundStyle(.gray)
+            .padding(.bottom, 4)
+
+
             Toggle("Shortcut brings app to front", isOn: $settingsManager.globalShortcutBringsAppToFront)
                 .toggleStyle(.checkbox)
 
             Divider()
                 .padding(8)
 
-            Toggle("Hide app on timer start", isOn: $settingsManager.hideAppOnTimerStart)
-                .toggleStyle(.checkbox)
             Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
+                .toggleStyle(.checkbox)
+            Toggle("Hide app on timer start", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
             if #available(macOS 14.0, *) {
                 picker.pickerStyle(.palette)
