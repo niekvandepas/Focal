@@ -12,7 +12,7 @@ struct SettingsView: View {
     @ObservedObject var settingsManager: SettingsManager
 
     var body: some View {
-        let picker = Picker("Number of sessions", selection: $settingsManager.sessionGoal) {
+        let picker = Picker("Number of sessions:", selection: $settingsManager.sessionGoal) {
             Text("2").tag(2)
             Text("3").tag(3)
             Text("4").tag(4)
@@ -20,34 +20,43 @@ struct SettingsView: View {
             Text("6").tag(6)
         }
 
-        Form {
-            VStack(alignment: .leading) {
-                KeyboardShortcuts.Recorder("Global shortcut", name: .toggleTimer)
-                Toggle("Shortcut brings app to front", isOn: $settingsManager.globalShortcutBringsAppToFront)
-                    .toggleStyle(.checkbox)
+        Grid(alignment: .leadingFirstTextBaseline) {
+            KeyboardShortcuts.Recorder("Global keyboard shortcut:", name: .toggleTimer)
 
-//                Divider()
+            Toggle("Shortcut brings app to front", isOn: $settingsManager.globalShortcutBringsAppToFront)
+                .toggleStyle(.checkbox)
 
-                Toggle("Hide app when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
-                    .toggleStyle(.checkbox)
-                Toggle("Show time left", isOn: $settingsManager.showTimeLeft)
-                    .toggleStyle(.checkbox)
-                if #available(macOS 14.0, *) {
-                    picker.pickerStyle(.palette)
-                } else {
-                    picker
-                }
+            Divider()
 
+            Toggle("Hide app when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
+                .toggleStyle(.checkbox)
+            Toggle("Show time left", isOn: $settingsManager.showTimeLeft)
+                .toggleStyle(.checkbox)
+            if #available(macOS 14.0, *) {
+                picker.pickerStyle(.palette)
+            } else {
+                picker
+            }
+
+            Divider()
+
+            GridRow {
+                Text("Work timer name:")
                 TextField("Work timer label", text: settingsManager.$optionalTimerWorkLabel, prompt: Text("Work"))
-                    .textFieldStyle(.plain)
                     .background(.white)
-                TextField("Rest timer label", text: settingsManager.$optionalTimerBreakLabel, prompt: Text("Rest"))
+                Spacer().frame(width:125, height: 0).hidden()
+            }
+            GridRow {
+                Text("Rest timer name:")
+                TextField("Rest timer name", text: settingsManager.$optionalTimerBreakLabel, prompt: Text("Rest"))
             }
         }
-        .formStyle(.grouped)
+        .padding()
+
     }
 }
 
 #Preview {
     return SettingsView(settingsManager: SettingsManager.shared)
+        .frame(width: 420, height: 220)
 }
