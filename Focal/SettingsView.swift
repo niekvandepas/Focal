@@ -27,6 +27,7 @@ struct SettingsView: View {
                 .toggleStyle(.checkbox)
 
             Divider()
+                .padding(8)
 
             Toggle("Hide app when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
@@ -39,6 +40,7 @@ struct SettingsView: View {
             }
 
             Divider()
+                .padding(8)
 
             GridRow {
                 Text("Work timer name:")
