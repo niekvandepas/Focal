@@ -29,7 +29,7 @@ struct SettingsView: View {
             Divider()
                 .padding(8)
 
-            Toggle("Hide app when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
+            Toggle("Hide app on timer start", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
             Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
                 .toggleStyle(.checkbox)
