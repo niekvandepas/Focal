@@ -41,8 +41,10 @@ struct SettingsView: View {
 
             Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
                 .toggleStyle(.checkbox)
+
             Toggle("Hide app on timer start", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
+
             if #available(macOS 14.0, *) {
                 picker.pickerStyle(.palette)
             } else {
