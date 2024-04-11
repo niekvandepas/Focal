@@ -47,3 +47,7 @@ struct SettingsView: View {
         .formStyle(.grouped)
     }
 }
+
+#Preview {
+    return SettingsView(settingsManager: SettingsManager.shared)
+}
