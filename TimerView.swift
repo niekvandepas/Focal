@@ -62,7 +62,6 @@ struct TimerView: View {
         let timerRectangleHeight = 250.0
 #endif
 
-        //        TODO fix this to check if the text is empty, which it is by default because of placeholder stuff
         let timerLabelText = {
             switch timerViewModel.timerState {
             case .work:

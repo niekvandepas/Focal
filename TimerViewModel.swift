@@ -38,7 +38,6 @@ class TimerViewModel: ObservableObject {
                     self.timeRemaining -= 1
                 } else {
                     self.timerState.toggle()
-                    // TODO I think this #if is no longer needed
                     #if os(macOS)
                     if !SettingsManager.shared.startNextTimerAutomatically {
                         self.pauseTimer()
