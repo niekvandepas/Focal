@@ -53,7 +53,7 @@ class TimerViewModel: ObservableObject {
                         self.timeRemaining = 25 * 60
                     case .rest:
                         self.completedSessions += 1
-                        self.timeRemaining = 2
+                        self.timeRemaining = 5 * 60
                     }
                     self.updateUserDefaults()
                 }
