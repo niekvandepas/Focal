@@ -93,6 +93,7 @@ struct TimerWidgetEntryView: View {
 
                 VStack {
                     Text(entry.timerState.description.capitalized)
+                        .foregroundStyle(.black)
 
                     if showTimeLeft! {
                         Text(timeRemainingFormatted)
