@@ -26,7 +26,7 @@ struct SettingsView: View {
                 Toggle("Shortcut brings app to front", isOn: $settingsManager.globalShortcutBringsAppToFront)
                     .toggleStyle(.checkbox)
 
-                Divider()
+//                Divider()
 
                 Toggle("Hide app when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
                     .toggleStyle(.checkbox)
@@ -37,6 +37,11 @@ struct SettingsView: View {
                 } else {
                     picker
                 }
+
+                TextField("Work timer label", text: settingsManager.$optionalTimerWorkLabel, prompt: Text("Work"))
+                    .textFieldStyle(.plain)
+                    .background(.white)
+                TextField("Rest timer label", text: settingsManager.$optionalTimerBreakLabel, prompt: Text("Rest"))
             }
         }
         .formStyle(.grouped)
