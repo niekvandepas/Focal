@@ -60,11 +60,13 @@ struct SettingsView: View {
             GridRow {
                 Text("Work timer name:")
                 TextField("Work timer label", text: settingsManager.$optionalTimerWorkLabel, prompt: Text("Work"))
+                    .textFieldStyle(.roundedBorder)
                 Spacer().frame(width:125, height: 0).hidden()
             }
             GridRow {
                 Text("Rest timer name:")
                 TextField("Rest timer name", text: settingsManager.$optionalTimerBreakLabel, prompt: Text("Rest"))
+                    .textFieldStyle(.roundedBorder)
             }
         }
         .padding()
