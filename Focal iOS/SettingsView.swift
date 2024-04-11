@@ -25,3 +25,7 @@ struct SettingsView: View {
         }
     }
 }
+
+#Preview {
+    return SettingsView(settingsManager: SettingsManager.shared)
+}
