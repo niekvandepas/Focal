@@ -25,7 +25,7 @@ struct SettingsView: View {
 
             Text(
                 """
-                The global keyboard shortcut starts or stops the timer from any app.
+                Start or stop the timer from anywhere in macOS.
                 """
             )
             .font(.callout)
@@ -33,7 +33,7 @@ struct SettingsView: View {
             .padding(.bottom, 4)
 
 
-            Toggle("Shortcut brings app to front", isOn: $settingsManager.globalShortcutBringsAppToFront)
+            Toggle("Global shortcut brings app to front", isOn: $settingsManager.globalShortcutBringsAppToFront)
                 .toggleStyle(.checkbox)
 
             Divider()
