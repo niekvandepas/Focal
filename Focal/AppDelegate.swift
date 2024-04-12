@@ -17,6 +17,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
         UNUserNotificationCenter.current().delegate = self
 
         ensureMainWindowIsOpen()
+        disableWindowResizing()
     }
 
     func applicationDidBecomeActive(_ notification: Notification) {
@@ -48,4 +49,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
         newWindowMenuItem.isEnabled = false
     }
 
+    /// Disables window rezising for all application windows
+    private func disableWindowResizing() {
+        NSApp.windows.forEach { $0.styleMask.remove(.resizable) }
+    }
 }
