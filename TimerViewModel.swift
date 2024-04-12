@@ -29,34 +29,7 @@ class TimerViewModel: ObservableObject {
 
         timer = Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
-            .sink { _ in
-                guard self.timerIsRunning else { return }
-                if self.timerIsRunning && !self.notificationScheduled {
-                    self.scheduleNotification()
-                }
-                if self.timeRemaining > 0 {
-                    self.timeRemaining -= 1
-                } else {
-                    self.timerState.toggle()
-                    #if os(macOS)
-                    if !SettingsManager.shared.startNextTimerAutomatically {
-                        self.pauseTimer()
-                    }
-                    #endif
-                    #if os(iOS)
-                    self.pauseTimer()
-                    #endif
-
-                    switch self.timerState {
-                    case .work:
-                        self.timeRemaining = 25 * 60
-                    case .rest:
-                        self.completedSessions += 1
-                        self.timeRemaining = 5 * 60
-                    }
-                    self.updateUserDefaults()
-                }
-            }
+            .sink(receiveValue: self.handleTimerTick)
     }
     
     func toggleTimer() {
@@ -102,6 +75,35 @@ class TimerViewModel: ObservableObject {
 
     var timeRemainingFormatted: String {
         "\(timeRemaining / 60):\(String(format: "%02d", timeRemaining % 60))"
+    }
+
+    private func handleTimerTick(_: Date) -> Void {
+        guard self.timerIsRunning else { return }
+        if self.timerIsRunning && !self.notificationScheduled {
+            self.scheduleNotification()
+        }
+        if self.timeRemaining > 0 {
+            self.timeRemaining -= 1
+        } else {
+            self.timerState.toggle()
+            #if os(macOS)
+            if !SettingsManager.shared.startNextTimerAutomatically {
+                self.pauseTimer()
+            }
+            #endif
+            #if os(iOS)
+            self.pauseTimer()
+            #endif
+
+            switch self.timerState {
+            case .work:
+                self.timeRemaining = 25 * 60
+            case .rest:
+                self.completedSessions += 1
+                self.timeRemaining = 5 * 60
+            }
+            self.updateUserDefaults()
+        }
     }
 
     private func scheduleNotification() {
