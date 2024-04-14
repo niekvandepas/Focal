@@ -41,7 +41,7 @@ struct TimerView: View {
         // paused:  .offWhite
         let timerSquareColor: Color = timerViewModel.timerIsRunning ? (timerViewModel.timerState == .work ? Color.workBlue : Color.breakGreen) : Color.offWhite
 #if os(macOS)
-        let timerStateLabelFontSize = 18.0
+        let timerStateLabelFontSize = 20.0
 #else
         let timerStateLabelFontSize = 26.0
 #endif
