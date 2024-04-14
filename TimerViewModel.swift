@@ -77,6 +77,7 @@ class TimerViewModel: ObservableObject {
         timerIsRunning = false
     }
 
+    /// Whether or not the timer is at 25 minutes
     var timerIsFull: Bool {
         return timeRemaining == 25 * 60
     }
