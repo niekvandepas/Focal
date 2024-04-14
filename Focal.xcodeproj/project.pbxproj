@@ -51,6 +51,8 @@
 		9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
 		9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */; };
 		9FBC3BBC2BACCAA90012876D /* SettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */; };
+		9FC2957B2BCC073700825591 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9FC2957A2BCC073700825591 /* Credits.rtf */; };
+		9FC2957C2BCC073700825591 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9FC2957A2BCC073700825591 /* Credits.rtf */; };
 		9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +116,7 @@
 		9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsIcon.swift; path = "Focal iOS/SettingsIcon.swift"; sourceTree = "<group>"; };
+		9FC2957A2BCC073700825591 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */,
+				9FC2957A2BCC073700825591 /* Credits.rtf */,
 				9F3053A82BB714F9006B8090 /* TimerWidgetExtension.entitlements */,
 				9F52B9012BB3322700410E1C /* SettingsManager.swift */,
 				9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */,
@@ -360,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC2957C2BCC073700825591 /* Credits.rtf in Resources */,
 				9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */,
 				9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F9406CC2BC843CD003DB49E /* Assets.xcassets in Resources */,
@@ -374,6 +379,7 @@
 				9FA3AC3D2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */,
 				9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */,
+				9FC2957B2BCC073700825591 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
