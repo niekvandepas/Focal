@@ -16,7 +16,19 @@ class TimerViewModel: ObservableObject {
 #else
     @Published var timeRemaining = 25 * 60
 #endif
-    @Published var timerIsRunning = false
+    @Published private var _timerIsRunning = false
+    var timerIsRunning: Bool {
+        get { return _timerIsRunning }
+        set {
+            if newValue == true {
+                self.initializeTimer()
+            }
+            else {
+                self.timer = nil
+            }
+            _timerIsRunning = newValue
+        }
+    }
     @Published var timerState: TimerState = .work
     @Published var completedSessions = 0
     var notificationScheduled = false
@@ -26,10 +38,6 @@ class TimerViewModel: ObservableObject {
 
     init() {
         self.updateUserDefaults()
-
-        timer = Timer.publish(every: 1, on: .main, in: .common)
-            .autoconnect()
-            .sink(receiveValue: self.handleTimerTick)
     }
     
     func toggleTimer() {
@@ -77,8 +85,13 @@ class TimerViewModel: ObservableObject {
         "\(timeRemaining / 60):\(String(format: "%02d", timeRemaining % 60))"
     }
 
+    private func initializeTimer() {
+        self.timer = Timer.publish(every: 1, on: .main, in: .common)
+            .autoconnect()
+            .sink(receiveValue: self.handleTimerTick)
+    }
+
     private func handleTimerTick(_: Date) -> Void {
-        guard self.timerIsRunning else { return }
         if self.timerIsRunning && !self.notificationScheduled {
             self.scheduleNotification()
         }
