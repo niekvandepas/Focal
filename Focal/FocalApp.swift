@@ -54,15 +54,19 @@ struct FocalApp: App {
     }
 
     private func menuBarExtra() -> some Scene {
+        // Getting this value from the SettingsManager here causes an infinite loop for some reason,
+        // So we use AppStorage directly here.
+        @AppStorage("showMenuBarIcon") var showMenuBarIcon = true
+
         if timerViewModel.timerIsRunning {
-            return MenuBarExtra("Focal", image: timerViewModel.timerState == .work ? "play.circle.workBlue" : "play.circle.workGreen") {
+            return MenuBarExtra("Focal", image: timerViewModel.timerState == .work ? "play.circle.workBlue" : "play.circle.workGreen", isInserted: $showMenuBarIcon) {
                 AppMenu()
             }
         }
         else {
             let systemImage = timerViewModel.timerIsFull ? "stop.circle" : "pause.circle"
 
-            return MenuBarExtra("Focal", systemImage: systemImage) {
+            return MenuBarExtra("Focal", systemImage: systemImage, isInserted: $showMenuBarIcon) {
                 AppMenu()
             }
         }

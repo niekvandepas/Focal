@@ -15,6 +15,9 @@ class SettingsManager: ObservableObject {
     @AppStorage("globalShortcutBringsAppToFront") var globalShortcutBringsAppToFront = false
     @AppStorage("hideAppOnTimerStart") var hideAppOnTimerStart = false
     @AppStorage("startNextTimerAutomatically") var startNextTimerAutomatically = false
+    #if os(macOS)
+    @AppStorage("showMenuBarIcon") var showMenuBarIcon = true
+    #endif
     @AppStorage("timerWorkLabel") var optionalTimerWorkLabel = ""
     @AppStorage("timerBreakLabel") var optionalTimerBreakLabel = ""
     @AppStorage("sessionGoal") var sessionGoal = 4

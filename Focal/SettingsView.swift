@@ -39,6 +39,9 @@ struct SettingsView: View {
             Divider()
                 .padding(8)
 
+            Toggle("Show menu bar icon", isOn: $settingsManager.showMenuBarIcon)
+                .toggleStyle(.checkbox)
+
             Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
                 .toggleStyle(.checkbox)
 
