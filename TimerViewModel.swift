@@ -25,6 +25,8 @@ class TimerViewModel: ObservableObject {
             }
             else {
                 self.timer = nil
+                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                self.notificationScheduled = false
             }
             _timerIsRunning = newValue
         }
@@ -37,11 +39,6 @@ class TimerViewModel: ObservableObject {
     private var timer: AnyCancellable?
 
     init() {
-        self.updateUserDefaults()
-    }
-    
-    func toggleTimer() {
-        timerIsRunning.toggle()
         self.updateUserDefaults()
     }
     

@@ -30,7 +30,7 @@ struct FocalApp: App {
                     .environmentObject(settingsManager)
                     .onAppear {
                         KeyboardShortcuts.onKeyUp(for: .toggleTimer) { [self] in
-                            timerViewModel.toggleTimer()
+                            timerViewModel.timerIsRunning.toggle()
 
                             if (settingsManager.globalShortcutBringsAppToFront) {
                                 if #available(macOS 14.0, *) {
