@@ -22,9 +22,11 @@ struct SessionMarkers: View {
                     .foregroundStyle(.workBlue)
                     .frame(width: 4, height: 4)
             }
+
             Circle()
                 .foregroundStyle(currentCircleColor)
                 .frame(width: 6, height: 6)
+
             ForEach(completedSessions+1..<goal, id: \.self) { index in
                 Circle()
                     .stroke(.white, lineWidth: 1)
