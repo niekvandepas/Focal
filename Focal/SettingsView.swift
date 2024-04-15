@@ -52,6 +52,7 @@ struct SettingsView: View {
                 .toggleStyle(.checkbox)
 
             Divider()
+                .padding(8)
 
             if #available(macOS 14.0, *) {
                 picker.pickerStyle(.palette)
