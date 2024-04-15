@@ -108,9 +108,9 @@ class TimerViewModel: ObservableObject {
 
             switch self.timerState {
             case .work:
+                self.completedSessions += 1
                 self.timeRemaining = 25 * 60
             case .rest:
-                self.completedSessions += 1
                 self.timeRemaining = 5 * 60
             }
             self.updateUserDefaults()
