@@ -147,7 +147,9 @@ class TimerViewModel: ObservableObject {
             content.title = "Break's over!"
             content.body = "Time to get back to work!"
         }
-        content.sound = .default
+
+        let sound = UNNotificationSound(named:UNNotificationSoundName(rawValue: "Ding2.wav"))
+        content.sound = sound
 
         if !SettingsManager.shared.startNextTimerAutomatically {
             content.categoryIdentifier = "TIMER_EXPIRED"

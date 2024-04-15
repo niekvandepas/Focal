@@ -52,6 +52,10 @@
 		9FC2957B2BCC073700825591 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9FC2957A2BCC073700825591 /* Credits.rtf */; };
 		9FC2957C2BCC073700825591 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9FC2957A2BCC073700825591 /* Credits.rtf */; };
 		9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
+		9FDB9E4E2BCD18E100E6BA19 /* Ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E462BCD18E100E6BA19 /* Ding.wav */; };
+		9FDB9E4F2BCD18E100E6BA19 /* Ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E462BCD18E100E6BA19 /* Ding.wav */; };
+		9FDB9E502BCD18E100E6BA19 /* Ding2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E472BCD18E100E6BA19 /* Ding2.wav */; };
+		9FDB9E512BCD18E100E6BA19 /* Ding2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E472BCD18E100E6BA19 /* Ding2.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +119,8 @@
 		9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsIcon.swift; path = "Focal iOS/SettingsIcon.swift"; sourceTree = "<group>"; };
 		9FC2957A2BCC073700825591 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
+		9FDB9E462BCD18E100E6BA19 /* Ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding.wav; sourceTree = "<group>"; };
+		9FDB9E472BCD18E100E6BA19 /* Ding2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding2.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9FDB9E4D2BCD18E100E6BA19 /* Sounds */,
 				9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */,
 				9FC2957A2BCC073700825591 /* Credits.rtf */,
 				9F3053A82BB714F9006B8090 /* TimerWidgetExtension.entitlements */,
@@ -241,6 +248,15 @@
 				9F954B012B9F3BCE00A8D5FA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9FDB9E4D2BCD18E100E6BA19 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9FDB9E462BCD18E100E6BA19 /* Ding.wav */,
+				9FDB9E472BCD18E100E6BA19 /* Ding2.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +381,8 @@
 				9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F9406CC2BC843CD003DB49E /* Assets.xcassets in Resources */,
 				9F5D33EE2BA9B9D50049100C /* Assets.xcassets in Resources */,
+				9FDB9E512BCD18E100E6BA19 /* Ding2.wav in Resources */,
+				9FDB9E4F2BCD18E100E6BA19 /* Ding.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,9 +390,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FDB9E502BCD18E100E6BA19 /* Ding2.wav in Resources */,
 				9FA3AC3D2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */,
 				9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */,
+				9FDB9E4E2BCD18E100E6BA19 /* Ding.wav in Resources */,
 				9FC2957B2BCC073700825591 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
