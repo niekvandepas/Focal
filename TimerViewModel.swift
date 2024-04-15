@@ -148,7 +148,8 @@ class TimerViewModel: ObservableObject {
             content.body = "Time to get back to work!"
         }
 
-        let sound = UNNotificationSound(named:UNNotificationSoundName(rawValue: "Ding2.wav"))
+        let notificationFileName = (NotificationSound(rawValue: settingsManager.notificationSound) ?? .bell).fileName
+        let sound = UNNotificationSound(named:UNNotificationSoundName(rawValue: notificationFileName))
         content.sound = sound
 
         if !SettingsManager.shared.startNextTimerAutomatically {

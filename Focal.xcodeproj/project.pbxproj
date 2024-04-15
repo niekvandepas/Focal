@@ -56,6 +56,21 @@
 		9FDB9E4F2BCD18E100E6BA19 /* Ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E462BCD18E100E6BA19 /* Ding.wav */; };
 		9FDB9E502BCD18E100E6BA19 /* Ding2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E472BCD18E100E6BA19 /* Ding2.wav */; };
 		9FDB9E512BCD18E100E6BA19 /* Ding2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E472BCD18E100E6BA19 /* Ding2.wav */; };
+		9FDB9E652BCD23CA00E6BA19 /* Suspended.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E5F2BCD23CA00E6BA19 /* Suspended.wav */; };
+		9FDB9E662BCD23CA00E6BA19 /* Suspended.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E5F2BCD23CA00E6BA19 /* Suspended.wav */; };
+		9FDB9E672BCD23CA00E6BA19 /* Arp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E602BCD23CA00E6BA19 /* Arp.wav */; };
+		9FDB9E682BCD23CA00E6BA19 /* Arp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E602BCD23CA00E6BA19 /* Arp.wav */; };
+		9FDB9E692BCD23CA00E6BA19 /* Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E612BCD23CA00E6BA19 /* Bell.wav */; };
+		9FDB9E6A2BCD23CA00E6BA19 /* Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E612BCD23CA00E6BA19 /* Bell.wav */; };
+		9FDB9E6B2BCD23CA00E6BA19 /* Fourths.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E622BCD23CA00E6BA19 /* Fourths.wav */; };
+		9FDB9E6C2BCD23CA00E6BA19 /* Fourths.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E622BCD23CA00E6BA19 /* Fourths.wav */; };
+		9FDB9E6D2BCD23CA00E6BA19 /* Buzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E632BCD23CA00E6BA19 /* Buzz.wav */; };
+		9FDB9E6E2BCD23CA00E6BA19 /* Buzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E632BCD23CA00E6BA19 /* Buzz.wav */; };
+		9FDB9E6F2BCD23CA00E6BA19 /* Home.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E642BCD23CA00E6BA19 /* Home.wav */; };
+		9FDB9E702BCD23CA00E6BA19 /* Home.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E642BCD23CA00E6BA19 /* Home.wav */; };
+		9FDB9E722BCD24E400E6BA19 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */; };
+		9FDB9E732BCD24E400E6BA19 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */; };
+		9FF3F14F2BCD2746004BC405 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +136,13 @@
 		9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
 		9FDB9E462BCD18E100E6BA19 /* Ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding.wav; sourceTree = "<group>"; };
 		9FDB9E472BCD18E100E6BA19 /* Ding2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding2.wav; sourceTree = "<group>"; };
+		9FDB9E5F2BCD23CA00E6BA19 /* Suspended.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Suspended.wav; sourceTree = "<group>"; };
+		9FDB9E602BCD23CA00E6BA19 /* Arp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Arp.wav; sourceTree = "<group>"; };
+		9FDB9E612BCD23CA00E6BA19 /* Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bell.wav; sourceTree = "<group>"; };
+		9FDB9E622BCD23CA00E6BA19 /* Fourths.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fourths.wav; sourceTree = "<group>"; };
+		9FDB9E632BCD23CA00E6BA19 /* Buzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Buzz.wav; sourceTree = "<group>"; };
+		9FDB9E642BCD23CA00E6BA19 /* Home.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Home.wav; sourceTree = "<group>"; };
+		9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +219,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */,
 				9FDB9E4D2BCD18E100E6BA19 /* Sounds */,
 				9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */,
 				9FC2957A2BCC073700825591 /* Credits.rtf */,
@@ -253,8 +276,14 @@
 		9FDB9E4D2BCD18E100E6BA19 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				9FDB9E602BCD23CA00E6BA19 /* Arp.wav */,
+				9FDB9E612BCD23CA00E6BA19 /* Bell.wav */,
+				9FDB9E632BCD23CA00E6BA19 /* Buzz.wav */,
 				9FDB9E462BCD18E100E6BA19 /* Ding.wav */,
 				9FDB9E472BCD18E100E6BA19 /* Ding2.wav */,
+				9FDB9E622BCD23CA00E6BA19 /* Fourths.wav */,
+				9FDB9E642BCD23CA00E6BA19 /* Home.wav */,
+				9FDB9E5F2BCD23CA00E6BA19 /* Suspended.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -377,10 +406,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FC2957C2BCC073700825591 /* Credits.rtf in Resources */,
+				9FDB9E6A2BCD23CA00E6BA19 /* Bell.wav in Resources */,
 				9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */,
 				9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				9FDB9E702BCD23CA00E6BA19 /* Home.wav in Resources */,
+				9FDB9E682BCD23CA00E6BA19 /* Arp.wav in Resources */,
 				9F9406CC2BC843CD003DB49E /* Assets.xcassets in Resources */,
+				9FDB9E662BCD23CA00E6BA19 /* Suspended.wav in Resources */,
+				9FDB9E6E2BCD23CA00E6BA19 /* Buzz.wav in Resources */,
 				9F5D33EE2BA9B9D50049100C /* Assets.xcassets in Resources */,
+				9FDB9E6C2BCD23CA00E6BA19 /* Fourths.wav in Resources */,
 				9FDB9E512BCD18E100E6BA19 /* Ding2.wav in Resources */,
 				9FDB9E4F2BCD18E100E6BA19 /* Ding.wav in Resources */,
 			);
@@ -391,10 +426,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FDB9E502BCD18E100E6BA19 /* Ding2.wav in Resources */,
+				9FDB9E6F2BCD23CA00E6BA19 /* Home.wav in Resources */,
 				9FA3AC3D2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */,
+				9FDB9E652BCD23CA00E6BA19 /* Suspended.wav in Resources */,
+				9FDB9E692BCD23CA00E6BA19 /* Bell.wav in Resources */,
 				9F954AFF2B9F3BCE00A8D5FA /* Assets.xcassets in Resources */,
 				9FDB9E4E2BCD18E100E6BA19 /* Ding.wav in Resources */,
+				9FDB9E672BCD23CA00E6BA19 /* Arp.wav in Resources */,
+				9FDB9E6B2BCD23CA00E6BA19 /* Fourths.wav in Resources */,
+				9FDB9E6D2BCD23CA00E6BA19 /* Buzz.wav in Resources */,
 				9FC2957B2BCC073700825591 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3053972BB5E9B6006B8090 /* TimerWidgetBundle.swift in Sources */,
+				9FF3F14F2BCD2746004BC405 /* NotificationSound.swift in Sources */,
 				9F3053A62BB6ED8F006B8090 /* SettingsManager.swift in Sources */,
 				9F3053A52BB6ED7F006B8090 /* TimerState.swift in Sources */,
 				9F3053A42BB6ED28006B8090 /* TimerViewModel.swift in Sources */,
@@ -427,6 +469,7 @@
 				9F5D33FE2BA9BE500049100C /* TimerState.swift in Sources */,
 				9F52B9002BB330F100410E1C /* SettingsView.swift in Sources */,
 				9F52B9032BB3322700410E1C /* SettingsManager.swift in Sources */,
+				9FDB9E732BCD24E400E6BA19 /* NotificationSound.swift in Sources */,
 				9F3053A92BB7644C006B8090 /* Constants.swift in Sources */,
 				9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */,
 				9F5D33FD2BA9BE440049100C /* TimerViewModel.swift in Sources */,
@@ -445,6 +488,7 @@
 				9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */,
 				9F83A67D2BAB5742004A6E6A /* SettingsView.swift in Sources */,
 				9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */,
+				9FDB9E722BCD24E400E6BA19 /* NotificationSound.swift in Sources */,
 				9F83A6832BAB6C41004A6E6A /* Constants.swift in Sources */,
 				9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */,
 				9F52B9022BB3322700410E1C /* SettingsManager.swift in Sources */,
