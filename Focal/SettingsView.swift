@@ -80,6 +80,7 @@ struct SettingsView: View {
                     .textFieldStyle(.roundedBorder)
                 Spacer().frame(width:125, height: 0).hidden()
             }
+
             GridRow {
                 Text("Rest timer name:")
                 TextField("Rest timer name", text: settingsManager.$optionalTimerBreakLabel, prompt: Text("Rest"))
