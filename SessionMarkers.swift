@@ -20,18 +20,18 @@ struct SessionMarkers: View {
             ForEach(0..<completedSessions, id: \.self) { index in
                 Circle()
                     .foregroundStyle(.workBlue)
-                    .frame(width: 4, height: 4)
+                    .frame(width: 5, height: 5)
             }
 
             Circle()
                 .foregroundStyle(currentCircleColor)
-                .frame(width: 6, height: 6)
+                .frame(width: 7, height: 7)
 
             ForEach(completedSessions+1..<goal, id: \.self) { index in
                 Circle()
                     .stroke(.white, lineWidth: 1)
                     .foregroundStyle(.appRed)
-                    .frame(width: 4, height: 4)
+                    .frame(width: 5, height: 5)
             }
         }
     }
