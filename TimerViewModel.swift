@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Combine
-import UserNotifications
 
 class TimerViewModel: ObservableObject {
     static let shared = TimerViewModel()
@@ -25,7 +24,7 @@ class TimerViewModel: ObservableObject {
             }
             else {
                 self.timer = nil
-                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                NotificationManager.removeAllNotificationRequests()
                 self.notificationScheduled = false
             }
             _timerIsRunning = newValue
@@ -91,7 +90,9 @@ class TimerViewModel: ObservableObject {
 
     private func handleTimerTick(_: Date) -> Void {
         if self.timerIsRunning && !self.notificationScheduled {
-            self.scheduleNotification()
+            NotificationManager.scheduleNotification(for: Date().addingTimeInterval(TimeInterval(self.timeRemaining)), withSound: NotificationSound(rawValue: settingsManager.notificationSound) ?? .bell, withTimerState: self.timerState) { notificationScheduled in
+                self.notificationScheduled = notificationScheduled
+            }
         }
         if self.timeRemaining > 0 {
             self.timeRemaining -= 1
@@ -115,58 +116,6 @@ class TimerViewModel: ObservableObject {
             }
             self.updateUserDefaults()
         }
-    }
-
-    private func scheduleNotification() {
-        let content = createNotificationContent(for: self.timerState)
-        let category = createNotificationCategory()
-        UNUserNotificationCenter.current().setNotificationCategories([category])
-
-        let triggerTime = Date().addingTimeInterval(TimeInterval(self.timeRemaining))
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerTime), repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
-        // add our notification request
-        UNUserNotificationCenter.current().add(request) { error in
-            if error == nil {
-                self.notificationScheduled = true
-            }
-            else {
-                print(error ?? "")
-            }
-        }
-    }
-
-    private func createNotificationContent(for finishedTimerState: TimerState) -> UNMutableNotificationContent {
-        let content = UNMutableNotificationContent()
-        switch finishedTimerState {
-        case .work:
-            content.title = "Time for a break!"
-            content.body = "Your Pomodoro session has ended. Time to take a break!"
-        case .rest:
-            content.title = "Break's over!"
-            content.body = "Time to get back to work!"
-        }
-
-        let notificationFileName = (NotificationSound(rawValue: settingsManager.notificationSound) ?? .bell).fileName
-        let sound = UNNotificationSound(named:UNNotificationSoundName(rawValue: notificationFileName))
-        content.sound = sound
-
-        if !SettingsManager.shared.startNextTimerAutomatically {
-            content.categoryIdentifier = "TIMER_EXPIRED"
-        }
-        return content
-    }
-
-    private func createNotificationCategory() -> UNNotificationCategory {
-        let startNextTimerAction = UNNotificationAction(identifier: "START_NEXT_TIMER",
-                                                         title: "Start Next Timer",
-                                                         options: .foreground)
-        let category = UNNotificationCategory(identifier: "TIMER_EXPIRED",
-                                              actions: [startNextTimerAction],
-                                              intentIdentifiers: [],
-                                              options: [])
-        return category
     }
 }
 

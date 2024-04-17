@@ -45,6 +45,8 @@
 		9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */; };
 		9FAA45F32BC40F6D0002A537 /* SessionMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */; };
 		9FAA45F42BC40F6D0002A537 /* SessionMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */; };
+		9FAC11FC2BD002ED00BF18A4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC11FB2BD002ED00BF18A4 /* NotificationManager.swift */; };
+		9FAC11FD2BD002ED00BF18A4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC11FB2BD002ED00BF18A4 /* NotificationManager.swift */; };
 		9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2207B2BB4B242007C722A /* SceneDelegate.swift */; };
 		9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
 		9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */; };
@@ -128,6 +130,7 @@
 		9F954B032B9F3BCE00A8D5FA /* Focal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focal.entitlements; sourceTree = "<group>"; };
 		9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMarkers.swift; sourceTree = "<group>"; };
+		9FAC11FB2BD002ED00BF18A4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		9FB2207B2BB4B242007C722A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9FAC11FB2BD002ED00BF18A4 /* NotificationManager.swift */,
 				9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */,
 				9FDB9E4D2BCD18E100E6BA19 /* Sounds */,
 				9FAA45F22BC40F6D0002A537 /* SessionMarkers.swift */,
@@ -473,6 +477,7 @@
 				9F3053A92BB7644C006B8090 /* Constants.swift in Sources */,
 				9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */,
 				9F5D33FD2BA9BE440049100C /* TimerViewModel.swift in Sources */,
+				9FAC11FD2BD002ED00BF18A4 /* NotificationManager.swift in Sources */,
 				9FBC3BBC2BACCAA90012876D /* SettingsIcon.swift in Sources */,
 				9F5D33EA2BA9B9D40049100C /* Focal_iOSApp.swift in Sources */,
 			);
@@ -488,6 +493,7 @@
 				9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */,
 				9F83A67D2BAB5742004A6E6A /* SettingsView.swift in Sources */,
 				9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */,
+				9FAC11FC2BD002ED00BF18A4 /* NotificationManager.swift in Sources */,
 				9FDB9E722BCD24E400E6BA19 /* NotificationSound.swift in Sources */,
 				9F83A6832BAB6C41004A6E6A /* Constants.swift in Sources */,
 				9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */,
