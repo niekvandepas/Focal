@@ -13,9 +13,13 @@ class TimerViewModel: ObservableObject {
 #if DEBUG
     @Published var timeRemaining = 3
 #else
-    @Published var timeRemaining = 25 * 60
+    @Published var timeRemaining = self.workTimerDuration
 #endif
     @Published private var _timerIsRunning = false
+
+    private let workTimerDuration = 25 * 60
+    private let restTimerDuration =  5 * 60
+
     var timerIsRunning: Bool {
         get { return _timerIsRunning }
         set {
@@ -53,7 +57,7 @@ class TimerViewModel: ObservableObject {
     
     func resetTimer() {
         timerState = .work
-        timeRemaining = 25 * 60
+        timeRemaining = self.workTimerDuration
         timerIsRunning = false
         completedSessions = 0
         self.updateUserDefaults()
@@ -69,13 +73,13 @@ class TimerViewModel: ObservableObject {
     }
 
     func resetTimerDuration() {
-        timeRemaining = timerState == .work ? 25 * 60 : 5 * 60
+        timeRemaining = timerState == .work ? self.workTimerDuration : self.restTimerDuration
         timerIsRunning = false
     }
 
     /// Whether or not the timer is at 25 minutes
     var timerIsFull: Bool {
-        return timeRemaining == 25 * 60
+        return timeRemaining == self.workTimerDuration
     }
 
     var timeRemainingFormatted: String {
@@ -110,9 +114,9 @@ class TimerViewModel: ObservableObject {
             switch self.timerState {
             case .work:
                 self.completedSessions += 1
-                self.timeRemaining = 25 * 60
+                self.timeRemaining = self.workTimerDuration
             case .rest:
-                self.timeRemaining = 5 * 60
+                self.timeRemaining = self.restTimerDuration
             }
             self.updateUserDefaults()
         }
