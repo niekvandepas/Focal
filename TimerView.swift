@@ -67,7 +67,7 @@ struct TimerView: View {
             case .work:
                 settingsManager.optionalTimerWorkLabel == "" ? "Work" : settingsManager.optionalTimerWorkLabel
             case .rest:
-                settingsManager.optionalTimerBreakLabel == "" ? "Break" : settingsManager.optionalTimerBreakLabel
+                settingsManager.optionalTimerBreakLabel == "" ? "Rest" : settingsManager.optionalTimerBreakLabel
             }
         }()
 
