@@ -14,7 +14,6 @@
 		9F3053992BB5E9B6006B8090 /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3053982BB5E9B6006B8090 /* TimerWidget.swift */; };
 		9F30539B2BB5E9B8006B8090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F30539A2BB5E9B8006B8090 /* Assets.xcassets */; };
 		9F30539F2BB5E9B8006B8090 /* TimerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9F30538F2BB5E9B6006B8090 /* TimerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9F3053A42BB6ED28006B8090 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */; };
 		9F3053A52BB6ED7F006B8090 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
 		9F3053A62BB6ED8F006B8090 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F52B9012BB3322700410E1C /* SettingsManager.swift */; };
 		9F3053A92BB7644C006B8090 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A6822BAB6C41004A6E6A /* Constants.swift */; };
@@ -455,7 +454,6 @@
 				9FF3F14F2BCD2746004BC405 /* NotificationSound.swift in Sources */,
 				9F3053A62BB6ED8F006B8090 /* SettingsManager.swift in Sources */,
 				9F3053A52BB6ED7F006B8090 /* TimerState.swift in Sources */,
-				9F3053A42BB6ED28006B8090 /* TimerViewModel.swift in Sources */,
 				9F3053992BB5E9B6006B8090 /* TimerWidget.swift in Sources */,
 				9F3053AA2BB764D3006B8090 /* Constants.swift in Sources */,
 			);
