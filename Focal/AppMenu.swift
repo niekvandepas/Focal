@@ -36,9 +36,8 @@ struct AppMenu: View {
         Button(action: handleStartOrPause, label: { timerViewModel.timerIsRunning ? Text("Pause Timer") : Text("Start Timer") })
             .keyboardShortcut(" ", modifiers: [])
 
-        // TODO fix this 25 * 60
         Button(action: timerViewModel.resetTimer, label: { Text("Reset Timer") })
-            .disabled(timerViewModel.timeRemaining == 25 * 60 && !timerViewModel.timerIsRunning )
+            .disabled(timerViewModel.timerIsFull && timerViewModel.timerState == .work && !timerViewModel.timerIsRunning )
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
 
         Divider()
