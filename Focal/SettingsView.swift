@@ -51,7 +51,7 @@ struct SettingsView: View {
             Toggle("Start next timer automatically", isOn: $settingsManager.startNextTimerAutomatically)
                 .toggleStyle(.checkbox)
 
-            Toggle("Hide app on timer start", isOn: $settingsManager.hideAppOnTimerStart)
+            Toggle("Hide Focal when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
 
             if #available(macOS 14.0, *) {
