@@ -15,6 +15,7 @@ class SettingsManager: ObservableObject {
     @AppStorage("globalShortcutBringsAppToFront") var globalShortcutBringsAppToFront = false
     @AppStorage("hideAppOnTimerStart") var hideAppOnTimerStart = false
     @AppStorage("startNextTimerAutomatically") var startNextTimerAutomatically = false
+    @AppStorage("notificationSoundIsOn") var notificationSoundIsOn = true
     #if os(macOS)
     @AppStorage("showMenuBarIcon") var showMenuBarIcon = true
     #endif

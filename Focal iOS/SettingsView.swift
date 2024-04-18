@@ -23,6 +23,8 @@ struct SettingsView: View {
                 settingsManager.sessionGoal -= 1
             }
 
+            Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
+
             Picker("Notification sound:", selection: $settingsManager.notificationSound) {
                 Text("Arp").tag(1)
                 Text("Bell").tag(0) // 'Bell' is the default

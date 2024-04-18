@@ -51,17 +51,19 @@ struct SettingsView: View {
             Toggle("Hide app on timer start", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
 
-            Divider()
-                .padding(8)
-
             if #available(macOS 14.0, *) {
                 picker.pickerStyle(.palette)
             } else {
                 picker
             }
 
+            Divider()
+                .padding(8)
+
+            Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
+                .toggleStyle(.checkbox)
+
             GridRow {
-                Text("Notification sound:")
                 Picker("Notification sound:", selection: $settingsManager.notificationSound) {
                     Text("Arp").tag(1)
                     Text("Bell").tag(0) // 'Bell' is the default

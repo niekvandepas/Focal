@@ -8,7 +8,7 @@
 import UserNotifications
 
 struct NotificationManager {
-    static func scheduleNotification(for triggerDate: Date, withSound notificationSound: NotificationSound, withTimerState timerState: TimerState, completion: @escaping (Bool) -> Void) {
+    static func scheduleNotification(for triggerDate: Date, withSound notificationSound: NotificationSound?, withTimerState timerState: TimerState, completion: @escaping (Bool) -> Void) {
         let content = createNotificationContent(for: timerState, withSound: notificationSound)
         let category = createNotificationCategory()
         UNUserNotificationCenter.current().setNotificationCategories([category])
@@ -30,7 +30,7 @@ struct NotificationManager {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
-    private static func createNotificationContent(for finishedTimerState: TimerState, withSound notificationSound: NotificationSound) -> UNMutableNotificationContent {
+    private static func createNotificationContent(for finishedTimerState: TimerState, withSound notificationSound: NotificationSound?) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         switch finishedTimerState {
         case .work:
@@ -41,9 +41,11 @@ struct NotificationManager {
             content.body = "Time to get back to work!"
         }
 
-        let notificationFileName = notificationSound.fileName
-        let sound = UNNotificationSound(named:UNNotificationSoundName(rawValue: notificationFileName))
-        content.sound = sound
+        if let notificationSound = notificationSound {
+            let notificationFileName = notificationSound.fileName
+            let sound = UNNotificationSound(named:UNNotificationSoundName(rawValue: notificationFileName))
+            content.sound = sound
+        }
 
         if !SettingsManager.shared.startNextTimerAutomatically {
             content.categoryIdentifier = "TIMER_EXPIRED"
