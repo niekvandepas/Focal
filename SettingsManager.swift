@@ -18,6 +18,7 @@ class SettingsManager: ObservableObject {
     @AppStorage("notificationSoundIsOn") var notificationSoundIsOn = true
     #if os(macOS)
     @AppStorage("showMenuBarIcon") var showMenuBarIcon = true
+    @AppStorage("showTimeLeftInMenuBar") var showTimeLeftInMenuBar = false
     #endif
     @AppStorage("notificationSound") var notificationSound = 0 // 'Bell' is the default
     @AppStorage("timerWorkLabel") var optionalTimerWorkLabel = ""
