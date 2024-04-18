@@ -17,8 +17,13 @@ class TimerViewModel: ObservableObject {
 #endif
     @Published private var _timerIsRunning = false
 
+    #if DEBUG
+    private let workTimerDuration = 5
+    private let restTimerDuration =  3
+    #else
     private let workTimerDuration = 25 * 60
     private let restTimerDuration =  5 * 60
+    #endif
 
     var timerIsRunning: Bool {
         get { return _timerIsRunning }
