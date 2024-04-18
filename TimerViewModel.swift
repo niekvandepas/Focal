@@ -13,7 +13,7 @@ class TimerViewModel: ObservableObject {
 #if DEBUG
     @Published var timeRemaining = 3
 #else
-    @Published var timeRemaining = self.workTimerDuration
+    @Published var timeRemaining = 25 * 60
 #endif
     @Published private var _timerIsRunning = false
 
