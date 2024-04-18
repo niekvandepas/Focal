@@ -25,14 +25,18 @@ struct TimerView: View {
 
         VStack {
             Spacer()
+            Spacer()
+            Spacer()
             timerRect
                 .frame(width:200)
             buttons
                 .frame(width:buttonFrameWidth)
             Spacer()
-            SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
-                .padding(.bottom)
-        }
+            SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipTimer)
+            Spacer()
+                SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
+                    .padding(.bottom)
+            }
     }
 
     var timerRect: some View {

@@ -30,6 +30,8 @@
 		9F5D34002BA9BE6A0049100C /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
 		9F5D34052BAA080D0049100C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34042BAA080D0049100C /* AppDelegate.swift */; };
 		9F5D34082BAA0AC40049100C /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D34072BAA0AC40049100C /* NotificationDelegate.swift */; };
+		9F64DF2C2BD13E8C005C4C0A /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */; };
+		9F64DF2D2BD13E8C005C4C0A /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */; };
 		9F6D48DB2BB59A0300FB7D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */; };
 		9F83A67D2BAB5742004A6E6A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A67C2BAB5742004A6E6A /* SettingsView.swift */; };
 		9F83A6812BAB6ACE004A6E6A /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 9F83A6802BAB6ACE004A6E6A /* KeyboardShortcuts */; };
@@ -118,6 +120,7 @@
 		9F5D33F02BA9B9D50049100C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F5D34042BAA080D0049100C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F5D34072BAA0AC40049100C /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
+		9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
 		9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F83A67C2BAB5742004A6E6A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9F83A6822BAB6C41004A6E6A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -221,6 +224,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */,
 				9FAC11FB2BD002ED00BF18A4 /* NotificationManager.swift */,
 				9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */,
 				9FDB9E4D2BCD18E100E6BA19 /* Sounds */,
@@ -477,6 +481,7 @@
 				9F5D33FD2BA9BE440049100C /* TimerViewModel.swift in Sources */,
 				9FAC11FD2BD002ED00BF18A4 /* NotificationManager.swift in Sources */,
 				9FBC3BBC2BACCAA90012876D /* SettingsIcon.swift in Sources */,
+				9F64DF2D2BD13E8C005C4C0A /* SkipButton.swift in Sources */,
 				9F5D33EA2BA9B9D40049100C /* Focal_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +496,7 @@
 				9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */,
 				9F83A67D2BAB5742004A6E6A /* SettingsView.swift in Sources */,
 				9FB39DFF2BA0B88F00B5A3F3 /* TimerViewModel.swift in Sources */,
+				9F64DF2C2BD13E8C005C4C0A /* SkipButton.swift in Sources */,
 				9FAC11FC2BD002ED00BF18A4 /* NotificationManager.swift in Sources */,
 				9FDB9E722BCD24E400E6BA19 /* NotificationSound.swift in Sources */,
 				9F83A6832BAB6C41004A6E6A /* Constants.swift in Sources */,

@@ -68,6 +68,14 @@ class TimerViewModel: ObservableObject {
         self.updateUserDefaults()
     }
 
+    func skipTimer() {
+        timerState.toggle()
+        self.resetTimerDuration()
+        NotificationManager.removeAllNotificationRequests()
+        completedSessions += 1
+        timerIsRunning = settingsManager.startNextTimerAutomatically
+    }
+
     func updateUserDefaults() {
         if let userDefaults = UserDefaults(suiteName: Constants.UD_GROUP_NAME) {
             userDefaults.set(timeRemaining, forKey: Constants.UD_TIME_REMAINING)
