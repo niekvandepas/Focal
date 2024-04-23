@@ -114,25 +114,29 @@ class TimerViewModel: ObservableObject {
         if self.timeRemaining > 0 {
             self.timeRemaining -= 1
         } else {
-            self.timerState.toggle()
-            #if os(macOS)
-            if !SettingsManager.shared.startNextTimerAutomatically {
-                self.pauseTimer()
-            }
-            #endif
-            #if os(iOS)
-            self.pauseTimer()
-            #endif
-
-            switch self.timerState {
-            case .work:
-                self.completedSessions += 1
-                self.timeRemaining = self.workTimerDuration
-            case .rest:
-                self.timeRemaining = self.restTimerDuration
-            }
-            self.updateUserDefaults()
+            self.handleTimerFinished()
         }
+    }
+
+    private func handleTimerFinished() {
+        self.timerState.toggle()
+        #if os(macOS)
+        if !SettingsManager.shared.startNextTimerAutomatically {
+            self.pauseTimer()
+        }
+        #endif
+        #if os(iOS)
+        self.pauseTimer()
+        #endif
+
+        switch self.timerState {
+        case .work:
+            self.completedSessions += 1
+            self.timeRemaining = self.workTimerDuration
+        case .rest:
+            self.timeRemaining = self.restTimerDuration
+        }
+        self.updateUserDefaults()
     }
 }
 
