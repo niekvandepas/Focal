@@ -74,6 +74,8 @@
 		9FDB9E722BCD24E400E6BA19 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */; };
 		9FDB9E732BCD24E400E6BA19 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */; };
 		9FF3F14F2BCD2746004BC405 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */; };
+		9FF6FCE92BD2773300E97D49 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9FF6FCE82BD2773300E97D49 /* ConfettiSwiftUI */; };
+		9FF6FCEB2BD2774100E97D49 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9FF6FCEA2BD2774100E97D49 /* ConfettiSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF6FCEB2BD2774100E97D49 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF6FCE92BD2773300E97D49 /* ConfettiSwiftUI in Frameworks */,
 				9F83A6812BAB6ACE004A6E6A /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +334,9 @@
 				9F30539E2BB5E9B8006B8090 /* PBXTargetDependency */,
 			);
 			name = "Focal iOS";
+			packageProductDependencies = (
+				9FF6FCEA2BD2774100E97D49 /* ConfettiSwiftUI */,
+			);
 			productName = "Focal iOS";
 			productReference = 9F5D33E72BA9B9D30049100C /* Focal iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -349,6 +356,7 @@
 			name = Focal;
 			packageProductDependencies = (
 				9F83A6802BAB6ACE004A6E6A /* KeyboardShortcuts */,
+				9FF6FCE82BD2773300E97D49 /* ConfettiSwiftUI */,
 			);
 			productName = Focal;
 			productReference = 9F954AF72B9F3BCC00A8D5FA /* Focal.app */;
@@ -386,6 +394,7 @@
 			mainGroup = 9F954AEE2B9F3BCC00A8D5FA;
 			packageReferences = (
 				9F83A67F2BAB6ACE004A6E6A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				9F0367B82BD2761900863D03 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 9F954AF82B9F3BCC00A8D5FA /* Products */;
 			projectDirPath = "";
@@ -870,6 +879,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9F0367B82BD2761900863D03 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		9F83A67F2BAB6ACE004A6E6A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
@@ -885,6 +902,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9F83A67F2BAB6ACE004A6E6A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		9FF6FCE82BD2773300E97D49 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F0367B82BD2761900863D03 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+		9FF6FCEA2BD2774100E97D49 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F0367B82BD2761900863D03 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 #if os(macOS)
 import KeyboardShortcuts
 import AppKit
 #endif
 import UserNotifications
+
 
 struct TimerView: View {
     @StateObject var timerViewModel = TimerViewModel.shared
@@ -32,11 +34,17 @@ struct TimerView: View {
             buttons
                 .frame(width:buttonFrameWidth)
             Spacer()
+            Button("🎉") {
+//                TODO
+                timerViewModel.showConfettiTemp()
+                    }
+            Spacer()
             SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipTimer)
             Spacer()
                 SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
                     .padding(.bottom)
             }
+        .confettiCannon(counter: $timerViewModel.confettiCounter, num: 30, rainHeight: 400, repetitions: 2, repetitionInterval: 0.4)
     }
 
     var timerRect: some View {

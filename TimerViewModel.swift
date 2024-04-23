@@ -16,6 +16,7 @@ class TimerViewModel: ObservableObject {
     @Published var timeRemaining = 25 * 60
 #endif
     @Published private var _timerIsRunning = false
+    @Published var confettiCounter: Int = 0
 
     #if DEBUG
     private let workTimerDuration = 5
@@ -132,11 +133,20 @@ class TimerViewModel: ObservableObject {
         switch self.timerState {
         case .work:
             self.completedSessions += 1
+            if self.completedSessions == settingsManager.sessionGoal {
+                self.confettiCounter += 1
+            }
             self.timeRemaining = self.workTimerDuration
         case .rest:
             self.timeRemaining = self.restTimerDuration
         }
+
         self.updateUserDefaults()
+    }
+
+    func showConfettiTemp() {
+        print("showing confo")
+        self.confettiCounter += 1
     }
 }
 
