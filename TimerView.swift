@@ -34,11 +34,6 @@ struct TimerView: View {
             buttons
                 .frame(width:buttonFrameWidth)
             Spacer()
-            Button("🎉") {
-//                TODO
-                timerViewModel.showConfettiTemp()
-                    }
-            Spacer()
             SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipTimer)
             Spacer()
                 SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)

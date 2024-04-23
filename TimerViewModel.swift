@@ -132,11 +132,13 @@ class TimerViewModel: ObservableObject {
         switch self.timerState {
         case .rest:
             self.completedSessions += 1
-            if self.completedSessions == settingsManager.sessionGoal {
-                self.confettiCounter += 1
-            }
             self.timeRemaining = self.workTimerDuration
         case .work:
+            // The completedSessions counter only rolls over after the break,
+            // so we need to check for sessionGoal - 1 here.
+            if completedSessions == settingsManager.sessionGoal - 1 {
+                showConfetti()
+            }
             self.timeRemaining = self.restTimerDuration
         }
 
@@ -144,8 +146,8 @@ class TimerViewModel: ObservableObject {
         self.updateUserDefaults()
     }
 
-    func showConfettiTemp() {
-        print("showing confo")
+    private func showConfetti() {
+        // Incrementing the counter causes confetti to be shown
         self.confettiCounter += 1
     }
 }
