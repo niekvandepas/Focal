@@ -33,6 +33,8 @@
 		9F64DF2C2BD13E8C005C4C0A /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */; };
 		9F64DF2D2BD13E8C005C4C0A /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */; };
 		9F6D48DB2BB59A0300FB7D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */; };
+		9F82EF2E2D18B92C007A452A /* EditableTimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82EF2D2D18B92C007A452A /* EditableTimerLabel.swift */; };
+		9F82EF2F2D18B92C007A452A /* EditableTimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82EF2D2D18B92C007A452A /* EditableTimerLabel.swift */; };
 		9F83A67D2BAB5742004A6E6A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A67C2BAB5742004A6E6A /* SettingsView.swift */; };
 		9F83A6812BAB6ACE004A6E6A /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 9F83A6802BAB6ACE004A6E6A /* KeyboardShortcuts */; };
 		9F83A6832BAB6C41004A6E6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A6822BAB6C41004A6E6A /* Constants.swift */; };
@@ -124,6 +126,7 @@
 		9F5D34072BAA0AC40049100C /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
 		9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F82EF2D2D18B92C007A452A /* EditableTimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTimerLabel.swift; sourceTree = "<group>"; };
 		9F83A67C2BAB5742004A6E6A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9F83A6822BAB6C41004A6E6A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F954AF72B9F3BCC00A8D5FA /* Focal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +231,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9F82EF2D2D18B92C007A452A /* EditableTimerLabel.swift */,
 				9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */,
 				9FAC11FB2BD002ED00BF18A4 /* NotificationManager.swift */,
 				9FDB9E712BCD24E400E6BA19 /* NotificationSound.swift */,
@@ -485,6 +489,7 @@
 				9F52B9002BB330F100410E1C /* SettingsView.swift in Sources */,
 				9F52B9032BB3322700410E1C /* SettingsManager.swift in Sources */,
 				9FDB9E732BCD24E400E6BA19 /* NotificationSound.swift in Sources */,
+				9F82EF2E2D18B92C007A452A /* EditableTimerLabel.swift in Sources */,
 				9F3053A92BB7644C006B8090 /* Constants.swift in Sources */,
 				9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */,
 				9F5D33FD2BA9BE440049100C /* TimerViewModel.swift in Sources */,
@@ -511,6 +516,7 @@
 				9F83A6832BAB6C41004A6E6A /* Constants.swift in Sources */,
 				9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */,
 				9F52B9022BB3322700410E1C /* SettingsManager.swift in Sources */,
+				9F82EF2F2D18B92C007A452A /* EditableTimerLabel.swift in Sources */,
 				9F2DDEEB2BA491A000EBA413 /* TimerState.swift in Sources */,
 				9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */,
 			);

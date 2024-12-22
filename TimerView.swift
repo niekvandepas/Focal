@@ -18,6 +18,23 @@ struct TimerView: View {
     @StateObject var timerViewModel = TimerViewModel.shared
     @ObservedObject var settingsManager = SettingsManager.shared
 
+    var selectedTimerName: Binding<String> {
+        Binding(
+            get: {
+                timerViewModel.timerState == .rest ? timerViewModel.restTimerName : timerViewModel.workTimerName
+            },
+            set: { newValue in
+                if timerViewModel.timerState == .rest {
+                    timerViewModel.restTimerName = newValue
+                } else {
+                    timerViewModel.workTimerName = newValue
+                }
+            }
+        )
+    }
+
+    @FocusState private var isTextFieldFocused: Bool
+
     var body: some View {
 #if os(macOS)
         let buttonFrameWidth = 200.0
@@ -40,6 +57,11 @@ struct TimerView: View {
                     .padding(.bottom)
             }
         .confettiCannon(counter: $timerViewModel.confettiCounter, num: 30, rainHeight: 400, repetitions: 2, repetitionInterval: 0.4)
+        .contentShape(Rectangle()) // Make the entire VStack tappable
+        .onTapGesture {
+            isTextFieldFocused = false // Dismiss focus when tapping anywhere outside the TextField
+        }
+        
     }
 
     var timerRect: some View {
@@ -47,17 +69,7 @@ struct TimerView: View {
         // rest:    .breakGreen
         // paused:  .offWhite
         let timerSquareColor: Color = timerViewModel.timerIsRunning ? (timerViewModel.timerState == .work ? Color.workBlue : Color.breakGreen) : Color.offWhite
-#if os(macOS)
-        let timerStateLabelFontSize = 20.0
-#else
-        let timerStateLabelFontSize = 26.0
-#endif
 
-#if os(macOS)
-        let timerTimeLeftFontSize = 50.0
-#else
-        let timerTimeLeftFontSize = 64.0
-#endif
 #if os(macOS)
         let timerRectangleWidth = 200.0
 #else
@@ -68,17 +80,6 @@ struct TimerView: View {
 #else
         let timerRectangleHeight = 250.0
 #endif
-
-        let timerLabelText = {
-            switch timerViewModel.timerState {
-            case .work:
-                settingsManager.optionalTimerWorkLabel == "" ? "Work" : settingsManager.optionalTimerWorkLabel
-            case .rest:
-                settingsManager.optionalTimerBreakLabel == "" ? "Rest" : settingsManager.optionalTimerBreakLabel
-            }
-        }()
-
-        let timerText = settingsManager.showTimeLeft ? timerViewModel.timeRemainingFormatted : timerLabelText
 
         return ZStack {
             Rectangle()
@@ -91,16 +92,19 @@ struct TimerView: View {
 
             VStack {
                 if settingsManager.showTimeLeft {
-                    Text(timerLabelText)
-                        .font(.custom("Inter", size: timerStateLabelFontSize))
-                        .padding(.bottom, -20)
-                        .foregroundStyle(.black)
-                }
+                    EditableTimerLabel(for: selectedTimerName, variant: .small)
+                        .focused($isTextFieldFocused) // Bind focus state to the TextField
 
-                Text(timerText)
-                    .font(.custom("Inter", size: timerTimeLeftFontSize))
-                    .padding()
-                    .foregroundStyle(.primaryButton)
+                    Text(timerViewModel.timeRemainingFormatted)
+                        .font(.custom("Inter", size: timerTimeLeftFontSize))
+                        .padding()
+                        .foregroundStyle(.primaryButton)
+                }
+                else {
+                    EditableTimerLabel(for: selectedTimerName, variant: .large)
+                        .focused($isTextFieldFocused) // Bind focus state to the TextField
+
+                }
 
             }
         }

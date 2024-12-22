@@ -18,6 +18,9 @@ class TimerViewModel: ObservableObject {
     @Published private var _timerIsRunning = false
     @Published var confettiCounter: Int = 0
 
+    @Published var workTimerName: String = "Work"
+    @Published var restTimerName: String = "Rest"
+
     #if DEBUG
     private let workTimerDuration = 5
     private let restTimerDuration =  3
