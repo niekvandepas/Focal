@@ -21,8 +21,6 @@ class SettingsManager: ObservableObject {
     @AppStorage("showTimeLeftInMenuBar") var showTimeLeftInMenuBar = false
     #endif
     @AppStorage("notificationSound") var notificationSound = 0 // 'Bell' is the default
-    @AppStorage("timerWorkLabel") var optionalTimerWorkLabel = ""
-    @AppStorage("timerBreakLabel") var optionalTimerBreakLabel = ""
     @AppStorage("sessionGoal") var sessionGoal = 4
 }
 
