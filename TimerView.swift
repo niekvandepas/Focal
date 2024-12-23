@@ -56,6 +56,11 @@ struct TimerView: View {
                 SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
                     .padding(.bottom)
             }
+        // Unfocus the label as soon as it appears to prevent
+        // all the text from being selected/highlighted.
+        .task {
+            isTextFieldFocused = false
+        }
         .confettiCannon(counter: $timerViewModel.confettiCounter, num: 30, rainHeight: 400, repetitions: 2, repetitionInterval: 0.4)
         .contentShape(Rectangle()) // Make the entire VStack tappable
         .onTapGesture {
