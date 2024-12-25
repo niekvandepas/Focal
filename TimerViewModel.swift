@@ -111,8 +111,13 @@ class TimerViewModel: ObservableObject {
     }
 
     private func handleTimerTick(_: Date) {
-        if self.timerIsRunning && !self.notificationScheduled {
-            NotificationManager.scheduleNotification(for: Date().addingTimeInterval(TimeInterval(self.timeRemaining)), withSound: NotificationSound(rawValue: settingsManager.notificationSound) ?? .bell, withTimerState: self.timerState) { notificationScheduled in
+        Task {
+            if self.timerIsRunning && !self.notificationScheduled {
+                let notificationScheduled = await NotificationManager.scheduleNotification(
+                    for: Date().addingTimeInterval(TimeInterval(self.timeRemaining)),
+                    withSound: NotificationSound(rawValue: settingsManager.notificationSound) ?? .bell,
+                    withTimerState: self.timerState)
+
                 self.notificationScheduled = notificationScheduled
             }
         }

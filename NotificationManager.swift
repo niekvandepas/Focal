@@ -8,29 +8,31 @@
 import UserNotifications
 
 struct NotificationManager {
-    static func scheduleNotification(for triggerDate: Date, withSound notificationSound: NotificationSound?, withTimerState timerState: TimerState, completion: @escaping (Bool) -> Void) {
-        let content = createNotificationContent(for: timerState, withSound: notificationSound)
+    static func scheduleNotification(for triggerDate: Date, withSound notificationSound: NotificationSound?, withTimerState timerState: TimerState) async -> Bool {
+        let content = await createNotificationContent(for: timerState, withSound: notificationSound)
         let category = createNotificationCategory()
         UNUserNotificationCenter.current().setNotificationCategories([category])
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerDate), repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 
-        UNUserNotificationCenter.current().add(request) { error in
-            if error == nil {
-                completion(true)
-            }
-            else {
-                completion(false)
+        var result = false
+        await withCheckedContinuation { continuation in
+            UNUserNotificationCenter.current().add(request) { error in
+                if error == nil {
+                    result = true
+                }
+                continuation.resume(returning: result)
             }
         }
+        return result
     }
 
     static func removeAllNotificationRequests() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
-    private static func createNotificationContent(for finishedTimerState: TimerState, withSound notificationSound: NotificationSound?) -> UNMutableNotificationContent {
+    private static func createNotificationContent(for finishedTimerState: TimerState, withSound notificationSound: NotificationSound?) async -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         switch finishedTimerState {
         case .work:
@@ -47,7 +49,7 @@ struct NotificationManager {
             content.sound = sound
         }
 
-        if !SettingsManager.shared.startNextTimerAutomatically {
+        if await !SettingsManager.shared.startNextTimerAutomatically {
             content.categoryIdentifier = "TIMER_EXPIRED"
         }
         return content
