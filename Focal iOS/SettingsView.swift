@@ -31,6 +31,7 @@ struct SettingsView: View {
                 Text("Home").tag(4)
                 Text("Suspended").tag(5)
             }
+            .disabled(!settingsManager.notificationSoundIsOn)
         }
     }
 }

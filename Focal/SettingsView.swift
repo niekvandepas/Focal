@@ -75,7 +75,9 @@ struct SettingsView: View {
                         Text("Fourths").tag(3)
                         Text("Home").tag(4)
                         Text("Suspended").tag(5)
-                    }.labelsHidden()
+                    }
+                    .labelsHidden()
+                    .disabled(!settingsManager.notificationSoundIsOn)
                 }
             }
         }
