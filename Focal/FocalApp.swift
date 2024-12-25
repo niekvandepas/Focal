@@ -35,6 +35,7 @@ struct FocalApp: App {
                 TimerView()
                     .frame(width: 300, height: 400)
                     .environmentObject(settingsManager)
+                    .navigationTitle("Focal")
                     .onAppear {
                         KeyboardShortcuts.onKeyUp(for: .toggleTimer) { [self] in
                             timerViewModel.timerIsRunning.toggle()

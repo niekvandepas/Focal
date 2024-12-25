@@ -20,6 +20,7 @@ final class SettingsManager: ObservableObject {
     #if os(macOS)
     @AppStorage("showMenuBarIcon") var showMenuBarIcon = true
     @AppStorage("showTimeLeftInMenuBar") var showTimeLeftInMenuBar = false
+    @AppStorage("showAppOnTimerElapse") var showAppOnTimerElapse = false
     #endif
     @AppStorage("notificationSound") var notificationSound = 0 // 'Bell' is the default
     @AppStorage("sessionGoal") var sessionGoal = 4

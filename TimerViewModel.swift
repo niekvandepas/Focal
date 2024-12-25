@@ -133,6 +133,14 @@ class TimerViewModel: ObservableObject {
         if !SettingsManager.shared.startNextTimerAutomatically {
             self.pauseTimer()
         }
+
+        if SettingsManager.shared.showAppOnTimerElapse {
+            NSApplication.shared.activate(ignoringOtherApps: true)
+
+            if let mainWindow = NSApplication.shared.windows.first(where: { $0.title == "Focal" }) {
+                mainWindow.makeKeyAndOrderFront(nil)
+            }
+        }
         #endif
         #if os(iOS)
         self.pauseTimer()

@@ -54,6 +54,9 @@ struct SettingsView: View {
             Toggle("Hide Focal when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
 
+            Toggle("Bring Focal to front when timer ends", isOn: $settingsManager.showAppOnTimerElapse)
+                .toggleStyle(.checkbox)
+
             if #available(macOS 14.0, *) {
                 picker.pickerStyle(.palette)
             } else {
