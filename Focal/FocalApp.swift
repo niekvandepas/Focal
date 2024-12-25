@@ -16,7 +16,14 @@ struct FocalApp: App {
     @StateObject var settingsManager = SettingsManager.shared
 
     init() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in }
+        Task {
+            do {
+                _ = try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+                print("here")
+            } catch {
+                print("there")
+            }
+        }
     }
 
     var body: some Scene {
