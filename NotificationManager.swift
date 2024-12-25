@@ -16,16 +16,15 @@ struct NotificationManager {
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerDate), repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 
-        var result = false
-        await withCheckedContinuation { continuation in
+        return await withCheckedContinuation { continuation in
             UNUserNotificationCenter.current().add(request) { error in
                 if error == nil {
-                    result = true
+                    continuation.resume(returning: true)
+                } else {
+                    continuation.resume(returning: false)
                 }
-                continuation.resume(returning: result)
             }
         }
-        return result
     }
 
     static func removeAllNotificationRequests() {
