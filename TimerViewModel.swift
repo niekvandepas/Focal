@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 
+@MainActor
 class TimerViewModel: ObservableObject {
     static let shared = TimerViewModel()
 #if DEBUG
