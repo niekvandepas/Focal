@@ -63,18 +63,20 @@ struct SettingsView: View {
             Divider()
                 .padding(8)
 
-            Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
-                .toggleStyle(.checkbox)
+            HStack {
+                Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
+                    .toggleStyle(.checkbox)
 
-            GridRow {
-                Picker("Notification sound:", selection: $settingsManager.notificationSound) {
-                    Text("Arp").tag(1)
-                    Text("Bell").tag(0) // 'Bell' is the default
-                    Text("Buzz").tag(2)
-                    Text("Fourths").tag(3)
-                    Text("Home").tag(4)
-                    Text("Suspended").tag(5)
-                }.labelsHidden()
+                GridRow {
+                    Picker("Notification sound:", selection: $settingsManager.notificationSound) {
+                        Text("Arp").tag(1)
+                        Text("Bell").tag(0) // 'Bell' is the default
+                        Text("Buzz").tag(2)
+                        Text("Fourths").tag(3)
+                        Text("Home").tag(4)
+                        Text("Suspended").tag(5)
+                    }.labelsHidden()
+                }
             }
         }
         .padding()
