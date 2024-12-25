@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-class SettingsManager: ObservableObject {
+@MainActor
+final class SettingsManager: ObservableObject {
     static let shared = SettingsManager()
     private init() {}
 
