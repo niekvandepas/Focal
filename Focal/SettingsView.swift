@@ -25,7 +25,7 @@ struct SettingsView: View {
 
             Text(
                 """
-                Start or stop the timer from anywhere in macOS.
+                Start and stop the timer from anywhere in macOS.
                 """
             )
             .font(.callout)
