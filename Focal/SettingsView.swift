@@ -85,12 +85,22 @@ struct SettingsView: View {
                     }
                     .labelsHidden()
                     .disabled(!settingsManager.notificationsAreOn || !settingsManager.notificationSoundIsOn)
+                    .onChange(of: settingsManager.notificationSound) { newValue in
+                        if let nextSound = NotificationSound(rawValue: newValue) {
+                            playSound(for: nextSound)
+                        }
+                    }
                 }
             }
         }
         .padding()
 
     }
+
+    private func playSound(for notificationSound: NotificationSound) {
+        NSSound(named: notificationSound.fileName)?.play()
+    }
+
 }
 
 #Preview {
