@@ -149,7 +149,7 @@ struct TimerView: View {
         }
             .customFocus()
             .disabled(timerViewModel.timeRemaining == 0)
-            .keyboardShortcut(" ")
+            .keyboardShortcut(KeyEquivalent(" "), modifiers: [])
             .foregroundColor(.white)
             .background(.primaryButton)
             .border(.black, width: 2)
