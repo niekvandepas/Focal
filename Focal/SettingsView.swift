@@ -92,6 +92,25 @@ struct SettingsView: View {
                     }
                 }
             }
+
+            Divider()
+                .padding(8)
+
+            VStack(alignment: .leading) {
+                Text("Keyboard Shortcuts")
+                    .font(.headline)
+                    .foregroundStyle(.primary)
+
+                Text("""
+                    ⌘ + R: Reset the timer
+                    Space: Pause/start the timer
+                    """)
+                    .font(.callout)
+                    .foregroundStyle(.gray)
+            }
+            .padding(.bottom, 4)
+            .frame(maxWidth: .infinity, alignment: .leading) // Ensures text is not truncated
+            .fixedSize(horizontal: false, vertical: true) // Prevents truncation by allowing multiline content
         }
         .padding()
 
