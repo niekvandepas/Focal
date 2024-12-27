@@ -9,6 +9,8 @@ import UserNotifications
 
 struct NotificationManager {
     static func scheduleNotification(for triggerDate: Date, withSound notificationSound: NotificationSound?, withTimerState timerState: TimerState) async -> Bool {
+        guard await SettingsManager.shared.notificationsAreOn else { return true }
+
         let content = await createNotificationContent(for: timerState, withSound: notificationSound)
         let category = createNotificationCategory()
         UNUserNotificationCenter.current().setNotificationCategories([category])

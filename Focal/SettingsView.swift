@@ -66,9 +66,13 @@ struct SettingsView: View {
             Divider()
                 .padding(8)
 
+            Toggle("Show notifications", isOn: $settingsManager.notificationsAreOn)
+                .toggleStyle(.checkbox)
+
             HStack {
                 Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
                     .toggleStyle(.checkbox)
+                    .disabled(!settingsManager.notificationsAreOn)
 
                 GridRow {
                     Picker("Notification sound:", selection: $settingsManager.notificationSound) {
@@ -80,7 +84,7 @@ struct SettingsView: View {
                         Text("Suspended").tag(5)
                     }
                     .labelsHidden()
-                    .disabled(!settingsManager.notificationSoundIsOn)
+                    .disabled(!settingsManager.notificationsAreOn || !settingsManager.notificationSoundIsOn)
                 }
             }
         }

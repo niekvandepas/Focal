@@ -21,7 +21,10 @@ struct SettingsView: View {
                 settingsManager.sessionGoal -= 1
             }
 
+            Toggle("Show notifications", isOn: $settingsManager.notificationsAreOn)
+
             Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
+                .disabled(!settingsManager.notificationsAreOn)
 
             Picker("Notification sound:", selection: $settingsManager.notificationSound) {
                 Text("Arp").tag(1)
@@ -31,7 +34,7 @@ struct SettingsView: View {
                 Text("Home").tag(4)
                 Text("Suspended").tag(5)
             }
-            .disabled(!settingsManager.notificationSoundIsOn)
+            .disabled(!settingsManager.notificationSoundIsOn || !settingsManager.notificationsAreOn)
         }
     }
 }
