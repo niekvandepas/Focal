@@ -171,7 +171,7 @@ struct TimerView: View {
             .disabled(timerViewModel.timerIsFull)
             .customFocus()
             .keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
-            .background(.white)
+            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
             .border(.black, width: 2)
             .background( // rounded border
                 RoundedRectangle(cornerRadius: 0)
