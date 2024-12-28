@@ -113,12 +113,7 @@ class TimerViewModel: ObservableObject {
     private func handleTimerTick(_: Date) {
         Task {
             if self.timerIsRunning && !self.notificationScheduled {
-                let notificationScheduled = await NotificationManager.scheduleNotification(
-                    for: Date().addingTimeInterval(TimeInterval(self.timeRemaining)),
-                    withSound: NotificationSound(rawValue: settingsManager.notificationSound) ?? .bell,
-                    withTimerState: self.timerState)
-
-                self.notificationScheduled = notificationScheduled
+                await self.scheduleTimerFinishedNotification()
             }
         }
         if self.timeRemaining > 0 {
@@ -146,6 +141,16 @@ class TimerViewModel: ObservableObject {
         self.pauseTimer()
         #endif
 
+        if settingsManager.startNextTimerAutomatically {
+            // If the timer is in this 'continuous mode',
+            // we need to schedule the next notification immediately when the timer elapses.
+            // Normally, this is done when the timer is manually unpaused,
+            // but that never happens in this mode.
+            Task {
+                await self.scheduleTimerFinishedNotification()
+            }
+        }
+
         switch self.timerState {
         case .rest:
             self.completedSessions += 1
@@ -161,6 +166,15 @@ class TimerViewModel: ObservableObject {
 
         self.timerState.toggle()
         self.updateUserDefaults()
+    }
+
+    private func scheduleTimerFinishedNotification() async {
+        let notificationScheduled = await NotificationManager.scheduleNotification(
+            for: Date().addingTimeInterval(TimeInterval(self.timeRemaining)),
+            withSound: NotificationSound(rawValue: settingsManager.notificationSound) ?? .bell,
+            withTimerState: self.timerState)
+
+        self.notificationScheduled = notificationScheduled
     }
 
     private func showConfetti() {
