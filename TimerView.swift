@@ -212,10 +212,18 @@ struct TimerView: View {
 }
 
 #Preview {
+    #if os(macOS)
     return ZStack {
         Color.appRed
         TimerView(settingsManager: SettingsManager.shared)
            .frame(width: 300, height: 400)
     }
     .frame(width: 300, height: 400)
+    #else
+    return ZStack {
+        Color.appRed
+        TimerView(settingsManager: SettingsManager.shared)
+    }
+    #endif
+
 }
