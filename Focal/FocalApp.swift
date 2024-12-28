@@ -19,9 +19,7 @@ struct FocalApp: App {
         Task {
             do {
                 _ = try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
-                print("here")
             } catch {
-                print("there")
             }
         }
     }
