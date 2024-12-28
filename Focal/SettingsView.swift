@@ -46,6 +46,17 @@ struct SettingsView: View {
             Toggle("Show menu bar icon", isOn: $settingsManager.showMenuBarIcon)
                 .toggleStyle(.checkbox)
 
+            Toggle("Hide Focal when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
+                .toggleStyle(.checkbox)
+
+            Toggle("Bring Focal to front when timer ends", isOn: $settingsManager.showAppOnTimerElapse)
+                .toggleStyle(.checkbox)
+
+            Divider()
+                .padding(8)
+
+            // ---Timer Settings---
+
             Toggle("Show time left in menu bar", isOn: $settingsManager.showTimeLeftInMenuBar)
                 .toggleStyle(.checkbox)
 
@@ -53,12 +64,6 @@ struct SettingsView: View {
                 .toggleStyle(.checkbox)
 
             Toggle("Start next timer automatically", isOn: $settingsManager.startNextTimerAutomatically)
-                .toggleStyle(.checkbox)
-
-            Toggle("Hide Focal when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
-                .toggleStyle(.checkbox)
-
-            Toggle("Bring Focal to front when timer ends", isOn: $settingsManager.showAppOnTimerElapse)
                 .toggleStyle(.checkbox)
 
             if #available(macOS 14.0, *) {
