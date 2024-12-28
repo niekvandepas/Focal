@@ -118,7 +118,7 @@
 		9F3053A82BB714F9006B8090 /* TimerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimerWidgetExtension.entitlements; sourceTree = "<group>"; };
 		9F52B8FF2BB330F100410E1C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9F52B9012BB3322700410E1C /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
-		9F5D33E72BA9B9D30049100C /* Focal iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focal iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F5D33E72BA9B9D30049100C /* Focal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5D33E92BA9B9D40049100C /* Focal_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focal_iOSApp.swift; sourceTree = "<group>"; };
 		9F5D33ED2BA9B9D50049100C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F5D33F02BA9B9D50049100C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				9F954AF72B9F3BCC00A8D5FA /* Focal.app */,
-				9F5D33E72BA9B9D30049100C /* Focal iOS.app */,
+				9F5D33E72BA9B9D30049100C /* Focal.app */,
 				9F30538F2BB5E9B6006B8090 /* TimerWidgetExtension.appex */,
 			);
 			name = Products;
@@ -342,7 +342,7 @@
 				9FF6FCEA2BD2774100E97D49 /* ConfettiSwiftUI */,
 			);
 			productName = "Focal iOS";
-			productReference = 9F5D33E72BA9B9D30049100C /* Focal iOS.app */;
+			productReference = 9F5D33E72BA9B9D30049100C /* Focal.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9F954AF62B9F3BCC00A8D5FA /* Focal */ = {
@@ -620,7 +620,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "niekvdpas.Focal-iOS2024";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Focal;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -655,7 +655,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "niekvdpas.Focal-iOS2024";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Focal;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
