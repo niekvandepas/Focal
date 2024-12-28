@@ -37,6 +37,39 @@ struct NotificationManager {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
+    /// Updates the notification sound for all pending notifications.
+    ///
+    /// - Parameter newSound: The new sound to set for all notifications.
+    static func updateNotificationSound(to newSound: NotificationSound) {
+        let notificationCenter = UNUserNotificationCenter.current()
+
+        notificationCenter.getPendingNotificationRequests { requests in
+            let identifiers = requests.map { $0.identifier }
+            notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
+
+            for request in requests {
+                let updatedContent = request.content.mutableCopy() as! UNMutableNotificationContent
+
+                let notificationFileName = newSound.fileName
+                let newSound = UNNotificationSound(named:UNNotificationSoundName(rawValue: notificationFileName))
+                updatedContent.sound = newSound
+
+                let newRequest = UNNotificationRequest(
+                    identifier: request.identifier,
+                    content: updatedContent,
+                    trigger: request.trigger
+                )
+
+                notificationCenter.add(newRequest) { error in
+                    if let error = error {
+                        print("Error re-scheduling notification: \(error)")
+                    }
+                }
+            }
+        }
+    }
+
+
     private static func createNotificationContent(for finishedTimerState: TimerState, withSound notificationSound: NotificationSound?) async -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         switch finishedTimerState {

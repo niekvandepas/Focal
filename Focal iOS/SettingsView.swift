@@ -40,6 +40,7 @@ struct SettingsView: View {
             .onChange(of: settingsManager.notificationSound) { newValue in
                 if let nextSound = NotificationSound(rawValue: newValue) {
                     playSound(for: nextSound)
+                    NotificationManager.updateNotificationSound(to: nextSound)
                 }
             }
         }
