@@ -35,7 +35,7 @@ struct SettingsView: View {
             .padding(.bottom, 4)
 
 
-            Toggle("Global shortcut brings app to front", isOn: $settingsManager.globalShortcutBringsAppToFront)
+            Toggle("Global shortcut brings Focal to the front", isOn: $settingsManager.globalShortcutBringsAppToFront)
                 .toggleStyle(.checkbox)
 
             Divider()
@@ -46,10 +46,10 @@ struct SettingsView: View {
             Toggle("Show menu bar icon", isOn: $settingsManager.showMenuBarIcon)
                 .toggleStyle(.checkbox)
 
-            Toggle("Hide Focal when timer starts", isOn: $settingsManager.hideAppOnTimerStart)
+            Toggle("Hide Focal when the timer starts", isOn: $settingsManager.hideAppOnTimerStart)
                 .toggleStyle(.checkbox)
 
-            Toggle("Bring Focal to front when timer ends", isOn: $settingsManager.showAppOnTimerElapse)
+            Toggle("Bring Focal to the front when the timer ends", isOn: $settingsManager.showAppOnTimerElapse)
                 .toggleStyle(.checkbox)
 
             Divider()
