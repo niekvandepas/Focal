@@ -43,6 +43,20 @@ struct TimerView: View {
 #endif
 
         VStack {
+            #if os(macOS)
+            Spacer()
+            Spacer()
+            Spacer()
+            timerRect
+                .frame(width:200)
+            buttons
+                .frame(width:buttonFrameWidth)
+            Spacer()
+            SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipTimer)
+            Spacer()
+                SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
+                    .padding(.bottom)
+            #else
             Spacer()
             timerRect
                 .frame(width:200)
@@ -54,6 +68,7 @@ struct TimerView: View {
                 .frame(height: 70)
                 SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
                     .padding(.bottom)
+            #endif
             }
         // Unfocus the label as soon as it appears to prevent
         // all the text from being selected/highlighted.
