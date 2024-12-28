@@ -44,15 +44,14 @@ struct TimerView: View {
 
         VStack {
             Spacer()
-            Spacer()
-            Spacer()
             timerRect
                 .frame(width:200)
+            Spacer()
             buttons
                 .frame(width:buttonFrameWidth)
-            Spacer()
             SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipTimer)
             Spacer()
+                .frame(height: 70)
                 SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
                     .padding(.bottom)
             }
