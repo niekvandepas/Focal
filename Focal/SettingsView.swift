@@ -21,6 +21,8 @@ struct SettingsView: View {
         }
 
         Grid(alignment: .leadingFirstTextBaseline) {
+
+            // ---Global Keyboard Shortcut---
             KeyboardShortcuts.Recorder("Global keyboard shortcut:", name: .toggleTimer)
 
             Text(
@@ -38,6 +40,8 @@ struct SettingsView: View {
 
             Divider()
                 .padding(8)
+
+            // ---Application Behavior---
 
             Toggle("Show menu bar icon", isOn: $settingsManager.showMenuBarIcon)
                 .toggleStyle(.checkbox)
@@ -65,6 +69,8 @@ struct SettingsView: View {
 
             Divider()
                 .padding(8)
+
+            // ---Notification Settings---
 
             Toggle("Show notifications", isOn: $settingsManager.notificationsAreOn)
                 .toggleStyle(.checkbox)
@@ -96,6 +102,8 @@ struct SettingsView: View {
 
             Divider()
                 .padding(8)
+
+            // ---Keyboard Shortcuts---
 
             VStack(alignment: .leading) {
                 Text("Keyboard Shortcuts")
