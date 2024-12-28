@@ -9,6 +9,10 @@ import UserNotifications
 
 struct NotificationManager {
     static func scheduleNotification(for triggerDate: Date, withSound notificationSound: NotificationSound?, withTimerState timerState: TimerState) async -> Bool {
+        // We return true here despite the notification not being scheduled when notifications are disabled,
+        // since the downstream business logic uses this function's return value
+        // to determine whether or not to call this function again.
+        // Returning 'false' here would result in many unnecessary calls to this function.
         guard await SettingsManager.shared.notificationsAreOn else { return true }
 
         let content = await createNotificationContent(for: timerState, withSound: notificationSound)
