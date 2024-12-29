@@ -73,7 +73,7 @@ class TimerViewModel: ObservableObject {
         self.updateUserDefaults()
     }
 
-    func skipTimer() {
+    func skipBreakTimer() {
         timerState.toggle()
         self.resetTimerDuration()
         NotificationManager.removeAllNotificationRequests()

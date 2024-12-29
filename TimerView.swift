@@ -52,7 +52,7 @@ struct TimerView: View {
             buttons
                 .frame(width:buttonFrameWidth)
             Spacer()
-            SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipTimer)
+            SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipBreakTimer)
             Spacer()
                 SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
                     .padding(.bottom)
@@ -63,7 +63,7 @@ struct TimerView: View {
             Spacer()
             buttons
                 .frame(width:buttonFrameWidth)
-            SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipTimer)
+            SkipButton(shown: timerViewModel.timerState == .rest, skipTimer: timerViewModel.skipBreakTimer)
             Spacer()
                 .frame(height: 70)
                 SessionMarkers(goal: settingsManager.sessionGoal, completedSessions: timerViewModel.completedSessions, timerState: timerViewModel.timerState, isRunning: timerViewModel.timerIsRunning)
