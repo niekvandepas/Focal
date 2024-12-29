@@ -100,6 +100,7 @@ struct NotificationManager {
         case .rest:
             "Start Break Timer"
         }
+
         let startNextTimerAction = UNNotificationAction(identifier: "START_NEXT_TIMER",
                                                          title: title,
                                                          options: .foreground)
