@@ -16,7 +16,7 @@ struct NotificationManager {
         guard await SettingsManager.shared.notificationsAreOn else { return true }
 
         let content = await createNotificationContent(for: timerState, withSound: notificationSound)
-        let category = createNotificationCategory(nextTimer: timerState.next)
+        let category = createNotificationCategory(nextTimerState: timerState.next)
         UNUserNotificationCenter.current().setNotificationCategories([category])
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerDate), repeats: false)
@@ -93,8 +93,8 @@ struct NotificationManager {
         return content
     }
 
-    private static func createNotificationCategory(nextTimer: TimerState) -> UNNotificationCategory {
-        let title: String = switch nextTimer {
+    private static func createNotificationCategory(nextTimerState: TimerState) -> UNNotificationCategory {
+        let title: String = switch nextTimerState {
         case .work:
             "Start Work Timer"
         case .rest:
