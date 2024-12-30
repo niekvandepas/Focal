@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9F5D33E62BA9B9D30049100C"
-               BuildableName = "Focal iOS.app"
+               BuildableName = "Focal.app"
                BlueprintName = "Focal iOS"
                ReferencedContainer = "container:Focal.xcodeproj">
             </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F5D33E62BA9B9D30049100C"
-            BuildableName = "Focal iOS.app"
+            BuildableName = "Focal.app"
             BlueprintName = "Focal iOS"
             ReferencedContainer = "container:Focal.xcodeproj">
          </BuildableReference>
@@ -97,7 +97,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9F5D33E62BA9B9D30049100C"
-            BuildableName = "Focal iOS.app"
+            BuildableName = "Focal.app"
             BlueprintName = "Focal iOS"
             ReferencedContainer = "container:Focal.xcodeproj">
          </BuildableReference>
