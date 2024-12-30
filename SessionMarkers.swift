@@ -27,11 +27,14 @@ struct SessionMarkers: View {
                 .foregroundStyle(currentCircleColor)
                 .frame(width: 7, height: 7)
 
-            ForEach(completedSessions+1..<goal, id: \.self) { index in
-                Circle()
-                    .stroke(.white, lineWidth: 1)
-                    .foregroundStyle(.appRed)
-                    .frame(width: 5, height: 5)
+            // If there are uncompleted sessions, render an empty circle for those
+            if completedSessions < goal {
+                ForEach(completedSessions+1..<goal, id: \.self) { index in
+                    Circle()
+                        .stroke(.white, lineWidth: 1)
+                        .foregroundStyle(.appRed)
+                        .frame(width: 5, height: 5)
+            }
             }
         }
     }
