@@ -139,9 +139,9 @@ struct TimerView: View {
 #if os(iOS)
             timerViewModel.timerIsRunning ? mediumFeedbackGenerator.impactOccurred() : notificationFeedbackGenerator.notificationOccurred(.success)
 #endif
-            // Immediately decreasing from 25:00 to 24:59 indicates visual responsiveness to the user
+            // Immediately removing a second from the timer indicates visual responsiveness to the user
             if timerViewModel.timerIsFull {
-                timerViewModel.timeRemaining = 24 * 60 + 59
+                timerViewModel.timeRemaining = timerViewModel.workTimerDuration - 1
             }
 
             timerViewModel.timerIsRunning.toggle()

@@ -23,13 +23,13 @@ class TimerViewModel: ObservableObject {
     @Published var restTimerName: String = "Rest"
 
     #if DEBUG
-    private let workTimerDuration = 5
-    private let restTimerDuration =  3
-    private let longRestTimerDuration = 25 * 60
+    let workTimerDuration = 5
+    let restTimerDuration =  3
+    let longRestTimerDuration = 25 * 60
     #else
-    private let workTimerDuration = 25 * 60
-    private let restTimerDuration =  5 * 60
-    private let longRestTimerDuration = 25 * 60
+    let workTimerDuration = 25 * 60
+    let restTimerDuration =  5 * 60
+    let longRestTimerDuration = 25 * 60
     #endif
 
     var timerIsRunning: Bool {
