@@ -97,7 +97,7 @@ class TimerViewModel: ObservableObject {
         timerIsRunning = false
     }
 
-    /// Whether or not the timer is at 25 minutes
+    /// Returns true if the timer is at its full work duration, indicating it is reset or not started.
     var timerIsFull: Bool {
         return timeRemaining == self.workTimerDuration
     }
