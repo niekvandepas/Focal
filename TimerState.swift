@@ -14,16 +14,8 @@ enum TimerState: Int, CustomStringConvertible {
             "work"
         case .rest:
             "rest"
-        }
-    }
-
-    /// Returns the next TimerState: 'work' if the current state is 'rest', and vice versa. Does not mutate self.
-    var next: TimerState {
-        switch self {
-        case .work:
-            return .rest
-        case .rest:
-            return .work
+        case .longRest:
+            "long rest"
         }
     }
 
@@ -33,18 +25,12 @@ enum TimerState: Int, CustomStringConvertible {
             .workBlue
         case .rest:
             .breakGreen
+        case .longRest:
+            .breakGreen
         }
     }
 
     case work = 0
     case rest = 1 // 'break' is a reserved keyword lol
-
-    mutating func toggle() {
-        switch self {
-        case .work:
-            self = .rest
-        case .rest:
-            self = .work
-        }
-    }
+    case longRest = 2
 }

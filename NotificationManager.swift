@@ -8,15 +8,15 @@
 import UserNotifications
 
 struct NotificationManager {
-    static func scheduleNotification(for triggerDate: Date, withSound notificationSound: NotificationSound?, withTimerState timerState: TimerState) async -> Bool {
+    static func scheduleNotification(for triggerDate: Date, withSound notificationSound: NotificationSound?, currentTimerState: TimerState, nextTimerState: TimerState) async -> Bool {
         // We return true here despite the notification not being scheduled when notifications are disabled,
         // since the downstream business logic uses this function's return value
         // to determine whether or not to call this function again.
         // Returning 'false' here would result in many unnecessary calls to this function.
         guard await SettingsManager.shared.notificationsAreOn else { return true }
 
-        let content = await createNotificationContent(for: timerState, withSound: notificationSound)
-        let category = createNotificationCategory(nextTimerState: timerState.next)
+        let content = await createNotificationContent(for: currentTimerState, withSound: notificationSound)
+        let category = createNotificationCategory(nextTimerState: nextTimerState)
         UNUserNotificationCenter.current().setNotificationCategories([category])
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerDate), repeats: false)
@@ -79,6 +79,9 @@ struct NotificationManager {
         case .rest:
             content.title = "Break's over!"
             content.body = "Time to get back to work!"
+        case .longRest:
+            content.title = "Break's over!"
+            content.body = "Time to get back to work!"
         }
 
         if let notificationSound = notificationSound {
@@ -98,6 +101,8 @@ struct NotificationManager {
         case .work:
             "Start Work Timer"
         case .rest:
+            "Start Break Timer"
+        case .longRest:
             "Start Break Timer"
         }
 

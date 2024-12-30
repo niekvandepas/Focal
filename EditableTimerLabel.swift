@@ -85,6 +85,8 @@ struct EditableTimerLabel: View {
                 switch timerViewModel.timerState {
                 case .work:
                     timerViewModel.workTimerName = lastUsedWorkTimerName
+                case .longRest:
+                    fallthrough
                 case .rest:
                     timerViewModel.restTimerName = lastUsedRestTimerName
                 }
@@ -93,6 +95,8 @@ struct EditableTimerLabel: View {
                 switch timerViewModel.timerState {
                 case .work:
                     lastUsedWorkTimerName = timerLabel
+                case .longRest:
+                    fallthrough
                 case .rest:
                     lastUsedRestTimerName = timerLabel
                 }
@@ -106,6 +110,8 @@ struct EditableTimerLabel: View {
             switch timerViewModel.timerState {
             case .work:
                 timerViewModel.workTimerName = lastUsedWorkTimerName
+            case .longRest:
+                fallthrough
             case .rest:
                 timerViewModel.restTimerName = lastUsedRestTimerName
             }
@@ -113,6 +119,8 @@ struct EditableTimerLabel: View {
             switch timerViewModel.timerState {
             case .work:
                 lastUsedWorkTimerName = timerLabel
+            case .longRest:
+                fallthrough
             case .rest:
                 lastUsedRestTimerName = timerLabel
             }

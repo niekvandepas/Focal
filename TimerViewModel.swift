@@ -25,9 +25,11 @@ class TimerViewModel: ObservableObject {
     #if DEBUG
     private let workTimerDuration = 5
     private let restTimerDuration =  3
+    private let longRestTimerDuration = 25 * 60
     #else
     private let workTimerDuration = 25 * 60
     private let restTimerDuration =  5 * 60
+    private let longRestTimerDuration = 25 * 60
     #endif
 
     var timerIsRunning: Bool {
@@ -74,7 +76,7 @@ class TimerViewModel: ObservableObject {
     }
 
     func skipBreakTimer() {
-        timerState.toggle()
+        timerState = .work
         self.resetTimerDuration()
         NotificationManager.removeAllNotificationRequests()
         completedSessions += 1
@@ -151,6 +153,8 @@ class TimerViewModel: ObservableObject {
             }
         }
 
+        let nextTimerState = getNextTimerState()
+
         switch self.timerState {
         case .rest:
             self.completedSessions += 1
@@ -161,18 +165,45 @@ class TimerViewModel: ObservableObject {
             if completedSessions == settingsManager.sessionGoal - 1 {
                 showConfetti()
             }
-            self.timeRemaining = self.restTimerDuration
+            self.timeRemaining = getTimerDuration(forTimerState: nextTimerState)
+        case .longRest:
+            self.resetTimer()
         }
 
-        self.timerState.toggle()
+        self.timerState = nextTimerState
         self.updateUserDefaults()
     }
 
+    private func getNextTimerState() -> TimerState {
+        switch self.timerState {
+        case .work:
+            // completedSessions only rolls over after the break, so we need to check for sessionGoal - 1
+            return self.completedSessions >= settingsManager.sessionGoal - 1 ? .longRest : .rest
+        case .rest:
+            return .work
+        case .longRest:
+            return .work
+        }
+    }
+
+    private func getTimerDuration(forTimerState timerState: TimerState) -> Int {
+        switch timerState {
+        case .work:
+            return self.workTimerDuration
+        case .rest:
+            return self.restTimerDuration
+        case .longRest:
+            return self.longRestTimerDuration
+        }
+    }
+
     private func scheduleTimerFinishedNotification() async {
+        let nextTimerState = getNextTimerState()
         let notificationScheduled = await NotificationManager.scheduleNotification(
             for: Date().addingTimeInterval(TimeInterval(self.timeRemaining)),
             withSound: NotificationSound(rawValue: settingsManager.notificationSound) ?? .bell,
-            withTimerState: self.timerState)
+            currentTimerState: self.timerState,
+            nextTimerState: nextTimerState)
 
         self.notificationScheduled = notificationScheduled
     }
