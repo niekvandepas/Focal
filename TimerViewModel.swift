@@ -23,9 +23,9 @@ class TimerViewModel: ObservableObject {
     @Published var restTimerName: String = "Rest"
 
     #if DEBUG
-    let workTimerDuration = 5
-    let restTimerDuration =  3
-    let longRestTimerDuration = 25 * 60
+    let workTimerDuration = 10
+    let restTimerDuration =  5
+    let longRestTimerDuration = 10
     #else
     let workTimerDuration = 25 * 60
     let restTimerDuration =  5 * 60
