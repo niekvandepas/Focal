@@ -23,15 +23,17 @@ struct Provider: TimelineProvider {
         let timeRemaining = userDefaults?.integer(forKey: Constants.UD_TIME_REMAINING) ?? 0
         let timerIsRunning = userDefaults?.bool(forKey: Constants.UD_TIMER_IS_RUNNING)
         let timerStateRawValue = userDefaults?.integer(forKey: Constants.UD_TIMER_STATE)
+        let nextTimerStateRawValue = userDefaults?.integer(forKey: Constants.UD_NEXT_TIMER_STATE)
         let timerState = TimerState(rawValue: timerStateRawValue ?? 0) ?? .work
+        let nextTimerState = TimerState(rawValue: nextTimerStateRawValue ?? 0) ?? .work
 
-        let entries = makeEntries(timerIsRunning: timerIsRunning ?? false, timeRemaining: timeRemaining, timerState: timerState)
+        let entries = makeEntries(timerIsRunning: timerIsRunning ?? false, timeRemaining: timeRemaining, timerState: timerState, nextTimerState: nextTimerState)
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 
-    private func makeEntries(timerIsRunning: Bool, timeRemaining: Int, timerState: TimerState) -> [SimpleEntry] {
+    private func makeEntries(timerIsRunning: Bool, timeRemaining: Int, timerState: TimerState, nextTimerState: TimerState) -> [SimpleEntry] {
         var entries: [SimpleEntry] = []
         let currentDate = Date()
 
@@ -49,7 +51,7 @@ struct Provider: TimelineProvider {
             let secondOffset = timeRemaining + 1
             let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate)!
             let timeRemaining = timerState == .work ? 5 * 60 : 25 * 60
-            let pausedNextTimerEntry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: timerState.next, timerIsRunning: timerIsRunning)
+            let pausedNextTimerEntry = SimpleEntry(date: entryDate, timeRemaining: timeRemaining, timerState: nextTimerState, timerIsRunning: timerIsRunning)
             entries.append(pausedNextTimerEntry)
         }
 

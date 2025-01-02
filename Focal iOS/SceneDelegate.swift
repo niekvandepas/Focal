@@ -33,7 +33,7 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
 
             // A negative correctedTimeRemaining means the timer has elapsed
             if correctedTimeRemaining < 0 {
-                timerViewModel.timerState.toggle()
+                timerViewModel.timerState = timerViewModel.getNextTimerState()
                 timerViewModel.resetTimerDuration()
             }
             else {

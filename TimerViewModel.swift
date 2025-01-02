@@ -88,6 +88,7 @@ class TimerViewModel: ObservableObject {
             userDefaults.set(timeRemaining, forKey: Constants.UD_TIME_REMAINING)
             userDefaults.set(timerIsRunning, forKey: Constants.UD_TIMER_IS_RUNNING)
             userDefaults.set(timerState.rawValue, forKey: Constants.UD_TIMER_STATE)
+            userDefaults.set(getNextTimerState().rawValue, forKey: Constants.UD_NEXT_TIMER_STATE)
             userDefaults.set(settingsManager.showTimeLeft, forKey: Constants.UD_SHOW_TIME_LEFT_SETTING)
         }
     }
@@ -104,6 +105,18 @@ class TimerViewModel: ObservableObject {
 
     var timeRemainingFormatted: String {
         "\(timeRemaining / 60):\(String(format: "%02d", timeRemaining % 60))"
+    }
+
+    func getNextTimerState() -> TimerState {
+        switch self.timerState {
+        case .work:
+            // completedSessions only rolls over after the break, so we need to check for sessionGoal - 1
+            return self.completedSessions >= settingsManager.sessionGoal - 1 ? .longRest : .rest
+        case .rest:
+            return .work
+        case .longRest:
+            return .work
+        }
     }
 
     private func initializeTimer() {
@@ -172,18 +185,6 @@ class TimerViewModel: ObservableObject {
 
         self.timerState = nextTimerState
         self.updateUserDefaults()
-    }
-
-    private func getNextTimerState() -> TimerState {
-        switch self.timerState {
-        case .work:
-            // completedSessions only rolls over after the break, so we need to check for sessionGoal - 1
-            return self.completedSessions >= settingsManager.sessionGoal - 1 ? .longRest : .rest
-        case .rest:
-            return .work
-        case .longRest:
-            return .work
-        }
     }
 
     private func getTimerDuration(forTimerState timerState: TimerState) -> Int {
