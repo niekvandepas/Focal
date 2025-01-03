@@ -4,7 +4,6 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Inter-VariableFont_slnt,wght.ttf</string>
 		<string>GeistMono-Regular.ttf</string>
 		<string>GeistMono-Bold.ttf</string>
 	</array>

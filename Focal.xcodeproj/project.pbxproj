@@ -179,6 +179,7 @@
 		9FD7E14A2D283B520034ECCF /* GeistMono-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Thin.ttf"; sourceTree = "<group>"; };
 		9FD7E14B2D283B520034ECCF /* GeistMono-UltraBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-UltraBlack.ttf"; sourceTree = "<group>"; };
 		9FD7E14C2D283B520034ECCF /* GeistMono-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-UltraLight.ttf"; sourceTree = "<group>"; };
+		9FD7E16F2D2866950034ECCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
 		9FDB9E462BCD18E100E6BA19 /* Ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding.wav; sourceTree = "<group>"; };
 		9FDB9E472BCD18E100E6BA19 /* Ding2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding2.wav; sourceTree = "<group>"; };
@@ -249,6 +250,7 @@
 				9FB2207B2BB4B242007C722A /* SceneDelegate.swift */,
 				9F6D48DA2BB59A0300FB7D23 /* AppDelegate.swift */,
 				9F5D34072BAA0AC40049100C /* NotificationDelegate.swift */,
+				9FD7E16F2D2866950034ECCF /* Info.plist */,
 				9F5D33E92BA9B9D40049100C /* Focal_iOSApp.swift */,
 				9F5D33ED2BA9B9D50049100C /* Assets.xcassets */,
 				9F5D33EF2BA9B9D50049100C /* Preview Content */,
@@ -679,6 +681,7 @@
 				DEVELOPMENT_TEAM = 335PJS6A82;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Focal iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Focal;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -715,6 +718,7 @@
 				DEVELOPMENT_TEAM = 335PJS6A82;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Focal iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Focal;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -157,10 +157,9 @@ struct TimerView: View {
                 .frame(width: 40, height: 16)
                 .hidden()
                 .overlay(Text(timerViewModel.timerIsRunning ? "Pause" : "Start"))
-                .font(.custom("Geist Mono", size: 13))
+                .font(.custom("Geist Mono Bold", size: 13))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
-                .bold()
                 .contentShape(Rectangle()) // This is needed to have the entire button actuate
         }
             .customFocus()
