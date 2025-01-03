@@ -25,5 +25,9 @@ final class SettingsManager: ObservableObject {
     #endif
     @AppStorage("notificationSound") var notificationSound = 0 // 'Bell' is the default
     @AppStorage("sessionGoal") var sessionGoal = 4
+
+    @AppStorage("workTimerDuration") var workTimerDuration = 25 * 60
+    @AppStorage("restTimerDuration") var restTimerDuration = 5 * 60
+    @AppStorage("longRestTimerDuration") var longRestTimerDuration = 30 * 60
 }
 

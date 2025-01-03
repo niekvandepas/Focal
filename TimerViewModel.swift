@@ -11,26 +11,12 @@ import Combine
 @MainActor
 class TimerViewModel: ObservableObject {
     static let shared = TimerViewModel()
-#if DEBUG
-    @Published var timeRemaining = 3
-#else
-    @Published var timeRemaining = 25 * 60
-#endif
+    @Published var timeRemaining: Int
     @Published private var _timerIsRunning = false
     @Published var confettiCounter: Int = 0
 
     @Published var workTimerName: String = "Work"
     @Published var restTimerName: String = "Rest"
-
-    #if DEBUG
-    let workTimerDuration = 10
-    let restTimerDuration =  5
-    let longRestTimerDuration = 10
-    #else
-    let workTimerDuration = 25 * 60
-    let restTimerDuration =  5 * 60
-    let longRestTimerDuration = 25 * 60
-    #endif
 
     var timerIsRunning: Bool {
         get { return _timerIsRunning }
@@ -54,6 +40,7 @@ class TimerViewModel: ObservableObject {
     private var timer: AnyCancellable?
 
     init() {
+        self.timeRemaining = settingsManager.workTimerDuration
         self.updateUserDefaults()
     }
     
@@ -69,7 +56,7 @@ class TimerViewModel: ObservableObject {
     
     func resetTimer() {
         timerState = .work
-        timeRemaining = self.workTimerDuration
+        timeRemaining = settingsManager.workTimerDuration
         timerIsRunning = false
         completedSessions = 0
         self.updateUserDefaults()
@@ -94,13 +81,13 @@ class TimerViewModel: ObservableObject {
     }
 
     func resetTimerDuration() {
-        timeRemaining = timerState == .work ? self.workTimerDuration : self.restTimerDuration
+        timeRemaining = timerState == .work ? settingsManager.workTimerDuration : settingsManager.restTimerDuration
         timerIsRunning = false
     }
 
     /// Returns true if the timer is at its full work duration, indicating it is reset or not started.
     var timerIsFull: Bool {
-        return timeRemaining == self.workTimerDuration
+        return timeRemaining == settingsManager.workTimerDuration
     }
 
     var timeRemainingFormatted: String {
@@ -171,7 +158,7 @@ class TimerViewModel: ObservableObject {
         switch self.timerState {
         case .rest:
             self.completedSessions += 1
-            self.timeRemaining = self.workTimerDuration
+            self.timeRemaining = settingsManager.workTimerDuration
         case .work:
             // The completedSessions counter only rolls over after the break,
             // so we need to check for sessionGoal - 1 here.
@@ -190,11 +177,11 @@ class TimerViewModel: ObservableObject {
     private func getTimerDuration(forTimerState timerState: TimerState) -> Int {
         switch timerState {
         case .work:
-            return self.workTimerDuration
+            return settingsManager.workTimerDuration
         case .rest:
-            return self.restTimerDuration
+            return settingsManager.restTimerDuration
         case .longRest:
-            return self.longRestTimerDuration
+            return settingsManager.longRestTimerDuration
         }
     }
 

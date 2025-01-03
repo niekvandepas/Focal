@@ -24,6 +24,17 @@ struct SettingsView: View {
                 settingsManager.sessionGoal -= 1
             }
 
+//            TODO probably need to move these into timerudariotninput for the complex logic
+            Stepper(value: $settingsManager.workTimerDuration, in: (5 * 60)...(120 * 60), step: 60) {
+                Text("Work: \(settingsManager.workTimerDuration / 60) minutes")
+            }
+            Stepper(value: $settingsManager.restTimerDuration, in: (5 * 60)...(120 * 60), step: 60) {
+                Text("Short break: \(settingsManager.restTimerDuration / 60) minutes")
+            }
+            Stepper(value: $settingsManager.longRestTimerDuration, in: (5 * 60)...(120 * 60), step: 60) {
+                Text("Long break: \(settingsManager.longRestTimerDuration / 60) minutes")
+            }
+
             Toggle("Show notifications", isOn: $settingsManager.notificationsAreOn)
 
             Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
