@@ -103,7 +103,7 @@ struct TimerWidgetEntryView: View {
                     }
 
                 }
-                .font(.custom("Inter", size: fontSize))
+                .font(.custom("Geist Mono", size: fontSize))
             }
     }
 }

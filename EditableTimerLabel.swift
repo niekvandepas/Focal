@@ -38,7 +38,7 @@ struct EditableTimerLabel: View {
 
     var body: some View {
     return TextField("", text: $timerLabel)
-        .font(.custom("Inter", size: variant == .small ? timerStateLabelFontSize : timerTimeLeftFontSize))
+        .font(.custom("Geist Mono", size: variant == .small ? timerStateLabelFontSize : timerTimeLeftFontSize))
         // For the large variant, push the label up by 20 points by setting negative padding
         .padding(variant == .small ? .bottom : [], variant == .small ? -20 : 0)
         .foregroundStyle(variant == .small ? .black : .primaryButton)

@@ -56,6 +56,33 @@
 		9FBC3BBC2BACCAA90012876D /* SettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */; };
 		9FC2957B2BCC073700825591 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9FC2957A2BCC073700825591 /* Credits.rtf */; };
 		9FC2957C2BCC073700825591 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9FC2957A2BCC073700825591 /* Credits.rtf */; };
+		9FD7E14D2D283B520034ECCF /* GeistMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14A2D283B520034ECCF /* GeistMono-Thin.ttf */; };
+		9FD7E14E2D283B520034ECCF /* GeistMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1472D283B520034ECCF /* GeistMono-Medium.ttf */; };
+		9FD7E14F2D283B520034ECCF /* GeistMono-UltraBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14B2D283B520034ECCF /* GeistMono-UltraBlack.ttf */; };
+		9FD7E1502D283B520034ECCF /* GeistMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1452D283B520034ECCF /* GeistMono-Bold.ttf */; };
+		9FD7E1512D283B520034ECCF /* GeistMono-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1442D283B520034ECCF /* GeistMono-Black.ttf */; };
+		9FD7E1522D283B520034ECCF /* GeistMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1462D283B520034ECCF /* GeistMono-Light.ttf */; };
+		9FD7E1532D283B520034ECCF /* GeistMono-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14C2D283B520034ECCF /* GeistMono-UltraLight.ttf */; };
+		9FD7E1542D283B520034ECCF /* GeistMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1492D283B520034ECCF /* GeistMono-SemiBold.ttf */; };
+		9FD7E1552D283B520034ECCF /* GeistMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1482D283B520034ECCF /* GeistMono-Regular.ttf */; };
+		9FD7E1562D283B520034ECCF /* GeistMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14A2D283B520034ECCF /* GeistMono-Thin.ttf */; };
+		9FD7E1572D283B520034ECCF /* GeistMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1472D283B520034ECCF /* GeistMono-Medium.ttf */; };
+		9FD7E1582D283B520034ECCF /* GeistMono-UltraBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14B2D283B520034ECCF /* GeistMono-UltraBlack.ttf */; };
+		9FD7E1592D283B520034ECCF /* GeistMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1452D283B520034ECCF /* GeistMono-Bold.ttf */; };
+		9FD7E15A2D283B520034ECCF /* GeistMono-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1442D283B520034ECCF /* GeistMono-Black.ttf */; };
+		9FD7E15B2D283B520034ECCF /* GeistMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1462D283B520034ECCF /* GeistMono-Light.ttf */; };
+		9FD7E15C2D283B520034ECCF /* GeistMono-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14C2D283B520034ECCF /* GeistMono-UltraLight.ttf */; };
+		9FD7E15D2D283B520034ECCF /* GeistMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1492D283B520034ECCF /* GeistMono-SemiBold.ttf */; };
+		9FD7E15E2D283B520034ECCF /* GeistMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1482D283B520034ECCF /* GeistMono-Regular.ttf */; };
+		9FD7E15F2D283B520034ECCF /* GeistMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14A2D283B520034ECCF /* GeistMono-Thin.ttf */; };
+		9FD7E1602D283B520034ECCF /* GeistMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1472D283B520034ECCF /* GeistMono-Medium.ttf */; };
+		9FD7E1612D283B520034ECCF /* GeistMono-UltraBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14B2D283B520034ECCF /* GeistMono-UltraBlack.ttf */; };
+		9FD7E1622D283B520034ECCF /* GeistMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1452D283B520034ECCF /* GeistMono-Bold.ttf */; };
+		9FD7E1632D283B520034ECCF /* GeistMono-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1442D283B520034ECCF /* GeistMono-Black.ttf */; };
+		9FD7E1642D283B520034ECCF /* GeistMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1462D283B520034ECCF /* GeistMono-Light.ttf */; };
+		9FD7E1652D283B520034ECCF /* GeistMono-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14C2D283B520034ECCF /* GeistMono-UltraLight.ttf */; };
+		9FD7E1662D283B520034ECCF /* GeistMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1492D283B520034ECCF /* GeistMono-SemiBold.ttf */; };
+		9FD7E1672D283B520034ECCF /* GeistMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1482D283B520034ECCF /* GeistMono-Regular.ttf */; };
 		9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
 		9FDB9E4E2BCD18E100E6BA19 /* Ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E462BCD18E100E6BA19 /* Ding.wav */; };
 		9FDB9E4F2BCD18E100E6BA19 /* Ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E462BCD18E100E6BA19 /* Ding.wav */; };
@@ -143,6 +170,15 @@
 		9FB39E002BA0F54B00B5A3F3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsIcon.swift; path = "Focal iOS/SettingsIcon.swift"; sourceTree = "<group>"; };
 		9FC2957A2BCC073700825591 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		9FD7E1442D283B520034ECCF /* GeistMono-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Black.ttf"; sourceTree = "<group>"; };
+		9FD7E1452D283B520034ECCF /* GeistMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Bold.ttf"; sourceTree = "<group>"; };
+		9FD7E1462D283B520034ECCF /* GeistMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Light.ttf"; sourceTree = "<group>"; };
+		9FD7E1472D283B520034ECCF /* GeistMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Medium.ttf"; sourceTree = "<group>"; };
+		9FD7E1482D283B520034ECCF /* GeistMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Regular.ttf"; sourceTree = "<group>"; };
+		9FD7E1492D283B520034ECCF /* GeistMono-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-SemiBold.ttf"; sourceTree = "<group>"; };
+		9FD7E14A2D283B520034ECCF /* GeistMono-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Thin.ttf"; sourceTree = "<group>"; };
+		9FD7E14B2D283B520034ECCF /* GeistMono-UltraBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-UltraBlack.ttf"; sourceTree = "<group>"; };
+		9FD7E14C2D283B520034ECCF /* GeistMono-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-UltraLight.ttf"; sourceTree = "<group>"; };
 		9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
 		9FDB9E462BCD18E100E6BA19 /* Ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding.wav; sourceTree = "<group>"; };
 		9FDB9E472BCD18E100E6BA19 /* Ding2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding2.wav; sourceTree = "<group>"; };
@@ -242,6 +278,15 @@
 				9F52B9012BB3322700410E1C /* SettingsManager.swift */,
 				9FBC3BBB2BACCAA90012876D /* SettingsIcon.swift */,
 				9FA3AC3C2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf */,
+				9FD7E1442D283B520034ECCF /* GeistMono-Black.ttf */,
+				9FD7E1452D283B520034ECCF /* GeistMono-Bold.ttf */,
+				9FD7E1462D283B520034ECCF /* GeistMono-Light.ttf */,
+				9FD7E1472D283B520034ECCF /* GeistMono-Medium.ttf */,
+				9FD7E1482D283B520034ECCF /* GeistMono-Regular.ttf */,
+				9FD7E1492D283B520034ECCF /* GeistMono-SemiBold.ttf */,
+				9FD7E14A2D283B520034ECCF /* GeistMono-Thin.ttf */,
+				9FD7E14B2D283B520034ECCF /* GeistMono-UltraBlack.ttf */,
+				9FD7E14C2D283B520034ECCF /* GeistMono-UltraLight.ttf */,
 				9F83A6822BAB6C41004A6E6A /* Constants.swift */,
 				9FB39DFE2BA0B88F00B5A3F3 /* TimerViewModel.swift */,
 				9F2DDEEA2BA491A000EBA413 /* TimerState.swift */,
@@ -418,6 +463,15 @@
 			files = (
 				9F9406CD2BC843CD003DB49E /* Assets.xcassets in Resources */,
 				9F30539B2BB5E9B8006B8090 /* Assets.xcassets in Resources */,
+				9FD7E1562D283B520034ECCF /* GeistMono-Thin.ttf in Resources */,
+				9FD7E1572D283B520034ECCF /* GeistMono-Medium.ttf in Resources */,
+				9FD7E1582D283B520034ECCF /* GeistMono-UltraBlack.ttf in Resources */,
+				9FD7E1592D283B520034ECCF /* GeistMono-Bold.ttf in Resources */,
+				9FD7E15A2D283B520034ECCF /* GeistMono-Black.ttf in Resources */,
+				9FD7E15B2D283B520034ECCF /* GeistMono-Light.ttf in Resources */,
+				9FD7E15C2D283B520034ECCF /* GeistMono-UltraLight.ttf in Resources */,
+				9FD7E15D2D283B520034ECCF /* GeistMono-SemiBold.ttf in Resources */,
+				9FD7E15E2D283B520034ECCF /* GeistMono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +484,15 @@
 				9F5D33F12BA9B9D50049100C /* Preview Assets.xcassets in Resources */,
 				9FA3AC3E2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
 				9FDB9E702BCD23CA00E6BA19 /* Home.wav in Resources */,
+				9FD7E14D2D283B520034ECCF /* GeistMono-Thin.ttf in Resources */,
+				9FD7E14E2D283B520034ECCF /* GeistMono-Medium.ttf in Resources */,
+				9FD7E14F2D283B520034ECCF /* GeistMono-UltraBlack.ttf in Resources */,
+				9FD7E1502D283B520034ECCF /* GeistMono-Bold.ttf in Resources */,
+				9FD7E1512D283B520034ECCF /* GeistMono-Black.ttf in Resources */,
+				9FD7E1522D283B520034ECCF /* GeistMono-Light.ttf in Resources */,
+				9FD7E1532D283B520034ECCF /* GeistMono-UltraLight.ttf in Resources */,
+				9FD7E1542D283B520034ECCF /* GeistMono-SemiBold.ttf in Resources */,
+				9FD7E1552D283B520034ECCF /* GeistMono-Regular.ttf in Resources */,
 				9FDB9E682BCD23CA00E6BA19 /* Arp.wav in Resources */,
 				9F9406CC2BC843CD003DB49E /* Assets.xcassets in Resources */,
 				9FDB9E662BCD23CA00E6BA19 /* Suspended.wav in Resources */,
@@ -448,6 +511,15 @@
 				9FDB9E502BCD18E100E6BA19 /* Ding2.wav in Resources */,
 				9FDB9E6F2BCD23CA00E6BA19 /* Home.wav in Resources */,
 				9FA3AC3D2BAB91F700153923 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				9FD7E15F2D283B520034ECCF /* GeistMono-Thin.ttf in Resources */,
+				9FD7E1602D283B520034ECCF /* GeistMono-Medium.ttf in Resources */,
+				9FD7E1612D283B520034ECCF /* GeistMono-UltraBlack.ttf in Resources */,
+				9FD7E1622D283B520034ECCF /* GeistMono-Bold.ttf in Resources */,
+				9FD7E1632D283B520034ECCF /* GeistMono-Black.ttf in Resources */,
+				9FD7E1642D283B520034ECCF /* GeistMono-Light.ttf in Resources */,
+				9FD7E1652D283B520034ECCF /* GeistMono-UltraLight.ttf in Resources */,
+				9FD7E1662D283B520034ECCF /* GeistMono-SemiBold.ttf in Resources */,
+				9FD7E1672D283B520034ECCF /* GeistMono-Regular.ttf in Resources */,
 				9F954B022B9F3BCE00A8D5FA /* Preview Assets.xcassets in Resources */,
 				9FDB9E652BCD23CA00E6BA19 /* Suspended.wav in Resources */,
 				9FDB9E692BCD23CA00E6BA19 /* Bell.wav in Resources */,

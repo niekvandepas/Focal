@@ -115,7 +115,7 @@ struct TimerView: View {
                         .focused($isTextFieldFocused) // Bind focus state to the TextField
 
                     Text(timerViewModel.timeRemainingFormatted)
-                        .font(.custom("Inter", size: timerTimeLeftFontSize))
+                        .font(.custom("Geist Mono", size: timerTimeLeftFontSize))
                         .padding()
                         .foregroundStyle(.primaryButton)
                 }
@@ -154,8 +154,10 @@ struct TimerView: View {
             // Overlay the actual text on hidden "Pause" text to ensure the button is always the same width,
             // https://stackoverflow.com/questions/77051742/how-to-create-a-fixed-size-swiftui-button-when-label-content-changes
             Text("Pause")
+                .frame(width: 40, height: 16)
                 .hidden()
                 .overlay(Text(timerViewModel.timerIsRunning ? "Pause" : "Start"))
+                .font(.custom("Geist Mono", size: 13))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
                 .bold()
@@ -177,6 +179,7 @@ struct TimerView: View {
             timerViewModel.resetTimer()
         }) {
             Text("Reset")
+                .font(.custom("Geist Mono", size: 13))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 20)
                 .foregroundStyle(.primaryButton)
