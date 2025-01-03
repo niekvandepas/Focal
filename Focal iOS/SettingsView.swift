@@ -15,6 +15,7 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
+
             Stepper {
                 Text("Number of sessions: \(settingsManager.sessionGoal)")
             } onIncrement: {
