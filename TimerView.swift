@@ -141,7 +141,7 @@ struct TimerView: View {
 #endif
             // Immediately removing a second from the timer indicates visual responsiveness to the user
             if timerViewModel.timerIsFull {
-                timerViewModel.timeRemaining = timerViewModel.workTimerDuration - 1
+                timerViewModel.timeRemaining = settingsManager.workTimerDuration - 1
             }
 
             timerViewModel.timerIsRunning.toggle()

@@ -12,7 +12,7 @@ struct SettingsView: View {
     @ObservedObject var settingsManager: SettingsManager
 
     var body: some View {
-        let picker = Picker("Number of sessions:", selection: $settingsManager.sessionGoal) {
+        let picker = Picker("", selection: $settingsManager.sessionGoal) {
             Text("2").tag(2)
             Text("3").tag(3)
             Text("4").tag(4)
@@ -65,12 +65,25 @@ struct SettingsView: View {
 
             Toggle("Start next timer automatically", isOn: $settingsManager.startNextTimerAutomatically)
                 .toggleStyle(.checkbox)
+                .padding(.bottom, 4)
 
-            if #available(macOS 14.0, *) {
-                picker.pickerStyle(.palette)
-            } else {
-                picker
+            HStack {
+                Text("Number of sessions")
+                    .frame(width: 123)
+                if #available(macOS 14.0, *) {
+                    picker.pickerStyle(.palette)
+                } else {
+                    picker
+                }
             }
+            .padding(.bottom, 4)
+
+//            TODO these values are not bound right
+            TimerDurationInput(label: "Work:", duration: $settingsManager.workTimerDuration, forTimerState: .work)
+                .padding(.bottom, 4)
+            TimerDurationInput(label: "Short break:", duration: $settingsManager.restTimerDuration, forTimerState: .rest)
+                .padding(.bottom, 4)
+            TimerDurationInput(label: "Long break:", duration: $settingsManager.longRestTimerDuration, forTimerState: .longRest)
 
             Divider()
                 .padding(8)

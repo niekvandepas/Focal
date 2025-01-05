@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F2DDEEB2BA491A000EBA413 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DDEEA2BA491A000EBA413 /* TimerState.swift */; };
+		9F2F352B2D270CC500060BE1 /* TimerDurationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2F352A2D270CC500060BE1 /* TimerDurationInput.swift */; };
+		9F2F352C2D270CC500060BE1 /* TimerDurationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2F352A2D270CC500060BE1 /* TimerDurationInput.swift */; };
 		9F3053922BB5E9B6006B8090 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3053912BB5E9B6006B8090 /* WidgetKit.framework */; };
 		9F3053942BB5E9B6006B8090 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3053932BB5E9B6006B8090 /* SwiftUI.framework */; };
 		9F3053972BB5E9B6006B8090 /* TimerWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3053962BB5E9B6006B8090 /* TimerWidgetBundle.swift */; };
@@ -134,6 +136,7 @@
 /* Begin PBXFileReference section */
 		9F2DDEEA2BA491A000EBA413 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		9F2DDEEE2BA4F1E900EBA413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9F2F352A2D270CC500060BE1 /* TimerDurationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimerDurationInput.swift; path = Focal/TimerDurationInput.swift; sourceTree = "<group>"; };
 		9F30538F2BB5E9B6006B8090 /* TimerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3053912BB5E9B6006B8090 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		9F3053932BB5E9B6006B8090 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -269,6 +272,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9F2F352A2D270CC500060BE1 /* TimerDurationInput.swift */,
 				9F82EF2D2D18B92C007A452A /* EditableTimerLabel.swift */,
 				9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */,
 				9FAC11FB2BD002ED00BF18A4 /* NotificationManager.swift */,
@@ -558,6 +562,7 @@
 				9F5D34082BAA0AC40049100C /* NotificationDelegate.swift in Sources */,
 				9FAA45F42BC40F6D0002A537 /* SessionMarkers.swift in Sources */,
 				9F5D33FF2BA9BE560049100C /* TimerView.swift in Sources */,
+				9F2F352B2D270CC500060BE1 /* TimerDurationInput.swift in Sources */,
 				9F5D34002BA9BE6A0049100C /* MyButtonStyle.swift in Sources */,
 				9F5D33FE2BA9BE500049100C /* TimerState.swift in Sources */,
 				9F52B9002BB330F100410E1C /* SettingsView.swift in Sources */,
@@ -588,6 +593,7 @@
 				9FAC11FC2BD002ED00BF18A4 /* NotificationManager.swift in Sources */,
 				9FDB9E722BCD24E400E6BA19 /* NotificationSound.swift in Sources */,
 				9F83A6832BAB6C41004A6E6A /* Constants.swift in Sources */,
+				9F2F352C2D270CC500060BE1 /* TimerDurationInput.swift in Sources */,
 				9FB39E012BA0F54B00B5A3F3 /* AppMenu.swift in Sources */,
 				9F52B9022BB3322700410E1C /* SettingsManager.swift in Sources */,
 				9F82EF2F2D18B92C007A452A /* EditableTimerLabel.swift in Sources */,
