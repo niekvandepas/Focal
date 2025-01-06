@@ -17,12 +17,20 @@ struct SettingsView: View {
             Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
 
             Stepper {
-                Text("Number of sessions: \(settingsManager.sessionGoal)")
+                HStack {
+                    Text("Number of sessions:")
+                    Spacer()
+                    Text("\(settingsManager.sessionGoal)")
+                }
             } onIncrement: {
                 settingsManager.sessionGoal += 1
             } onDecrement: {
                 settingsManager.sessionGoal -= 1
             }
+
+            TimerDurationStepper(forTimerState: .work, duration: $settingsManager.workTimerDuration)
+            TimerDurationStepper(forTimerState: .rest, duration: $settingsManager.restTimerDuration)
+            TimerDurationStepper(forTimerState: .longRest, duration: $settingsManager.longRestTimerDuration)
 
             Toggle("Show notifications", isOn: $settingsManager.notificationsAreOn)
 

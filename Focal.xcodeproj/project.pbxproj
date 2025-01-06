@@ -83,6 +83,8 @@
 		9FD7E1652D283B520034ECCF /* GeistMono-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E14C2D283B520034ECCF /* GeistMono-UltraLight.ttf */; };
 		9FD7E1662D283B520034ECCF /* GeistMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1492D283B520034ECCF /* GeistMono-SemiBold.ttf */; };
 		9FD7E1672D283B520034ECCF /* GeistMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD7E1482D283B520034ECCF /* GeistMono-Regular.ttf */; };
+		9FD7E1762D2AD2960034ECCF /* TimerDurationStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7E1752D2AD2960034ECCF /* TimerDurationStepper.swift */; };
+		9FD7E1782D2AD2960034ECCF /* TimerDurationStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7E1752D2AD2960034ECCF /* TimerDurationStepper.swift */; };
 		9FD86AF12BA5D8DE00BBED1B /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */; };
 		9FDB9E4E2BCD18E100E6BA19 /* Ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E462BCD18E100E6BA19 /* Ding.wav */; };
 		9FDB9E4F2BCD18E100E6BA19 /* Ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9FDB9E462BCD18E100E6BA19 /* Ding.wav */; };
@@ -180,6 +182,7 @@
 		9FD7E14B2D283B520034ECCF /* GeistMono-UltraBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-UltraBlack.ttf"; sourceTree = "<group>"; };
 		9FD7E14C2D283B520034ECCF /* GeistMono-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-UltraLight.ttf"; sourceTree = "<group>"; };
 		9FD7E16F2D2866950034ECCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FD7E1752D2AD2960034ECCF /* TimerDurationStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDurationStepper.swift; sourceTree = "<group>"; };
 		9FD86AF02BA5D8DE00BBED1B /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
 		9FDB9E462BCD18E100E6BA19 /* Ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding.wav; sourceTree = "<group>"; };
 		9FDB9E472BCD18E100E6BA19 /* Ding2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ding2.wav; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 		9F954AEE2B9F3BCC00A8D5FA = {
 			isa = PBXGroup;
 			children = (
+				9FD7E1752D2AD2960034ECCF /* TimerDurationStepper.swift */,
 				9F82EF2D2D18B92C007A452A /* EditableTimerLabel.swift */,
 				9F64DF2B2BD13E8C005C4C0A /* SkipButton.swift */,
 				9FAC11FB2BD002ED00BF18A4 /* NotificationManager.swift */,
@@ -563,6 +567,7 @@
 				9F52B9002BB330F100410E1C /* SettingsView.swift in Sources */,
 				9F52B9032BB3322700410E1C /* SettingsManager.swift in Sources */,
 				9FDB9E732BCD24E400E6BA19 /* NotificationSound.swift in Sources */,
+				9FD7E1762D2AD2960034ECCF /* TimerDurationStepper.swift in Sources */,
 				9F82EF2E2D18B92C007A452A /* EditableTimerLabel.swift in Sources */,
 				9F3053A92BB7644C006B8090 /* Constants.swift in Sources */,
 				9FB2207C2BB4B242007C722A /* SceneDelegate.swift in Sources */,
@@ -593,6 +598,7 @@
 				9F82EF2F2D18B92C007A452A /* EditableTimerLabel.swift in Sources */,
 				9F2DDEEB2BA491A000EBA413 /* TimerState.swift in Sources */,
 				9F954AFB2B9F3BCC00A8D5FA /* FocalApp.swift in Sources */,
+				9FD7E1782D2AD2960034ECCF /* TimerDurationStepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
