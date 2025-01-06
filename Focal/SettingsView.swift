@@ -60,7 +60,7 @@ struct SettingsView: View {
             Toggle("Show time left in menu bar", isOn: $settingsManager.showTimeLeftInMenuBar)
                 .toggleStyle(.checkbox)
 
-            Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
+            Toggle("Show time remaining", isOn: $settingsManager.showTimeLeft)
                 .toggleStyle(.checkbox)
 
             Toggle("Start next timer automatically", isOn: $settingsManager.startNextTimerAutomatically)

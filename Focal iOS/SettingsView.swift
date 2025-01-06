@@ -15,7 +15,7 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section {
-                Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
+                Toggle("Show time remaining", isOn: $settingsManager.showTimeLeft)
 
                 Stepper {
                     HStack {
