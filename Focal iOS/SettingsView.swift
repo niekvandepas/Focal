@@ -14,42 +14,46 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
+            Section {
+                Toggle("Show time left in timer", isOn: $settingsManager.showTimeLeft)
 
-            Stepper {
-                HStack {
-                    Text("Number of sessions:")
-                    Spacer()
-                    Text("\(settingsManager.sessionGoal)")
+                Stepper {
+                    HStack {
+                        Text("Number of sessions:")
+                        Spacer()
+                        Text("\(settingsManager.sessionGoal)")
+                    }
+                } onIncrement: {
+                    settingsManager.sessionGoal += 1
+                } onDecrement: {
+                    settingsManager.sessionGoal -= 1
                 }
-            } onIncrement: {
-                settingsManager.sessionGoal += 1
-            } onDecrement: {
-                settingsManager.sessionGoal -= 1
+
+                TimerDurationStepper(forTimerState: .work, duration: $settingsManager.workTimerDuration)
+                TimerDurationStepper(forTimerState: .rest, duration: $settingsManager.restTimerDuration)
+                TimerDurationStepper(forTimerState: .longRest, duration: $settingsManager.longRestTimerDuration)
             }
 
-            TimerDurationStepper(forTimerState: .work, duration: $settingsManager.workTimerDuration)
-            TimerDurationStepper(forTimerState: .rest, duration: $settingsManager.restTimerDuration)
-            TimerDurationStepper(forTimerState: .longRest, duration: $settingsManager.longRestTimerDuration)
+            Section {
+                Toggle("Show notifications", isOn: $settingsManager.notificationsAreOn)
 
-            Toggle("Show notifications", isOn: $settingsManager.notificationsAreOn)
+                Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
+                    .disabled(!settingsManager.notificationsAreOn)
 
-            Toggle("Play sound for notifications", isOn: $settingsManager.notificationSoundIsOn)
-                .disabled(!settingsManager.notificationsAreOn)
-
-            Picker("Notification sound:", selection: $settingsManager.notificationSound) {
-                Text("Arp").tag(1)
-                Text("Bell").tag(0) // 'Bell' is the default
-                Text("Buzz").tag(2)
-                Text("Fourths").tag(3)
-                Text("Home").tag(4)
-                Text("Suspended").tag(5)
-            }
-            .disabled(!settingsManager.notificationSoundIsOn || !settingsManager.notificationsAreOn)
-            .onChange(of: settingsManager.notificationSound) { newValue in
-                if let nextSound = NotificationSound(rawValue: newValue) {
-                    playSound(for: nextSound)
-                    NotificationManager.updateNotificationSound(to: nextSound)
+                Picker("Notification sound:", selection: $settingsManager.notificationSound) {
+                    Text("Arp").tag(1)
+                    Text("Bell").tag(0) // 'Bell' is the default
+                    Text("Buzz").tag(2)
+                    Text("Fourths").tag(3)
+                    Text("Home").tag(4)
+                    Text("Suspended").tag(5)
+                }
+                .disabled(!settingsManager.notificationSoundIsOn || !settingsManager.notificationsAreOn)
+                .onChange(of: settingsManager.notificationSound) { newValue in
+                    if let nextSound = NotificationSound(rawValue: newValue) {
+                        playSound(for: nextSound)
+                        NotificationManager.updateNotificationSound(to: nextSound)
+                    }
                 }
             }
         }
