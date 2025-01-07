@@ -36,22 +36,22 @@ struct TimerDurationStepper: View {
     func getMinDuration() -> Int {
         switch timerState {
         case .work:
-            return 10 * 60
+            return Constants.MIN_WORK_DURATION
         case .rest:
-            return 1 * 60
+            return Constants.MIN_REST_DURATION
         case .longRest:
-            return 5 * 60
+            return Constants.MIN_LONG_REST_DURATION
         }
     }
 
     func getMaxDuration() -> Int {
         switch timerState {
         case .work:
-            return 120 * 60
+            return Constants.MAX_WORK_DURATION
         case .rest:
-            return 15 * 60
+            return Constants.MAX_REST_DURATION
         case .longRest:
-            return 60 * 60
+            return Constants.MAX_LONG_REST_DURATION
         }
     }
 
