@@ -90,7 +90,7 @@ struct NotificationManager {
             content.sound = sound
         }
 
-        if await !SettingsManager.shared.startNextTimerAutomatically {
+        if await !SettingsManager.shared.continuousMode {
             content.categoryIdentifier = "TIMER_EXPIRED"
         }
         return content

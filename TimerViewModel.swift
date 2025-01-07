@@ -67,7 +67,7 @@ class TimerViewModel: ObservableObject {
         self.resetTimerDuration()
         NotificationManager.removeAllNotificationRequests()
         completedSessions += 1
-        timerIsRunning = settingsManager.startNextTimerAutomatically
+        timerIsRunning = settingsManager.continuousMode
     }
 
     func updateUserDefaults() {
@@ -127,7 +127,7 @@ class TimerViewModel: ObservableObject {
 
     private func handleTimerFinished() {
         #if os(macOS)
-        if !SettingsManager.shared.startNextTimerAutomatically {
+        if !SettingsManager.shared.continuousMode {
             self.pauseTimer()
         }
 
@@ -143,7 +143,7 @@ class TimerViewModel: ObservableObject {
         self.pauseTimer()
         #endif
 
-        if settingsManager.startNextTimerAutomatically {
+        if settingsManager.continuousMode {
             // If the timer is in this 'continuous mode',
             // we need to schedule the next notification immediately when the timer elapses.
             // Normally, this is done when the timer is manually unpaused,

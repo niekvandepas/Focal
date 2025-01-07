@@ -15,7 +15,7 @@ final class SettingsManager: ObservableObject {
     @AppStorage("showTimeLeft") var showTimeLeft = true
     @AppStorage("globalShortcutBringsAppToFront") var globalShortcutBringsAppToFront = false
     @AppStorage("hideAppOnTimerStart") var hideAppOnTimerStart = false
-    @AppStorage("startNextTimerAutomatically") var startNextTimerAutomatically = false
+    @AppStorage("continuousMode") var continuousMode = false
     @AppStorage("notificationsAreOn") var notificationsAreOn = true
     @AppStorage("notificationSoundIsOn") var notificationSoundIsOn = true
     #if os(macOS)

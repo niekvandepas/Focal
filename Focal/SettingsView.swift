@@ -63,7 +63,7 @@ struct SettingsView: View {
             Toggle("Show time remaining", isOn: $settingsManager.showTimeLeft)
                 .toggleStyle(.checkbox)
 
-            Toggle("Start next timer automatically", isOn: $settingsManager.startNextTimerAutomatically)
+            Toggle("Start next timer automatically", isOn: $settingsManager.continuousMode)
                 .toggleStyle(.checkbox)
                 .padding(.bottom, 4)
 
