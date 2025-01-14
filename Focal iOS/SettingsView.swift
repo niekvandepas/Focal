@@ -32,6 +32,8 @@ struct SettingsView: View {
                 TimerDurationStepper(forTimerState: .work, duration: $settingsManager.workTimerDuration)
                 TimerDurationStepper(forTimerState: .rest, duration: $settingsManager.restTimerDuration)
                 TimerDurationStepper(forTimerState: .longRest, duration: $settingsManager.longRestTimerDuration)
+
+                Toggle("Start next timer automatically", isOn: $settingsManager.continuousMode)
             }
 
             Section {

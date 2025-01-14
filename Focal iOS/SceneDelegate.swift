@@ -25,22 +25,69 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     }
 
     func correctSuspendedTimerState() {
+        logToFile("The time is now \(Date.now)")
+        logToFile("time remaining at start: \(timerViewModel.timeRemaining)")
         guard timerViewModel.timerIsRunning else { return }
 
-        if let resignationTime = lastTimeWhenFocalResignedActive {
-            let timeDifferenceBetweenResignationAndActivation = Date().timeIntervalSince(resignationTime)
-            let correctedTimeRemaining =
-                timerViewModel.timeRemaining - Int(timeDifferenceBetweenResignationAndActivation)
+        guard let resignationTime = lastTimeWhenFocalResignedActive else { return }
+        let timeSinceResignationInSeconds = Int(Date().timeIntervalSince(resignationTime))
+        logToFile("timeSinceResignationInSeconds: \(timeSinceResignationInSeconds)")
+        let correctedTimeRemaining =
+            timerViewModel.timeRemaining - timeSinceResignationInSeconds
 
-            // A negative correctedTimeRemaining means the timer has elapsed
-            if correctedTimeRemaining < 0 {
-                timerViewModel.timerState = timerViewModel.getNextTimerState()
-                timerViewModel.resetTimerDuration()
-            }
-            else {
-                timerViewModel.timeRemaining = correctedTimeRemaining
-            }
+        // A non-negative time remaining means the timer is still running,
+        // and we simply need to correct the time remaining.
+        if correctedTimeRemaining > 0 {
+            timerViewModel.timeRemaining = correctedTimeRemaining
+            logToFile("time remaining at end: \(timerViewModel.timeRemaining)")
+            return
         }
+
+        // Otherwise, the last started timer has already elapsed.
+        // In that case, if continuous mode is off, we simply reset the timer to the next timer state.
+        if !settingsManager.continuousMode {
+            timerViewModel.timerState = timerViewModel.getNextTimerState()
+            timerViewModel.resetTimerDuration()
+            logToFile("time remaining at end: \(timerViewModel.timeRemaining)")
+            return
+        }
+
+        // If continuous mode is ON, things are a bit trickier:
+        // we keep moving to the next timer state until
+        // the overflow time is less than a full timer,
+        // and then subtract the overflow time from the time remaining in the timer.
+        var overflowTimeInSeconds = timeSinceResignationInSeconds
+        var i = 0;
+
+        while (overflowTimeInSeconds - timerViewModel.timeRemaining) >= 0 {
+            logToFile("**************************************")
+            logToFile("Staring iteration \(i)")
+
+            let nextTimerState = timerViewModel.getNextTimerState()
+            let nextTimeRemaining = SettingsManager.getTimerDuration(forTimerState: nextTimerState)
+            let nextCompletedSessions = timerViewModel.getNextCompletedSessions()
+
+            logToFile("overflowTimeInSeconds: \(overflowTimeInSeconds)")
+            logToFile("overflowTimeInSeconds - timerViewModel.timeRemaining: \(overflowTimeInSeconds - timerViewModel.timeRemaining)")
+            logToFile("The current timer state is: \(timerViewModel.timerState)")
+            logToFile("nextTimerState: \(nextTimerState)")
+
+            timerViewModel.timerState = nextTimerState
+
+            logToFile("Setting timerViewModel.timeRemaining to: \(nextTimeRemaining)")
+            timerViewModel.timeRemaining = nextTimeRemaining
+
+            logToFile("Setting timerViewModel.completedSessions to: \(nextCompletedSessions)")
+            timerViewModel.completedSessions = nextCompletedSessions
+
+            overflowTimeInSeconds -= timerViewModel.timeRemaining
+            logToFile("overflowTimeInSeconds after subtracting: \(overflowTimeInSeconds)")
+            logToFile("**************************************\n")
+            i += 1
+        }
+
+        timerViewModel.timeRemaining -= Int(overflowTimeInSeconds)
+        logToFile("time remaining at end: \(timerViewModel.timeRemaining)")
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -81,5 +128,29 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
         default:
             break
         }
+    }
+}
+
+func logToFile(_ message: String) {
+    let fileName = "app_debug_log.txt"
+    let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
+
+    let timestamp = Date().description
+    let logMessage = "[\(timestamp)] \(message)\n"
+
+    do {
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            if let fileHandle = try? FileHandle(forWritingTo: fileURL) {
+                fileHandle.seekToEndOfFile()
+                if let data = logMessage.data(using: .utf8) {
+                    fileHandle.write(data)
+                }
+                fileHandle.closeFile()
+            }
+        } else {
+            try logMessage.write(to: fileURL, atomically: true, encoding: .utf8)
+        }
+    } catch {
+        logToFile("Failed to write log: \(error)")
     }
 }

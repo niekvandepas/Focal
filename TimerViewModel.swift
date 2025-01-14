@@ -94,6 +94,7 @@ class TimerViewModel: ObservableObject {
         "\(timeRemaining / 60):\(String(format: "%02d", timeRemaining % 60))"
     }
 
+    /// Returns whatever the timer state will be after the current timer is finished.
     func getNextTimerState() -> TimerState {
         switch self.timerState {
         case .work:
@@ -103,6 +104,18 @@ class TimerViewModel: ObservableObject {
             return .work
         case .longRest:
             return .work
+        }
+    }
+
+    /// Returns whatever the number of completed sessions will be after the current timer is finished.
+    func getNextCompletedSessions() -> Int {
+        switch self.timerState {
+        case .work:
+            return self.completedSessions
+        case .rest:
+            return self.completedSessions + 1
+        case .longRest:
+            return 0
         }
     }
 
@@ -126,8 +139,17 @@ class TimerViewModel: ObservableObject {
     }
 
     private func handleTimerFinished() {
-        #if os(macOS)
-        if !SettingsManager.shared.continuousMode {
+#if os(macOS)
+        if SettingsManager.shared.continuousMode {
+            // If the timer is in this 'continuous mode',
+            // we need to schedule the next notification immediately when the timer elapses.
+            // Normally, this is done when the timer is manually unpaused,
+            // but that never happens in this mode.
+            Task {
+                await self.scheduleTimerFinishedNotification()
+            }
+        }
+        else {
             self.pauseTimer()
         }
 
@@ -138,20 +160,7 @@ class TimerViewModel: ObservableObject {
                 mainWindow.makeKeyAndOrderFront(nil)
             }
         }
-        #endif
-        #if os(iOS)
-        self.pauseTimer()
-        #endif
-
-        if settingsManager.continuousMode {
-            // If the timer is in this 'continuous mode',
-            // we need to schedule the next notification immediately when the timer elapses.
-            // Normally, this is done when the timer is manually unpaused,
-            // but that never happens in this mode.
-            Task {
-                await self.scheduleTimerFinishedNotification()
-            }
-        }
+#endif
 
         let nextTimerState = getNextTimerState()
 

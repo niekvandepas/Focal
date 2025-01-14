@@ -35,5 +35,16 @@ final class SettingsManager: ObservableObject {
     @AppStorage("restTimerDuration") var restTimerDuration = 5 * 60
     @AppStorage("longRestTimerDuration") var longRestTimerDuration = 30 * 60
     #endif
+
+    static func getTimerDuration(forTimerState timerState: TimerState) -> Int {
+        switch timerState {
+        case .work:
+            return SettingsManager.shared.workTimerDuration
+        case .rest:
+            return SettingsManager.shared.restTimerDuration
+        case .longRest:
+            return SettingsManager.shared.longRestTimerDuration
+        }
+    }
 }
 
