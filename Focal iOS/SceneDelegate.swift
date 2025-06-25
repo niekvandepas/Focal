@@ -14,6 +14,10 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     var lastTimeWhenFocalResignedActive: Date? = nil
 
     func sceneWillResignActive(_ scene: UIScene) {
+        logToFile("RESIGNING ACTIVE")
+//        TODO I think the timer is only stopped after a couple of seconds (i.e. Focal is only really suspended after 3 seconds or so)
+        // so we need to compensate for that.
+//        lastTimeWhenFocalResignedActive = Date().addingTimeInterval(3)
         lastTimeWhenFocalResignedActive = Date()
         setApplicationShorcutItems()
         timerViewModel.updateUserDefaults()
